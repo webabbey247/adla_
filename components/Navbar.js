@@ -10,13 +10,13 @@ const Navbar = () => {
   const activeSegment = useSelectedLayoutSegment();
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
+    if (typeof window.scrollY >= 80) {
       setColorchange(true);
     } else {
       setColorchange(false);
     }
   };
-  window.addEventListener("scroll", changeNavbarColor);
+  typeof window.addEventListener("scroll", changeNavbarColor);
   return (
     <header className="positon-absolute py-0">
       <nav
