@@ -42,7 +42,7 @@ position: relative;
     transition: 0.4s;
     position: relative;
     will-change: transform;
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-1-258306d375b7ee8822cfe20d40d52795.png");
+    background-image: url("/static/agricorp-531.jpg");
 }
 
 .masonary_gallery_rtl {
@@ -110,23 +110,32 @@ position: relative;
 }
 
 .masonary_gallery_rtl .masonary_gallery_rtl_img span.one_of_five {
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-2-19db7e7c6ed5a8b3148acc1f5d774aa3.png");
+    background-image: url("/static/agricorp-531.jpg");
+    background-position: center;
+
 }
 
 .masonary_gallery_rtl .masonary_gallery_rtl_img span.two_of_five {
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-3-4ab20eb8e806736cbd95040505446aa6.png");
+    background-image: url("/static/agriculture_banner_img.jpg");
+    background-position: center;
+
 }
 
 .masonary_gallery_rtl .masonary_gallery_rtl_img span.three_of_five {
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-4-7b12ca2c7c3b91f89b27d8b568ea1d89.png");
+    background-image: url("/static/agricorp-531.jpg");
+    background-position: center;
+
 }
 
 .masonary_gallery_rtl .masonary_gallery_rtl_img span.four_of_five {
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-5-776502407a06c639fa9c4c674a4b8182.png");
+    background-image: url("/static/vision_mission_img.jpg");
+    background-position: center;
+
 }
 
 .masonary_gallery_rtl .masonary_gallery_rtl_img span.five_of_five {
-    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-6-7d0adc74c484b7cd4d33a13d93e4ff83.png");
+    background-image: url("/static/m.jpg");
+    background-position: center;
 }
 
 

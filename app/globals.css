@@ -257,7 +257,9 @@ ul {
 
 
 .banner-container .swiper-slide {
-  background-image: url('/static/banner-img.jpg');
+  /* background-image: url('/static/banner-img.jpg'); */
+  background-image: url('/static/agriculture_banner_img.jpg');
+
   /* background-image: url('/static/m.jpg'); */
   /* background-image: url('/static/agriculture_banner_img.jpg'); */
   background-position: center;

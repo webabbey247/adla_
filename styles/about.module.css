@@ -11,7 +11,7 @@
     padding-left: 80px;
     padding-right: 80px;
     padding: 8rem 0;
-    mix-blend-mode: luminosity !important;
+    /* mix-blend-mode: luminosity !important; */
 }
 
 .about_us_banner h2 {
@@ -55,7 +55,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/agriculture_banner_img.jpg');
+    background-image: url('/static/mkk.jpg');
     height: 100%;
     border-radius: var(--adlas-border-radius);
     margin: 0 0 0 6rem;

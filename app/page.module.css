@@ -54,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://neveah.com.ng/uploads/hometopslidersection/16294320859.jpg');
+    background-image: url('/static/vision_mission_img.jpg');
     /* mix-blend-mode: luminosity !important; */
     height: 550px;
     position: relative;
@@ -103,8 +103,7 @@
 
 .home_services_grid_container .home_services_ltr_img {
     height: 400px;
-    background-image: url('https://www.caxton.com/wp-content/uploads/2021/10/corp-bg-01.jpg');
-    /* background-image: url('/static/agriculture_banner_img.jpg'); */
+    background-image: url('/static/banner_img_02.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
