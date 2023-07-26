@@ -77,10 +77,10 @@ const Footer = () => {
                   </p>
                   <ul className="list-unstyled">
                     <li className="mb-lg-3">
-                      <a href="/">+1-301-340-3946</a>
+                      <a href="/">+234 913 257 4069</a>
                     </li>
                     <li className="mb-lg-3">
-                      <a href="/">info@finity.com</a>
+                      <a href="/">info@addressmail.com</a>
                     </li>
                   </ul>
                 </div>
