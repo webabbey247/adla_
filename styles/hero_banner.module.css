@@ -1,0 +1,78 @@
+.heroContainer_padding {
+    padding: 0;
+}
+
+.banner_background_overlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #28251F00 70%, #f2295b 100%);
+    opacity: 0.82;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    filter: brightness(0%) contrast(80%) saturate(80%) blur(0px) hue-rotate(0deg) !important;
+}
+
+.heroContainer_padding h2 {
+    font-weight: 600 !important;
+    font-size: 3.625rem !important;
+    line-height: 1.1 !important;
+}
+
+.heroContainer_padding p {
+    /* font-size: 1rem;
+    line-height: 1.5; */
+    margin: 2rem 0;
+    max-width: 450px;
+}
+
+.heroContainer_padding h2, .heroContainer_padding p {
+    text-align: left;
+}
+
+.heroContainer_padding .custom_btn {
+    border: 1px solid #fba543;
+    background: #fba543;
+    min-width: 191px;
+    height: 55px;
+    line-height: 28px;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px !important;
+    text-align: left;
+}
+
+.heroContainer_padding .banner_background_img {
+    min-width: calc(35% - 15px);
+    /* max-height: 400px;
+    width: 100%;
+    min-height: 228px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat !important;
+    margin: 7.5px;
+    border-radius: 10px;
+    overflow: hidden; */
+}
+
+.heroContainer_padding .banner_background_img span {
+    display: block;
+    height: 400px;
+    width: 100%;
+    background-size: cover !important;
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
+    transition: 0.4s;
+    position: relative;
+    will-change: transform;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--adlas-border-radius);
+}
+

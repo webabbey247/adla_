@@ -1,76 +1,24 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+  --adlas-border-radius: 4px;
+  --adlas-border: 1px solid #e5e5e5;
+  --adlas-button-border: 1px solid #fba543;
+  /* --adlas-font-family: "Quasimoda", -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, sans-serif; */
+  --adlas-nav-color: rgb(46, 60, 74);
+  --adlas-body-text-color: rgb(131, 133, 140);
+  --adlas-body-font-size: 1rem;
+  --adlas-body-line-height: 1.5;
+  --adlas-nav-font-size: 14px;
+  --adlas-body-font-weight: 400;
+  --adlas-nav-font-weight: 700;
+  --adlas-nav-letter-spacing: 0.1em;
+  --adlas-nav-line-height: 1.66;
+  --adlas-nav-active-color: #fba543;
+  --adlas-primary-color: #fba543;
+  --adlas-secondary-color: #0e3844;
+  --adlas-secondary-color-01: #E8C545;
+  --adlas-color-white: #ffffff;
+  --adlas-color-black: #121212;
+  --adlas-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .09);
 }
 
 * {
@@ -83,25 +31,345 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+  color: var(--adlas-nav-color);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+h1 {
+  font-size: 49px;
+  line-height: 53.9px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+
+h2 {
+  font-size: 39px;
+  line-height: 42.9px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+
+h3 {
+  font-size: 32px;
+  line-height: 35.2px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 30px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+
+h5 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+p {
+  font-size: 16px !important;
+  line-height: 30px !important;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+small, span {
+  font-size: 12px;
+  line-height: 16.8px;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+}
+
+
+
+/* h1, h2, h3, h4 {
+  font-family: var(--adlas-font-family) !important;
+  font-weight: 700;
+  color: inherit;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 100%;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 35px;
+  margin: 0px;
+}
+
+p {
+  font-size: 16px !important;
+  line-height: 1.7em !important;
+  margin: 0;
+  font-weight: 400 !important;
+  color: inherit;
+} */
+
+
+span {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 800;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
+
 }
 
-@media (prefers-color-scheme: dark) {
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav_padding {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
+/***** Header *****/
+.navbar.bg-body-transparent {
+  background-color: transparent !important;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+}
+
+.navbar.bg-body-theme {
+  background-color: var(--adlas-color-white) !important;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+  transform: translateY(0%);
+  box-shadow: rgba(65, 62, 101, 0.1) 0px 12px 34px -11px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-item {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  color: var(--adlas-color-white) !important;
+  font-weight: 700 !important;
+  font-size: var(--adlas-nav-font-size) !important;
+  line-height: var(--adlas-nav-line-height) !important;
+}
+
+.navbar.navbar-expand-lg .nav-link {
+  color: var(--adlas-color-white) !important;
+}
+
+.navbar.navbar-expand-lg.bg-body-theme .nav-link {
+  color: var(--adlas-nav-color) !important;
+}
+
+
+.navbar.navbar-expand-lg .nav-link.active, .navbar.navbar-expand-lg .nav-link.show,
+.navbar.navbar-expand-lg.bg-body-theme .nav-link.active, .navbar.navbar-expand-lg.bg-body-theme .nav-link.show {
+  color: var(--adlas-nav-active-color) !important;
+}
+
+
+/***** End Header *****/
+
+/***** Swiper  *****/
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.autoplay-progress {
+  position: absolute;
+  right: 60px;
+  /* right: 16px; */
+  bottom: 26px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color:  var(--adlas-primary-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--adlas-primary-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+
+.banner-container .swiper-slide {
+  background-image: url('/static/banner-img.jpg');
+  /* background-image: url('/static/m.jpg'); */
+  /* background-image: url('/static/agriculture_banner_img.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 650px;
+  padding-left: 80px;
+  padding-right: 80px;
+  mix-blend-mode: luminosity !important;
+}
+
+
+.banner-container .swiper-container-horizontal>.swiper-pagination-bullets,
+.banner-container .swiper-pagination-custom,
+.banner-container .swiper-pagination-fraction {
+  bottom: 135px;
+  left: 75px;
+  width: 100%;
+}
+
+.banner-container .swiper-pagination {
+  text-align: left;
+}
+
+.banner-container .swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  opacity: 1;
+}
+
+.banner-container .swiper-pagination-bullet-active {
+  background: #a8d280;
+}
+
+/***** Forms *****/
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+textarea {
+  resize: none !important;
+  padding: 0.375rem 0.75rem !important;
+  border: 1px solid var(--adlas-nav-color);
+}
+
+textarea::placeholder {
+  font-size: 15px;
+  line-height: 19px;
+  opacity: 0.35;
+  color: var(--adlas-body-text-color);
+}
+
+/***** End Forms *****/
+
+@keyframes corp-line {
+  0% {
+    height: 0
+  }
+
+  100% {
+    height: calc(100% + 235px)
+  }
+}
+
+/* .bannerImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.bannerImage:before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: url('./../img/Neveah_Home_Assets-04Banner.png') no-repeat center center / 100% 100%;
+  width: 125px;
+  height: 125px;
+}
+
+.banner-heading h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: "Gilroy-extrabold";
+}
+
+.banner-description p {
+  font-size: 24px;
+  padding-bottom: 2%;
+} */
+
+
+/***** End Swiper *****/
+
+
+
+
+/* .navbar-expand-lg .navbar-nav .nav-item:last-child {
+  padding-right: 0 !important;
+} */
+
+
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

@@ -1,0 +1,93 @@
+.subscribe_form_container {
+    margin-right: 2rem !important;
+    margin-bottom: 0;
+}
+
+.subscribe_form_container .subscribe_form {
+    box-shadow: 0 32px 84px rgba(14, 86, 124, .17);
+    border-radius: 4px !important;
+    background-color: var(--adlas-color-white);
+}
+
+.subscribe_form .subscribe_input {
+    padding-right: 105px;
+    height: 65px;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: none;
+    color: #8c97ac;
+}
+
+.subscribe_form label svg {
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #8c97ac;
+}
+
+
+.subscribe_form .subscribe_input_button {
+    min-width: 160px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-weight: 500;
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 55px !important;
+    font-size: 16px;
+    border-radius: 4px !important;
+    border: 1px solid var(--adlas-nav-active-color);
+    background: var(--adlas-nav-active-color);
+    color: var(--adlas-color-white);
+}
+
+
+.general_form_container {
+    border-radius: var(--adlas-border-radius) !important;
+}
+
+.general_form_container .general_input  {
+    height: 55px;
+    padding-left: 2rem;
+    border-radius: 4px;
+    color: #8c97ac;
+}
+
+
+.general_form_container .general_input:focus,
+.general_form_container .general_text_area:focus {
+    box-shadow: none !important;
+    border-color: var(--adlas-secondary-color-01);
+}
+
+.general_form_container .general_input::placeholder, 
+.general_form_container .general_text_area::placeholder {
+    color: rgb(43, 45, 66) !important;
+    font-size: 15px;
+    line-height: 19px;
+    opacity: 0.5;
+}
+
+.general_form_container .general_text_area {
+    padding-left: 2rem;
+    border-radius: 4px;
+    color: #8c97ac;
+}
+
+
+.general_form_container .general_input_button {
+    min-width: 180px;
+    font-weight: 500;
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 55px !important;
+    font-size: 16px;
+    border-radius: 4px !important;
+    border: var(--adlas-button-border);
+    background: var(--adlas-primary-color);
+    color: var(--adlas-color-white);
+    margin: 1rem 0 4rem;
+}
+

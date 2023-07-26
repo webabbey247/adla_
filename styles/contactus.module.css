@@ -1,0 +1,108 @@
+.contact_us_banner {
+    background-image: url('/static/agriculture_banner_img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* height: 450px; */
+    padding-left: 80px;
+    padding-right: 80px;
+    padding: 6rem 0;
+    mix-blend-mode: luminosity !important;
+}
+
+.contact_us_banner h2 {
+    font-size: 60px;
+    line-height: 1.1em;
+    text-align: left;
+    font-weight: 800 !important;
+}
+
+.contact_us_banner p {
+    margin: 1rem 0 !important;
+    text-align: left;
+    font-weight: 400 !important;
+}
+
+
+
+.contact_us_form_section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-color: var(--adlas-color-white);
+}
+
+
+.contact_us_form_section .contact_text_info_holder h4 {
+    line-height: 1.1em;
+    text-align: left;
+    font-weight: 700 !important;
+}
+
+.contact_us_form_section .contact_text_info_holder p {
+   margin: 1rem 0 !important;
+}
+
+.contact_us_form_section a.get_quote_link {
+   color: var(--adlas-primary-color) !important;
+ }
+
+ .contact_us_form_section a.get_quote_link:hover {
+    color: var(--adlas-secondary-color) !important;
+
+ }
+
+.contact_map_iframe {
+    margin-bottom: -5.5px !important;
+}
+
+
+.contact_info_holder {
+    padding: 1rem;
+    border: var(--adlas-border);
+    border-radius: var(--adlas-border-radius);
+    margin: 0.5rem 0;
+    transition: all .5s ease;
+}
+
+.contact_info_holder:first-child {
+    padding-top: 3rem !important;
+}
+
+.contact_info_holder:hover {
+    box-shadow: var(--adlas-box-shadow);
+    border-radius: var(--adlas-border-radius);
+}
+
+.contact_info_holder .contact_icon_holder {
+    width: 40px;
+    height: 40px;
+    background: var(--adlas-nav-active-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.contact_info_holder aside {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: var(--adlas-nav-color);
+    line-height: 25px;
+}
+
+
+
+
+@keyframes contact-line {
+    0% {
+        height: 0
+    }
+
+    100% {
+        height: calc(100% - 150px)
+    }
+}

@@ -1,0 +1,425 @@
+.about_us_banner {
+    background-image: url('/static/agriculture_banner_img.jpg');
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--adlas-color-white);
+    /* height: 450px; */
+    padding-left: 80px;
+    padding-right: 80px;
+    padding: 8rem 0;
+    mix-blend-mode: luminosity !important;
+}
+
+.about_us_banner h2 {
+    font-size: 60px;
+    line-height: 1.1em;
+    text-align: left;
+    font-weight: 800 !important;
+}
+
+.about_us_banner p {
+    margin: 1rem 0 !important;
+    text-align: left;
+    font-weight: 400 !important;
+}
+
+.about_us {
+    padding: 6rem 0;
+    background: var(--adlas-color-white) !important;
+    position: relative;
+    /* background: #0e3844 !important; */
+}
+
+.about_us span {
+    text-align: left;
+    color: var(--adlas-secondary-color-01) !important;
+    text-transform: uppercase !important;
+    font-weight: 800 !important;
+}
+
+.about_us h4 {
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: 700 !important;
+}
+
+.about_us .about_us_rtl_img_01 {
+    object-fit: cover;
+    transform: translateZ(0);
+    transition: opacity .25s linear;
+    will-change: opacity;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/agriculture_banner_img.jpg');
+    height: 100%;
+    border-radius: var(--adlas-border-radius);
+    margin: 0 0 0 6rem;
+}
+
+.about_us .about_us_rtl_quote_card {
+    right: 20%;
+    position: absolute;
+    bottom: 10%;
+    transform: scale(1);
+    box-shadow: var(--adlas-box-shadow);
+    /* box-shadow: 0 30px 40px rgba(0, 0, 0, .05); */
+    background-color: var(--adlas-color-white) !important;
+    padding: 1.5625rem !important;
+    align-items: center !important;
+    display: flex !important;
+    width: 30%;
+    border-radius: var(--adlas-border-radius);
+}
+
+.about_us .about_us_rtl_quote_card svg {
+    color: var(--adlas-secondary-color-01);
+    margin-right: 2rem;
+    font-size: 40px !important;
+}
+
+.about_us .about_us_rtl_quote_card p {
+font-weight: 600 !important;
+line-height: 24.6px !important;
+}
+
+/* .about_us .about_us_rtl_img_02 {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    width: 34%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/banner-img.jpg');
+    height: 300px;
+} */
+
+.about_us_banner .masonary_gallery_ltr {
+    border-radius: 10px;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+    min-width: calc(40% - 15px);
+    min-height: 472px;
+    max-height: 472px;
+}
+
+.masonary_gallery_ltr .masonary_gallery_ltr_img {
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.masonary_gallery_ltr .masonary_gallery_ltr_img span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    position: relative;
+    will-change: transform;
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-1-258306d375b7ee8822cfe20d40d52795.png");
+}
+
+.masonary_gallery_rtl {
+    margin-top: -7.5px;
+    min-width: 60%;
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img {
+    min-width: calc(35% - 15px);
+    max-height: 228px;
+    min-height: 228px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin: 7.5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img:first-child {
+    min-width: calc(35% - 15px);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img:nth-child(2) {
+    min-width: calc(25% - 15px);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img:nth-child(3) {
+    min-width: calc(40% - 15px);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img:nth-child(4) {
+    min-width: calc(35% - 15px);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img:nth-child(4) {
+    min-width: calc(65% - 15px);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    position: relative;
+    will-change: transform;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    content: "";
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    will-change: opacity;
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span.one_of_five {
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-2-19db7e7c6ed5a8b3148acc1f5d774aa3.png");
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span.two_of_five {
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-3-4ab20eb8e806736cbd95040505446aa6.png");
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span.three_of_five {
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-4-7b12ca2c7c3b91f89b27d8b568ea1d89.png");
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span.four_of_five {
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-5-776502407a06c639fa9c4c674a4b8182.png");
+}
+
+.masonary_gallery_rtl .masonary_gallery_rtl_img span.five_of_five {
+    background-image: url("https://finity-gatsby.netlify.app/static/masonry-img-6-7d0adc74c484b7cd4d33a13d93e4ff83.png");
+}
+
+.vision_mission_section {
+    padding: 4rem 0;
+    /* background: #e8c5451c; */
+    background-color: #f5f7f7;
+}
+
+.vision_mission_section h4 {
+    font-weight: 700 !important;
+}
+
+
+
+.vision_mission_section .vision_mission_container {
+    padding: 3rem 0;
+}
+
+.vision_mission_container .mission_top_wrapper {
+    /* transform: translate3d(0px, 0px, 0px) scale(1.3); */
+    will-change: transform;
+    transition: transform 0.6s cubic-bezier(0, 0, 0, 1) 0s;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+.vision_mission_container .mission_top_wrapper span {
+    display: block;
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    position: relative;
+    will-change: transform;
+    background-image: url("/static/mission_vision_img_01.jpg");
+    border-radius: var(--adlas-border-radius);
+}
+
+.vision_mission_container .mission_bottom_wrapper {
+    background: var(--adlas-color-white);
+    box-shadow: var(--adlas-box-shadow);
+    padding: 3rem 1.5rem;
+    border-radius: var(--adlas-border-radius);
+}
+
+.vision_mission_container  h4 {
+    font-weight: 700 !important;
+}
+
+.vision_mission_container .mission_bottom_wrapper svg {
+    font-size: 40px !important;
+    margin-bottom: 1rem;
+    color: var(--adlas-secondary-color-01);;
+}
+
+.vision_mission_container .mission_bottom_wrapper p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.vision_mission_container .core_values_wrapper {
+    background: var(--adlas-color-white);
+    box-shadow: var(--adlas-box-shadow);
+    padding: 3rem 1.5rem;
+    border-radius: var(--adlas-border-radius);
+}
+
+.vision_mission_container .core_values_wrapper:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.vision_mission_container .core_values_wrapper p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.vision_mission_container .core_values_wrapper svg {
+    font-size: 40px !important;
+    margin-bottom: 1rem;
+    color: var(--adlas-secondary-color-01);;
+}
+
+
+.vision_mission_container .mission_vision_placeholder_wrapper span {
+    display: block;
+    height: 690px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    position: relative;
+    will-change: transform;
+    background-image: url("/static/vision_mission_img.jpg");
+    border-radius: var(--adlas-border-radius);
+}
+
+.about_us_services_section {
+    padding: 4rem 0;
+    background: #e8c5451c;
+}
+
+.about_us_services_section .about_us_services_top_wrapper {
+    max-width: 700px;
+}
+
+.about_us_services_section .about_us_services_top_wrapper span {
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+}
+
+.about_us_services_section .about_us_services_top_wrapper h4 {
+    margin: 0.5rem 0;
+    max-width: 550px;
+    font-weight: 700 !important;
+}
+
+.about_us_services_section .about_us_services_top_wrapper p {
+    padding-bottom: 3rem;
+}
+
+.about_us_services_section .about_us_services_bottom_wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card_grid {
+    padding: 2rem 0;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card {
+    background: var(--adlas-color-white);
+    padding: 25px 25px 40px;
+    transition: all 0.4s ease 0s;
+    color: rgb(38, 39, 41);
+    border-radius: var(--adlas-border-radius);
+    height: 380px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card:hover {
+    border-color: var(--adlas-secondary-color);
+    background: var(--adlas-secondary-color);
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card svg {
+    font-size: 40px !important;
+    margin-bottom: 1.3rem !important;
+    color: var(--adlas-secondary-color-01);
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card small {
+    position: absolute;
+    font-size: 48px !important;
+    line-height: 60px !important;
+    color: var(--adlas-secondary-color-01);;
+    right: 20px;
+    top: 15px;
+    font-weight: 800 !important;
+    opacity: 0.2;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card h4 {
+    max-width: 230px;
+    margin-bottom: 1rem;
+    font-weight: 700 !important;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card .hover_text_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    padding: 0px 40px;
+    transition: all 700ms ease 100ms;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(-45deg) translateZ(-50px);
+    background: var(--adlas-secondary-color);
+    border-radius: var(--adlas-border-radius);
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card:hover .hover_text_content {
+    -webkit-transform: perspective(1200px) rotateX(0deg) translateZ(0px);
+    transform: perspective(1200px) rotateX(0deg) translateZ(0px);
+    opacity: 1;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card .hover_text_content .content {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card .hover_text_content .content .inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card .hover_text_content p {
+    color: var(--adlas-color-white);
+}
