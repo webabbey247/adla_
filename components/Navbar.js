@@ -2,21 +2,24 @@
 
 import styles from "@/styles/layout.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 const Navbar = () => {
   const activeSegment = useSelectedLayoutSegment();
   const [colorChange, setColorchange] = useState(false);
-  const changeNavbarColor = () => {
-    if (typeof window.scrollY >= 80) {
-      setColorchange(true);
-    } else {
-      setColorchange(false);
-    }
-  };
-  typeof window.addEventListener("scroll", changeNavbarColor);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        setColorchange(true);
+      } else {
+        setColorchange(false);
+      }
+    });
+  }, []);
+
   return (
     <header className="positon-absolute py-0">
       <nav
@@ -90,7 +93,11 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="me-auto ms-lg-3">
-            <Link href="/get-quote" className={`${styles.contact_us_button}`} passHref>
+            <Link
+              href="/get-quote"
+              className={`${styles.contact_us_button}`}
+              passHref
+            >
               Get Quote
             </Link>
           </div>
