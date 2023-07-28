@@ -1,6 +1,8 @@
 .contact_us_banner {
-    background-image: url('/static/agriculture_banner_img.jpg');
+    /* background-image: url('/static/backdropbanner.png'); */
     /* background-image: url('/static/banner_img_02.jpg'); */
+    background-image: url('/static/agriculture_banner_img.jpg');
+   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

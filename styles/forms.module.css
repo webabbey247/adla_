@@ -1,6 +1,7 @@
 .subscribe_form_container {
     margin-right: 2rem !important;
     margin-bottom: 0;
+    width:100%;
 }
 
 .subscribe_form_container .subscribe_form {

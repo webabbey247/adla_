@@ -236,7 +236,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color:  var(--adlas-primary-color);
+  color: var(--adlas-primary-color);
 }
 
 .autoplay-progress svg {
@@ -329,49 +329,24 @@ textarea::placeholder {
   }
 }
 
-/* .bannerImage img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
-}
 
-.bannerImage:before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: url('./../img/Neveah_Home_Assets-04Banner.png') no-repeat center center / 100% 100%;
-  width: 125px;
-  height: 125px;
-}
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
 
-.banner-heading h2 {
-  font-size: 5rem;
-  font-weight: 700;
-  font-family: "Gilroy-extrabold";
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
 
-.banner-description p {
-  font-size: 24px;
-  padding-bottom: 2%;
-} */
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
 
-
-/***** End Swiper *****/
-
-
-
-
-/* .navbar-expand-lg .navbar-nav .nav-item:last-child {
-  padding-right: 0 !important;
-} */
-
-
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  /***** General *****/
+  .nav_padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
-} */
+  
+  /***** End General *****/
+  .navbar-toggler-icon {
+    height: 2.5em !important;
+  }
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

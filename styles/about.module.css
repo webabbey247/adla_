@@ -261,6 +261,20 @@ line-height: 24.6px !important;
     border-radius: var(--adlas-border-radius);
 }
 
+.vision_mission_container .mission_bottom_wrapper span {
+   height: 124px;
+   width: 124px;
+   background-size: contain;
+   background-position: 50%;
+   background-repeat: no-repeat;
+}
+
+.vision_mission_container .mission_bottom_wrapper span.mission_icon {
+    background-image: url("/static/icons/mission_icon.svg");
+ }
+
+
+
 .vision_mission_container  h4 {
     font-weight: 700 !important;
 }
@@ -281,6 +295,22 @@ line-height: 24.6px !important;
     box-shadow: var(--adlas-box-shadow);
     padding: 3rem 1.5rem;
     border-radius: var(--adlas-border-radius);
+}
+
+.vision_mission_container .core_values_wrapper span {
+    height: 124px;
+    width: 124px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.vision_mission_container .core_values_wrapper span.values_icon {
+    background-image: url("/static/icons/values_icon.svg");
+}
+
+.vision_mission_container .core_values_wrapper span.vision_icon {
+    background-image: url("/static/icons/vision_icon.svg");
 }
 
 .vision_mission_container .core_values_wrapper:first-child {
@@ -358,16 +388,51 @@ line-height: 24.6px !important;
     position: relative;
 }
 
+
 .about_us_services_bottom_wrapper .about_us_services_card:hover {
     border-color: var(--adlas-secondary-color);
     background: var(--adlas-secondary-color);
 }
 
-.about_us_services_bottom_wrapper .about_us_services_card svg {
+.about_us_services_bottom_wrapper .about_us_services_card span {
+    height: 84px;
+    width: 84px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.one_of_six {
+    background-image: url("/static/icons/procurement.svg");
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.two_of_six {
+    background-image: url("/static/icons/agricultural.svg");
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.three_of_six {
+    background-image: url("/static/icons/food_non_food_items.svg");
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.four_of_six {
+    background-image: url("/static/icons/export.svg");
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.five_of_six {
+    background-image: url("/static/icons/partnership.svg");
+}
+
+.about_us_services_bottom_wrapper .about_us_services_card span.six_of_six {
+    background-image: url("/static/icons/sustainability.svg");
+}
+
+
+/* .about_us_services_bottom_wrapper .about_us_services_card svg {
     font-size: 40px !important;
     margin-bottom: 1.3rem !important;
     color: var(--adlas-secondary-color-01);
-}
+} */
 
 .about_us_services_bottom_wrapper .about_us_services_card small {
     position: absolute;

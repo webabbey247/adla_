@@ -168,7 +168,7 @@ const AboutUsPage = () => {
                     <div
                       className={`${styles.mission_bottom_wrapper} d-flex justify-content-center align-items-center flex-column`}
                     >
-                      <FiCameraOff />
+                      <span className={styles.mission_icon} />
                       <h4>Our Mission</h4>
                       <p>
                         Equal blame belongs to those who fail in their duty
@@ -180,7 +180,7 @@ const AboutUsPage = () => {
                     <div
                       className={`${styles.core_values_wrapper} d-flex justify-content-center align-items-center flex-column`}
                     >
-                      <FiCameraOff />
+                       <span className={styles.values_icon} />
                       <h4>Our Core Values</h4>
                       <p>
                         We thrive on being accountable, responsive, honest, and
@@ -192,7 +192,7 @@ const AboutUsPage = () => {
                     <div
                       className={`${styles.core_values_wrapper} d-flex justify-content-center align-items-center flex-column`}
                     >
-                      <FiCameraOff />
+                        <span className={styles.vision_icon} />
                       <h4>Our Vision</h4>
                       <p>
                         Our vision is to be the single largest producer and
@@ -232,7 +232,7 @@ const AboutUsPage = () => {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.one_of_six} />
                       <small>01</small>
                       <h4>Procurement Excellence</h4>
                       <p>
@@ -260,7 +260,7 @@ const AboutUsPage = () => {
 
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.two_of_six} />
                       <small>02</small>
                       <h4>Agricultural Expertise</h4>
                       <p>
@@ -289,7 +289,7 @@ const AboutUsPage = () => {
 
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.three_of_six} />
                       <small>03</small>
                       <h4>Food and Non-Food Items</h4>
                       <p>
@@ -318,7 +318,7 @@ const AboutUsPage = () => {
 
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.four_of_six} />
                       <small>04</small>
                       <h4>Seamless Export Solutions</h4>
                       <p>
@@ -346,7 +346,7 @@ const AboutUsPage = () => {
 
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.five_of_six} />
                       <small>05</small>
                       <h4>Collaborative Partnerships</h4>
                       <p>
@@ -375,7 +375,7 @@ const AboutUsPage = () => {
 
                   <div className="col-lg-3">
                     <div className={styles.about_us_services_card}>
-                      <FiCameraOff />
+                    <span className={styles.six_of_six} />
                       <small>06</small>
                       <h4>Commitment to Sustainability</h4>
                       <p>
