@@ -36,10 +36,10 @@ const ContactUsPage = () => {
             <div className="row">
               <div className="col-lg-8 offset-lg-2 col-md-12">
                 <div className="row">
-                  <div className="col-lg-6 col-md-12 col-sm-12">
+                  <div className="col-lg-6 col-md-12 col-sm-12 order-last">
                     <ContactUsForm />
                   </div>
-                  <div className="col-lg-6 col-md-12 col-sm-12">
+                  <div className="col-lg-6 col-md-12 col-sm-12 order-first">
                     <div className="d-flex flex-column w-100">
                       <div className={styles.contact_text_info_holder}>
                         <h4>Reach Our Expert Team</h4>

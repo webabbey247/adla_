@@ -338,15 +338,19 @@ textarea::placeholder {
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
   /***** General *****/
+  p {
+    line-height: 1.5 !important;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+
   .nav_padding {
     padding-left: 20px !important;
     padding-right: 20px !important;
-  }
-  
+}
   /***** End General *****/
-  .navbar-toggler-icon {
-    height: 2.5em !important;
-  }
+
 }
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

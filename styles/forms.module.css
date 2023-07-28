@@ -1,7 +1,7 @@
 .subscribe_form_container {
     margin-right: 2rem !important;
     margin-bottom: 0;
-    width:100%;
+    width: 100%;
 }
 
 .subscribe_form_container .subscribe_form {
@@ -49,7 +49,7 @@
     border-radius: var(--adlas-border-radius) !important;
 }
 
-.general_form_container .general_input  {
+.general_form_container .general_input {
     height: 55px;
     padding-left: 2rem;
     border-radius: 4px;
@@ -63,7 +63,7 @@
     border-color: var(--adlas-secondary-color-01);
 }
 
-.general_form_container .general_input::placeholder, 
+.general_form_container .general_input::placeholder,
 .general_form_container .general_text_area::placeholder {
     color: rgb(43, 45, 66) !important;
     font-size: 15px;
@@ -92,3 +92,37 @@
     margin: 1rem 0 4rem;
 }
 
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+
+    /* Subscription styles */
+    .subscribe_form_container {
+        margin-bottom: 3rem;
+    }
+
+    /* General styles */
+
+    .general_form_container {
+        margin-top: 2rem;
+    }
+
+    .general_form_container .general_input,
+    .general_form_container .general_text_area {
+        margin: 0.5rem 0 !important;
+    }
+
+    .general_form_container .general_input_button {
+        margin-bottom: 1rem !important;
+    }
+
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

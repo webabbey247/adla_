@@ -29,7 +29,9 @@ const Navbar = () => {
             : "navbar navbar-expand-lg bg-body-transparent py-0"
         }
       >
-        <div className={`container-fluid ${styles.nav_padding}`}>
+        <div
+          className={`container-fluid ${styles.nav_padding} ${styles.is_mobile}`}
+        >
           <a className="navbar-brand py-0" href="/">
             <Image
               src="/static/logo.png"
@@ -38,15 +40,6 @@ const Navbar = () => {
               alt="Adla Logo"
             />
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -90,7 +83,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="me-auto ms-lg-3">
+          <div className="ms-lg-3">
             <Link
               href="/get-quote"
               className={`${styles.contact_us_button}`}
@@ -98,6 +91,20 @@ const Navbar = () => {
             >
               Get Quote
             </Link>
+          </div>
+          <div className="ms-lg-3 d-lg-none d-md-none d-sm-block">
+            <button className={styles.is_mobile_burger_menu}>
+              {colorChange ? (
+                <span className={`${styles.is_mobile_burger_icon} ${styles.is_mobile_burger_icon_theme}`}></span>
+              ) : (
+                <span className={styles.is_mobile_burger_icon}></span>
+              )}
+            </button>
+            {/* <button
+              className={`${styles.is_mobile_burger_menu} position-relative cursor-pointer`}
+            >
+              <span className={styles.is_mobile_burger_icon}></span>
+            </button> */}
           </div>
         </div>
       </nav>

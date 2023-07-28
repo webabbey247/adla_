@@ -7,7 +7,7 @@ const ContactUsForm = () => {
     >
       <form className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="mb-lg-3">
+          <div className="mb-lg-3 mt-sm-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
