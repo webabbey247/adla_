@@ -109,7 +109,13 @@
 
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+    .contact_us_form_section .contact_us_form_container {
+        width: 83.33333333% !important;
+        margin-left: 8.33333333% !important;
+        margin-right: 8.33333333% !important;
+    }
+}
 
 @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
 

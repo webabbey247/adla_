@@ -14,7 +14,7 @@
     padding-right: 105px;
     height: 65px;
     padding-left: 20px;
-    border-radius: 5px;
+    border-radius: var(--adlas-border-radius);
     border: none;
     color: #8c97ac;
 }
@@ -38,10 +38,10 @@
     padding-right: 18px;
     height: 55px !important;
     font-size: 16px;
-    border-radius: 4px !important;
+    border-radius: var(--adlas-border-radius) !important;
     border: 1px solid var(--adlas-nav-active-color);
     background: var(--adlas-nav-active-color);
-    color: var(--adlas-color-white);
+    color: var(--adlas-color-black);
 }
 
 
@@ -52,7 +52,7 @@
 .general_form_container .general_input {
     height: 55px;
     padding-left: 2rem;
-    border-radius: 4px;
+    border-radius: var(--adlas-border-radius) !important;
     color: #8c97ac;
 }
 
@@ -73,7 +73,7 @@
 
 .general_form_container .general_text_area {
     padding-left: 2rem;
-    border-radius: 4px;
+    border-radius: var(--adlas-border-radius) !important;
     color: #8c97ac;
 }
 
@@ -85,11 +85,20 @@
     padding-right: 18px;
     height: 55px !important;
     font-size: 16px;
-    border-radius: 4px !important;
+    border-radius: var(--adlas-border-radius) !important;
     border: var(--adlas-button-border);
     background: var(--adlas-primary-color);
-    color: var(--adlas-color-white);
+    color: var(--adlas-color-black);
     margin: 1rem 0 4rem;
+}
+
+.input_errors {
+    width: 100%;
+    font-size: 13px !important;
+    color: var(--adlas-error-color);
+    margin: 0.3rem 0px;
+    padding: 0px;
+    display: inline-block;
 }
 
 
@@ -121,6 +130,25 @@
 
     .general_form_container .general_input_button {
         margin-bottom: 1rem !important;
+    }
+
+
+    @media only screen and (max-device-width: 375px) {
+
+        /* Subscription styles */
+        .subscribe_form_container {
+            margin-bottom: 8rem;
+        }
+
+        .subscribe_form .subscribe_input_button {
+            top: 70px;
+            right: 0;
+            padding-left: 18px;
+            padding-right: 18px;
+            min-width: 100%;
+
+        }
+
     }
 
 }

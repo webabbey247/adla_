@@ -141,7 +141,7 @@ const AboutUsPage = () => {
       <div className={`${styles.vision_mission_section} position-relative`}>
         <div className="container-fluid nav_padding">
           <div className="row">
-            <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+            <div className={`${styles.vision_mission_content} col-lg-8 offset-lg-2 col-md-12 col-sm-12`}>
               <div className={styles.vision_mission_text_container}>
                 <h4>
                   We specialize in sourcing the finest agro commodities, base

@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--adlas-border-radius);
-    color: var(--adlas-color-white) !important;
+    color: var(--adlas-color-black) !important;
     font-weight: 700 !important;
     font-size: var(--adlas-nav-font-size) !important;
     line-height: var(--adlas-nav-line-height) !important;
@@ -56,7 +56,7 @@
 
 .footer_section .social li {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -126,6 +126,46 @@
     line-height: 1.5;
     font-weight: 500 !important;
 }
+
+/* mobile Nav csss */
+.mobile_nav_container {
+    background-color: var(--adlas-secondary-color);
+    transition: background-color 0.5s ease 0s;
+    max-height: 100%;
+    padding-top: 80px;
+    padding-bottom: 160px;
+}
+
+/* .c_gMZqDA {
+    margin-right: -4px;
+    height: 30px;
+    width: 30px;
+    border-radius: 26px;
+    padding: 4px;
+}
+
+.c_dCcqIE {
+    height: 2px;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    background: var(--adlas-color-white);
+    transform: rotate(45deg);
+}
+
+.c_dCcqIE::before, .c_dCcqIE::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    background: var(--adlas-color-white);
+}
+
+.c_dCcqIE::before {
+    top: 0px;
+    transform: rotate(90deg);
+} */
 
 
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
@@ -200,6 +240,22 @@
         background: var(--adlas-primary-color) !important;
     }
 
+    .is_mobile_burger_menu_open>.is_mobile_burger_icon {
+        transform: rotate(45deg);
+    }
+
+    .is_mobile_burger_menu_open>.is_mobile_burger_icon::before {
+        top: 0px;
+        transform: rotate(90deg);
+    }
+
+    .is_mobile_burger_menu_open>.is_mobile_burger_icon::after {
+        bottom: 0px;
+        transform: rotate(90deg);
+    }
+
+
+
     /* footer styles */
     .footer_section {
         padding: 3rem 0 0 !important;
@@ -212,7 +268,7 @@
     .footer_section ul li {
         margin: 1rem 0 !important;
     }
-    
+
 
     .footer_section h4 {
         margin: 1.5rem 0;
@@ -222,7 +278,7 @@
         max-width: 100%;
         margin-bottom: 1rem;
         margin-top: 0.5rem !important;
-        line-height: 1.4 !important; 
+        line-height: 1.4 !important;
     }
 
 
@@ -240,8 +296,13 @@
         display: none;
     }
 
-
     /***** End General *****/
+
+    @media only screen and (max-device-width: 384px) {
+        .contact_us_button {
+            display: none !important;
+        }
+    }
 }
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

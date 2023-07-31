@@ -83,21 +83,9 @@
 }
 
 .about_us .about_us_rtl_quote_card p {
-font-weight: 600 !important;
-line-height: 24.6px !important;
+    font-weight: 600 !important;
+    line-height: 24.6px !important;
 }
-
-/* .about_us .about_us_rtl_img_02 {
-    position: absolute;
-    right: 15%;
-    bottom: 20px;
-    width: 34%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/static/banner-img.jpg');
-    height: 300px;
-} */
 
 .about_us_banner .masonary_gallery_ltr {
     border-radius: 10px;
@@ -220,11 +208,10 @@ line-height: 24.6px !important;
     background-color: #f5f7f7;
 }
 
+
 .vision_mission_section h4 {
     font-weight: 700 !important;
 }
-
-
 
 .vision_mission_section .vision_mission_container {
     padding: 3rem 0;
@@ -236,9 +223,6 @@ line-height: 24.6px !important;
     transition: transform 0.6s cubic-bezier(0, 0, 0, 1) 0s;
     margin-bottom: 1.5rem;
 }
-
-
-
 
 .vision_mission_container .mission_top_wrapper span {
     display: block;
@@ -262,27 +246,28 @@ line-height: 24.6px !important;
 }
 
 .vision_mission_container .mission_bottom_wrapper span {
-   height: 124px;
-   width: 124px;
-   background-size: contain;
-   background-position: 50%;
-   background-repeat: no-repeat;
+    height: 124px;
+    width: 124px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
 
 .vision_mission_container .mission_bottom_wrapper span.mission_icon {
     background-image: url("/static/icons/mission_icon.svg");
- }
+}
 
 
 
-.vision_mission_container  h4 {
+.vision_mission_container h4 {
     font-weight: 700 !important;
 }
 
 .vision_mission_container .mission_bottom_wrapper svg {
     font-size: 40px !important;
     margin-bottom: 1rem;
-    color: var(--adlas-secondary-color-01);;
+    color: var(--adlas-secondary-color-01);
+    ;
 }
 
 .vision_mission_container .mission_bottom_wrapper p {
@@ -325,7 +310,8 @@ line-height: 24.6px !important;
 .vision_mission_container .core_values_wrapper svg {
     font-size: 40px !important;
     margin-bottom: 1rem;
-    color: var(--adlas-secondary-color-01);;
+    color: var(--adlas-secondary-color-01);
+    ;
 }
 
 
@@ -438,7 +424,8 @@ line-height: 24.6px !important;
     position: absolute;
     font-size: 48px !important;
     line-height: 60px !important;
-    color: var(--adlas-secondary-color-01);;
+    color: var(--adlas-secondary-color-01);
+    ;
     right: 20px;
     top: 15px;
     font-weight: 800 !important;
@@ -488,3 +475,79 @@ line-height: 24.6px !important;
 .about_us_services_bottom_wrapper .about_us_services_card .hover_text_content p {
     color: var(--adlas-color-white);
 }
+
+
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+    .vision_mission_section .vision_mission_content {
+        width: 83.33333333% !important;
+        margin-left: 8.33333333% !important;
+        margin-right: 8.33333333% !important;
+    }
+
+    .about_us .about_us_rtl_img_01 {
+        margin: 0 0 0 3rem;
+    }
+
+    .about_us_services_bottom_wrapper .about_us_services_card {
+        height: 480px;
+        padding: 25px 25px 40px;
+
+    }
+
+    .about_us .about_us_rtl_quote_card {
+        right: 6.2%;
+        bottom: 0%;
+        padding: 1.4rem !important;
+        width: 48%;
+    }
+
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+    .about_us h4, .vision_mission_section h4 {
+        font-size: 25px !important;
+        line-height: 30px !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+
+    .about_us_banner h2 {
+        margin-top: 3rem !important;
+        font-size: 40px !important;
+      }
+
+    .about_us h4, .vision_mission_section h4 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .vision_mission_section h4 {
+        margin-bottom: 0 !important;
+    }
+    
+    .about_us .about_us_rtl_img_01,
+    .about_us .about_us_rtl_quote_card {
+       display: none !important;
+    }
+
+    .vision_mission_container .mission_bottom_wrapper {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .vision_mission_container .mission_vision_placeholder_wrapper span {
+        margin-top: 1.5rem !important;
+    }
+
+    @media only screen and (max-device-width: 360px) {
+
+    }
+    
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

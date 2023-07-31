@@ -9,6 +9,7 @@ import { useSelectedLayoutSegment } from "next/navigation";
 const Navbar = () => {
   const activeSegment = useSelectedLayoutSegment();
   const [colorChange, setColorchange] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -24,7 +25,9 @@ const Navbar = () => {
     <header className="positon-absolute py-0">
       <nav
         className={
-          colorChange
+          isMobile
+            ? "navbar navbar-expand-lg bg-body-secondary py-0"
+            : colorChange
             ? "navbar navbar-expand-lg bg-body-theme py-0"
             : "navbar navbar-expand-lg bg-body-transparent py-0"
         }
@@ -61,9 +64,6 @@ const Navbar = () => {
                 >
                   About Adla
                 </Link>
-                {/* <a className="nav-link" href="/about">
-                  About Adla
-                </a> */}
               </li>
 
               <li className="nav-item">
@@ -77,9 +77,6 @@ const Navbar = () => {
                 >
                   Contact Us
                 </Link>
-                {/* <a className="nav-link" href="/contact">
-                  Contact Us
-                </a> */}
               </li>
             </ul>
           </div>
@@ -93,21 +90,49 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="ms-lg-3 d-lg-none d-md-none d-sm-block">
-            <button className={styles.is_mobile_burger_menu}>
+            <button
+              className={
+                isMobile
+                  ? `${styles.is_mobile_burger_menu} ${styles.is_mobile_burger_menu_open}`
+                  : `${styles.is_mobile_burger_menu}`
+              }
+              onClick={() => setIsMobile(!isMobile)}
+            >
               {colorChange ? (
-                <span className={`${styles.is_mobile_burger_icon} ${styles.is_mobile_burger_icon_theme}`}></span>
+                <span
+                  className={`${styles.is_mobile_burger_icon} ${styles.is_mobile_burger_icon_theme}`}
+                ></span>
               ) : (
                 <span className={styles.is_mobile_burger_icon}></span>
               )}
             </button>
-            {/* <button
-              className={`${styles.is_mobile_burger_menu} position-relative cursor-pointer`}
-            >
-              <span className={styles.is_mobile_burger_icon}></span>
-            </button> */}
           </div>
         </div>
       </nav>
+      {isMobile && (
+        <div className={styles.mobile_nav_container}>
+          <div className="d-flex flex-column align-items-center">
+            <Link href="/" passHref>
+              hello
+            </Link>
+            <Link href="/" passHref>
+              hello
+            </Link>
+            <Link href="/" passHref>
+              hello
+            </Link>
+            <Link href="/" passHref>
+              hello
+            </Link>
+            <Link href="/" passHref>
+              hello
+            </Link>
+            <Link href="/" passHref>
+              hello
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
