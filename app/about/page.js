@@ -160,7 +160,7 @@ const AboutUsPage = () => {
 
               <div className={styles.vision_mission_container}>
                 <div className="row">
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className={styles.mission_top_wrapper}>
                       <span />
                     </div>
@@ -176,7 +176,7 @@ const AboutUsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 col-md-6 col-sm-12">
                     <div
                       className={`${styles.core_values_wrapper} d-flex justify-content-center align-items-center flex-column`}
                     >
@@ -200,7 +200,7 @@ const AboutUsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 col-md-12 col-sm-12">
                     <div className={styles.mission_vision_placeholder_wrapper}>
                       <span />
                     </div>
@@ -230,7 +230,7 @@ const AboutUsPage = () => {
 
               <div className={styles.about_us_services_bottom_wrapper}>
                 <div className="row">
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.one_of_six} />
                       <small>01</small>
@@ -258,7 +258,7 @@ const AboutUsPage = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.two_of_six} />
                       <small>02</small>
@@ -287,7 +287,7 @@ const AboutUsPage = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.three_of_six} />
                       <small>03</small>
@@ -316,7 +316,7 @@ const AboutUsPage = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.four_of_six} />
                       <small>04</small>
@@ -344,7 +344,7 @@ const AboutUsPage = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.five_of_six} />
                       <small>05</small>
@@ -373,7 +373,7 @@ const AboutUsPage = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className={styles.about_us_services_card}>
                     <span className={styles.six_of_six} />
                       <small>06</small>

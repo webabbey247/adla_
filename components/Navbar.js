@@ -80,16 +80,20 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="ms-lg-3">
-            <Link
-              href="/get-quote"
-              className={`${styles.contact_us_button}`}
-              passHref
-            >
-              Get Quote
-            </Link>
-          </div>
-          <div className="ms-lg-3 d-lg-none d-md-none d-sm-block">
+
+          {!isMobile && (
+            <div className="ms-auto">
+              <Link
+                href="/get-quote"
+                className={`${styles.contact_us_button}`}
+                passHref
+              >
+                Get Quote
+              </Link>
+            </div>
+          )}
+
+          <div className="ms-lg-3 d-lg-none d-md-block d-sm-block">
             <button
               className={
                 isMobile
@@ -108,31 +112,62 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      </nav>
-      {isMobile && (
-        <div className={styles.mobile_nav_container}>
-          <div className="d-flex flex-column align-items-center">
-            <Link href="/" passHref>
-              hello
-            </Link>
-            <Link href="/" passHref>
-              hello
-            </Link>
-            <Link href="/" passHref>
-              hello
-            </Link>
-            <Link href="/" passHref>
-              hello
-            </Link>
-            <Link href="/" passHref>
-              hello
-            </Link>
-            <Link href="/" passHref>
-              hello
-            </Link>
+
+        {isMobile && (
+          <div className={styles.responsive_mobile_nav}>
+            <div className="d-flex flex-column align-items-center">
+              <Link
+                href="/"
+                className={styles.responsive_nav_link}
+                passHref
+                onClick={() => setIsMobile(!isMobile)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className={styles.responsive_nav_link}
+                passHref
+                onClick={() => setIsMobile(!isMobile)}
+              >
+                About Adla
+              </Link>
+              <Link
+                href="/contact"
+                className={styles.responsive_nav_link}
+                passHref
+                onClick={() => setIsMobile(!isMobile)}
+              >
+                Contact Us
+              </Link>
+              <Link
+                onClick={() => setIsMobile(!isMobile)}
+                href="/get-quote"
+                className={styles.responsive_nav_link_btn}
+                passHref
+              >
+                Get Quote
+              </Link>
+
+              <div className={styles.responsive_nav_info}>
+                <aside>Company Address</aside>
+                <p>8 Okunade str, Charity bus stop, Oshodi Lagos</p>
+              </div>
+
+              <div className={styles.responsive_nav_info}>
+                <aside>General Enquires </aside>
+                <p>Email: info@addressmail.com</p>
+                <p>Phone: +234 913 257 4069</p>
+              </div>
+
+              <div className={styles.responsive_nav_info}>
+                <aside>Operation Hours </aside>
+                <p>Mon-Satday: 09.00 to 07.00 (Sunday: Closed)</p>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </nav>
     </header>
   );
 };

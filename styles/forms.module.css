@@ -108,7 +108,22 @@
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
 
-@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+
+    .general_form_container {
+        margin-top: 2rem;
+    }
+    
+    .general_form_container .general_input,
+    .general_form_container .general_text_area {
+        margin: 0.5rem 0 !important;
+    }
+
+    .general_form_container .general_input_button {
+        margin-bottom: 0 !important;
+    }
+
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
 

@@ -75,6 +75,7 @@ const ContactUsPage = () => {
                         <div className="">
                           <aside>General Enquires </aside>
                           <p>Email: info@addressmail.com</p>
+                          <p>Phone: +234 913 257 4069</p>
                         </div>
                       </div>
 

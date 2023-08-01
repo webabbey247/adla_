@@ -8,7 +8,7 @@ const Footer = () => {
     <section className={`${styles.footer_section} pt-lg-5 position-relative`}>
       <div className={`container-fluid ${styles.nav_padding}`}>
         <div className="row pb-lg-5">
-          <div className="col-lg-4 col-md-5 col-md-3 col-xs-8">
+          <div className="col-lg-4 col-md-12 col-sm-12">
             <div className="">
               {/* <div className="brand-logo mb-5"></div> */}
               <p className="font-size-5 mb-0 text-bali-gray pr-sm-10 pr-md-0">
@@ -41,9 +41,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-lg-8 col-md-5 col-md-3 col-xs-8">
+          <div className="col-lg-8 col-md-12 col-sm-12">
             <div className="row">
-              <div className="col-lg-2 col-md-12">
+              <div className="col-lg-2 col-md-2 col-sm-12">
                 <div className="mb-lg-0 position-relative">
                   <h4 className="mb-lg-4">
                     Company
@@ -68,7 +68,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-lg-4 col-md-12">
+              <div className="col-lg-4 col-md-4 col-sm-12">
                 <div className="mb-lg-0 position-relative">
                 <h4 className="mb-lg-4">Contacts</h4>
                   <p className="mb-lg-4">
@@ -86,7 +86,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-12">
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className={styles.footer_email_subscription}>
                 <h4 className="mb-lg-4">Subscribe to Our Newsletter</h4>
                   <p className="mb-lg-4">
