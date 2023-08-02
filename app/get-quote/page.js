@@ -12,7 +12,7 @@ const GetQuotePage = () => {
       <div className={styles.blank_banner_section} />
 
       <div className={styles.qet_quote}>
-        <div className="d-flex flex-wrap">
+        {/* <div className="d-flex flex-wrap">
           <div className={`${styles.masonary_gallery_ltr} overflow-hidden`}>
             <div
               className={`${styles.masonary_gallery_ltr_img} w-100 h-100 m-lg-0`}
@@ -42,7 +42,7 @@ const GetQuotePage = () => {
               <span className={styles.five_of_five} />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="container-fluid nav_padding">
           <div className="row">

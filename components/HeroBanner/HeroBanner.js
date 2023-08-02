@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "@/styles/hero_banner.module.css";
 import { useRef } from "react";
 
@@ -12,6 +13,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Link from "next/link";
 
 const HeroBanner = () => {
   const progressCircle = useRef(null);
@@ -21,8 +23,6 @@ const HeroBanner = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const externalImage =
-    "https://neveah.com.ng/uploads/hometopslidersection/16294320859.jpg";
   return (
     <div className="swiper-container">
       <Swiper
@@ -32,84 +32,62 @@ const HeroBanner = () => {
           delay: 4500,
           disableOnInteraction: false,
         }}
-        // pagination={{
-        //   clickable: false,
-        // }}
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
+        className="home-hero-banner"
       >
-        <SwiperSlide>
-          {/* <div className={styles.banner_background_overlay} /> */}
-          <div className={`${styles.heroContainer_padding} container-fluid`}>
-            <div className="row">
-              <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-lg-start">
-                <h2 className="text-lg-left">
-                  Your Procurement and Export Partner.
-                </h2>
-                <p className="text-lg-left">
-                  Welcome to Adla Global Business Solutions, a leading
-                  procurement and exports specialist company. We are dedicated
-                  to sourcing a wide range of agricultural, food, and non-food
-                  items for manufacturers and distributors in Europe and North
-                  America.
-                </p>
+        <div className={`container-fluid ${styles.heroContainer_padding}`}>
+          <div className="row">
+            <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column justify-content-lg-start">
+              <SwiperSlide>
+                <div className={styles.hero_banner_slider_child}>
+                  <h2 className="text-lg-left">
+                    Your Procurement and Export Partner.
+                  </h2>
+                  <p className="text-lg-left">
+                    Welcome to Adla Global Business Solutions, a leading
+                    procurement and exports specialist company. We are dedicated
+                    to sourcing a wide range of agricultural, food, and non-food
+                    items for manufacturers and distributors in Europe and North
+                    America.
+                  </p>
 
-                <a
-                  title="Get started"
-                  href=""
-                  className={`${styles.custom_btn} me-auto`}
-                >
-                  Get Started
-                </a>
-              </div>
-              {/* <div className="col-lg-6 col-md-6 col-sm-12">
-                <div className={styles.banner_background_img}>
-                  <span
-                    style={{
-                      backgroundImage: `url(${externalImage})`,
-                    }}
-                  />
+                  <Link
+                    href="/"
+                    passHref
+                    className={`${styles.custom_btn} me-auto`}
+                  >
+                    Get Started
+                  </Link>
                 </div>
-              </div> */}
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className={styles.hero_banner_slider_child}>
+                  <h2 className="text-lg-left">
+                    Your Procurement and Export Partner.
+                  </h2>
+                  <p className="text-lg-left">
+                    Welcome to Adla Global Business Solutions, a leading
+                    procurement and exports specialist company. We are dedicated
+                    to sourcing a wide range of agricultural, food, and non-food
+                    items for manufacturers and distributors in Europe and North
+                    America.
+                  </p>
+
+                  <Link
+                    href="/"
+                    passHref
+                    className={`${styles.custom_btn} me-auto`}
+                  >
+                    Get Started
+                  </Link>
+                </div>
+              </SwiperSlide>
             </div>
           </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          {/* <div className={styles.banner_background_overlay} /> */}
-          <div className={`${styles.heroContainer_padding} container-fluid`}>
-            <div className="row">
-              <div className="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-lg-start">
-                <h2 className="text-lg-left">
-                  Your Procurement and Export Partner.
-                </h2>
-                <p className="text-lg-left">
-                  With our expertise in the agricultural sector, you can
-                  confidently rely on us for your procurement needs.
-                </p>
-
-                <a
-                  title="Get started"
-                  href=""
-                  className={`${styles.custom_btn} me-auto`}
-                >
-                  Get Started
-                </a>
-              </div>
-              {/* <div className="col-lg-6 col-md-6 col-sm-12">
-                <div className={styles.banner_background_img}>
-                  <span
-                    style={{
-                      backgroundImage: `url(${externalImage})`,
-                    }}
-                  />
-                </div>
-              </div> */}
-            </div>
-          </div>
-        </SwiperSlide>
+        </div>
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

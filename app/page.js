@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import { HeroBanner } from "@/components";
+import { HeroBanner, TestimonialSlider } from "@/components";
 
 export default function Home() {
   return (
@@ -17,18 +17,16 @@ export default function Home() {
                     exports specialist company.
                   </h4>
                   <p>
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
+                    Our goal is to deliver consistent absolute returns for our
+                    investors irrespective of the market environment. Rigorous
+                    analysis, disciplined risk management, and a relentless
+                    pursuit of excellence underpin Adla’s reputation as a market
+                    leader.
                   </p>
 
                   <p>
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit.
+                    Our enduring client relationships are built on trust,
+                    integrity, and high-performing investment strategies.
                   </p>
                 </div>
               </div>
@@ -41,6 +39,100 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.home_services_section}>
+          <div className="container-fluid nav_padding">
+            <div className="row">
+              <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
+                <div className={styles.home_services_text_container}>
+                  <h4>Our Difference</h4>
+                  <p>
+                    A diversity of opinion, expertise, and experience are the
+                    cornerstones of our investment process while analytical
+                    precision, ethical discipline, and responsible thinking
+                    drive its implementation.
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-lg-12 col-md-12 col-sm-12">
+                <div
+                  className={`position-relative ${styles.home_services_grid_container}`}
+                >
+                  <div className={`row ${styles.active_liner} no-gutters`}>
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                      <div
+                        className={`${styles.home_services_ltr} position-relative`}
+                      >
+                        <div className={styles.home_services_ltr_img}>
+                          <span />
+                          <div
+                            className={`position-relative ${styles.home_services_ltr_text}`}
+                          >
+                            <p>
+                              Our enduring client relationships are built on
+                              trust, integrity, and high-performing investment
+                              strategies.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`${styles.home_services_ltr_bottom} d-flex  flex-column justify-content-end align-items-end`}
+                      >
+                        <h4>Experience</h4>
+                        <p>
+                          Approaching four decades of analysing cyclical and
+                          secular market shifts has instilled resilience and
+                          flexibility into our investment and risk management
+                          processes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                      <div
+                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-start align-items-start`}
+                      >
+                        <h4>Sustainability</h4>
+                        <p>
+                          Adla’s longevity creates a natural synergy with
+                          sustainable investing practices. To build on our
+                          long-term success, we have dedicated resources working
+                          to ensure that our portfolios are conscious of
+                          environmental, social, and governance (ESG) factors,
+                          and all of the opportunities that creates.
+                        </p>
+                      </div>
+
+                      <div
+                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-start align-items-start`}
+                      >
+                        <h4>Consistency</h4>
+                        <p>
+                          Our investing expertise is fortified by proven
+                          infrastructure and a commitment to industry best
+                          practices. That combination promotes the continuous
+                          process improvement needed to deliver consistent
+                          outperformance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.home_section_testimonials}>
+          <div className="container-fluid nav-padding">
+            <div className="row">
+              <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                <TestimonialSlider />
+       
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className={styles.home_services_section}>
           <div className="container-fluid nav_padding">
             <div className="row">
               <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
@@ -150,18 +242,13 @@ export default function Home() {
                           to a greener future.
                         </p>
                       </div>
-
-                      {/* <div className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-start align-items-start`}>
-                       <h4 className="pb-lg-3">Community Investment</h4>
-                       <p>Belief in the power of education is engrained in Caxton’s DNA. We consider giving someone the opportunity to learn to be one of the greatest investments we can make; it can empower and uplift not only the individual, but also their community. Our success has driven the growth of various educational initiatives, including the Speakers for Schools UK charity.</p>
-                      </div> */}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

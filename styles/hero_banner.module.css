@@ -12,30 +12,47 @@
     left: 0;
     position: absolute;
     background-color: transparent;
-    background-image: linear-gradient(180deg, #28251F00 70%, #f2295b 100%);
+    mix-blend-mode: luminosity !important;
+    z-index: 10;
+    /* background-image: linear-gradient(180deg, #28251F00 70%, #f2295b 100%);
     opacity: 0.82;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-    filter: brightness(0%) contrast(80%) saturate(80%) blur(0px) hue-rotate(0deg) !important;
+    filter: brightness(0%) contrast(80%) saturate(80%) blur(0px) hue-rotate(0deg) !important; */
 }
 
-.heroContainer_padding h2 {
+.hero_banner_slider_child {
+    background-image: url('/static/agriculture_banner_img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 650px;
+}
+
+.hero_banner_slider_child h2 {
     font-weight: 600 !important;
     font-size: 3.625rem !important;
     line-height: 1.1 !important;
+    max-width: 600px;
 }
 
-.heroContainer_padding p {
+.hero_banner_slider_child p {
     margin: 2rem 0;
     max-width: 450px;
 }
 
-.heroContainer_padding h2, .heroContainer_padding p {
+.hero_banner_slider_child h2, .hero_banner_slider_child p {
     text-align: left;
 }
 
-.heroContainer_padding .custom_btn {
-    border: 1px solid #fba543;
-    background: #fba543;
+.hero_banner_slider_child .custom_btn {
+    border: 1px solid var(--adlas-primary-color);
+    background: var(--adlas-primary-color);
     min-width: 191px;
     height: 55px;
     line-height: 28px;
@@ -45,6 +62,12 @@
     justify-content: center;
     border-radius: 5px !important;
     text-align: left;
+    z-index: 11;
+}
+
+.hero_banner_slider_child .custom_btn:hover {
+    border: 1px solid var(--adlas-secondary-color);
+    background: var(--adlas-secondary-color);
 }
 
 .heroContainer_padding .banner_background_img {
@@ -64,4 +87,3 @@
     background: rgba(0, 0, 0, 0.3);
     border-radius: var(--adlas-border-radius);
 }
-

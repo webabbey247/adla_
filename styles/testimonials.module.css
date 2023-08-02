@@ -1,0 +1,22 @@
+.testimonials_child_container {}
+
+
+.testimonials_child_container .swiper-slide {
+}
+
+.testimonials_child_container .testimonials_child {
+    padding-left: 80px !important;
+padding-right: 80px !important;
+}
+
+
+.testimonials_child_container .testimonials_child h4 {
+    font-weight: 700 !important;
+    margin-bottom: 1rem;
+}
+
+.testimonials_child_container .testimonials_child h4,
+.testimonials_child_container .testimonials_child p {
+    text-align: center;
+}
+

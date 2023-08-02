@@ -33,10 +33,10 @@
     font-weight: 700 !important;
     font-size: 38px;
     line-height: 45px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.home_about_section_ltr  p {
+.home_about_section_ltr p {
     max-width: 650px !important;
     margin-bottom: 0.5rem;
 }
@@ -62,8 +62,17 @@
     border-radius: var(--adlas-border-radius);
 }
 
+
+.home_about_section_rtl_text {
+    top: 10%;
+    max-width: 259px;
+    opacity: 1;
+    transition: all 0.8s;
+    z-index: 15;
+}
+
 .home_services_section {
-    padding: 10rem 0;
+    padding: 8rem 0 4rem;
     background-color: #f5f7f7 !important;
     background: var(--adlas-color-white);
 }
@@ -145,7 +154,7 @@
 }
 
 .home_services_grid_container .home_services_ltr_bottom, .home_services_grid_container .home_services_rlt_text {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
     padding: 2rem 0;
     display: flex;
     /* justify-content: flex-end;
@@ -154,12 +163,33 @@
 }
 
 .home_services_grid_container .home_services_rlt_text:first-child {
-    margin-top: 3rem !important;
+    margin-top: 3.5rem !important;
 }
+
 
 .home_services_grid_container .home_services_ltr_bottom h4,
 .home_services_grid_container .home_services_rlt_text h4 {
     font-weight: 700 !important;
+    position: relative !important;
+}
+
+.home_services_grid_container .home_services_ltr_bottom h4::before,
+.home_services_grid_container .home_services_rlt_text h4::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    /* background-color: var(--adlas-secondary-color); */
+    background-color: #2cc849;
+    margin: auto;
+    /* left: 0; */
+}
+
+.home_services_grid_container .home_services_ltr_bottom p,
+.home_services_grid_container .home_services_rlt_text p {
+   margin-top: 1rem !important;
 }
 
 .home_services_grid_container .home_services_ltr_bottom h4, .home_services_grid_container .home_services_ltr_bottom p {
@@ -172,6 +202,13 @@
     text-align: left;
     max-width: 350px;
     margin-left: 4rem;
+}
+
+.home_section_testimonials {
+    padding: 4rem 0;
+    background-color: var(--adlas-color-white);
+    position: relative;
+    z-index: 11;
 }
 
 
