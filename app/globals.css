@@ -16,11 +16,14 @@
   --adlas-primary-color: #fba543;
   --adlas-secondary-color: #0e3844;
   --adlas-secondary-color-01: #E8C545;
+  --adlas-secondary-color-02: #e8c5451c;
   --adlas-color-white: #ffffff;
   --adlas-color-black: #121212;
   --adlas-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .09);
   --adlas-error-color: #cd494e;
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -335,6 +338,13 @@ textarea::placeholder {
 .testimonials-slider .swiper-button-prev, .testimonials-slider .swiper-button-next {
   color: var(--adlas-primary-color) !important;
   font-size: 32px !important;
+}
+
+.bg-pattern {
+  background-image: radial-gradient(rgba(232, 197, 69, 0.5) 2px,transparent 0);
+background-size: 14px 14px;
+height: 75px;
+margin-top: -2px;
 }
 
 @keyframes corp-line {

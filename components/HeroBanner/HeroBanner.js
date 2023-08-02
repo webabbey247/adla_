@@ -41,7 +41,11 @@ const HeroBanner = () => {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column justify-content-lg-start">
               <SwiperSlide>
+                <div className={styles.banner_background_overlay } />
                 <div className={styles.hero_banner_slider_child}>
+                {/* <div className={styles.hero_banner_slider_child} style={{
+                  backgroundImage: `url(${imgeUrl})`,
+                }}> */}
                   <h2 className="text-lg-left">
                     Your Procurement and Export Partner.
                   </h2>
@@ -64,6 +68,7 @@ const HeroBanner = () => {
               </SwiperSlide>
 
               <SwiperSlide>
+              <div className={styles.banner_background_overlay } />
                 <div className={styles.hero_banner_slider_child}>
                   <h2 className="text-lg-left">
                     Your Procurement and Export Partner.

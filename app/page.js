@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import { HeroBanner, TestimonialSlider } from "@/components";
+import { servicesList } from "@/utils/config";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className={styles.home_services_section}>
           <div className="container-fluid nav_padding">
             <div className="row">
@@ -122,12 +124,57 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* <div className={`position-relative ${styles.home_services_section_v}`}>
+          <div className="container-fluid nav-padding">
+            <div className="row">
+              <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
+                <div className={styles.home_services_section_v_title}>
+                  <h4>Guiding principles and values</h4>
+                  <p>
+                    The environment in which our people work has a direct and
+                    meaningful impact on our ability to serve clients. Our
+                    culture is founded on the following principles
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                <div className={styles.home_services_children_container}>
+                  <div className="row">
+                    {servicesList.map((_data, index) => {
+                      return (
+                        <div
+                          className="col-lg-6 col-md-12 col-sm-12"
+                          key={index}
+                        >
+                          <div
+                            className={`d-flex flex-row ${styles.home_services_child} ${_data.bgClass}`}
+                          >
+                            <span className={_data.iconClass} />
+                            <div
+                              className={`d-flex flex-column align-items-start justify-content-start ${styles.home_services_child_text}`}
+                            >
+                              <h4>{_data.name}</h4>
+                              <p>
+                              {_data.summary}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
         <div className={styles.home_section_testimonials}>
           <div className="container-fluid nav-padding">
             <div className="row">
               <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
                 <TestimonialSlider />
-       
               </div>
             </div>
           </div>

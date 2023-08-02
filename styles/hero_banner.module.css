@@ -14,14 +14,14 @@
     background-color: transparent;
     mix-blend-mode: luminosity !important;
     z-index: 10;
-    /* background-image: linear-gradient(180deg, #28251F00 70%, #f2295b 100%);
+    background-image: linear-gradient(180deg, #28251F00 70%, #f2295b 100%);
     opacity: 0.82;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-    filter: brightness(0%) contrast(80%) saturate(80%) blur(0px) hue-rotate(0deg) !important; */
+    filter: brightness(0%) contrast(80%) saturate(80%) blur(0px) hue-rotate(0deg) !important;
 }
 
 .hero_banner_slider_child {
-    background-image: url('/static/agriculture_banner_img.jpg');
+    background-image: url('/static/home_hero_03.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

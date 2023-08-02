@@ -39,6 +39,7 @@ const AboutUsPage = () => {
           </div>
         </div>
       </div>
+      <div className="bg-pattern" />
 
       {/* <div className={styles.about_us_blank_banner} /> */}
       {/* <div className={styles.about_us_banner}>

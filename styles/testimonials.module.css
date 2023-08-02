@@ -1,12 +1,12 @@
-.testimonials_child_container {}
-
-
-.testimonials_child_container .swiper-slide {
+.testimonials_child_container {
+    /* background: var(--adlas-secondary-color-02); */
+    background: var(--adlas-white-color);
 }
 
 .testimonials_child_container .testimonials_child {
     padding-left: 80px !important;
 padding-right: 80px !important;
+background: var(--adlas-white-color);
 }
 
 
