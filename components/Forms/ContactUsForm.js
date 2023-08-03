@@ -7,13 +7,15 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactValidationSchema } from "@/utils/validation";
-import { useState } from "react";
-import Select from "react-select";
-import { servicesList } from "@/utils/config";
+import { useState, useEffect } from "react";
+import { useContactUsMutation } from "@/redux/services/sitemapApiSlice";
 
 const ContactUsForm = () => {
   const [mobile, setMobile] = useState(null);
-  const [services, setServices] = useState(null);
+  const [
+    contactUs,
+    { data: isContactUs, isLoading, isSuccess, isError, error },
+  ] = useContactUsMutation();
   const {
     register,
     handleSubmit,
@@ -29,13 +31,41 @@ const ContactUsForm = () => {
       customer_full_name: data.fullName,
       customer_email_address: data.emailAddress,
       customer_mobile_number: mobile ? mobile : data.mobileNumber,
-      customer_hear_about_us: data.aboutUs,
+      hear_about_us: data.aboutUs,
       customer_enquiries: data.enquiry,
     };
 
     console.log("form info", payload);
+
+    try {
+      const contactUsRes = await contactUs(payload);
+      return contactUsRes;
+    } catch (err) {
+      console.log("error response", err.response);
+    }
+
     reset();
   };
+
+  useEffect(
+    () => {
+      if (isError) {
+        toast.warning(error?.message, {
+          position: toast.POSITION.BOTTOM_LEFT,
+        });
+      }
+
+      if (isSuccess) {
+        // console.log('success response', responseData?.message);
+        reset();
+        toast.success(isContactUs?.message, {
+          position: toast.POSITION.BOTTOM_LEFT,
+        });
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isContactUs, isError, isSuccess, error]
+  );
 
   return (
     <div
@@ -137,9 +167,22 @@ const ContactUsForm = () => {
 
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="mb-lg-2">
-            <button type="submit" className={styles.general_input_button}>
+            {isLoading ? (
+              <button className={styles.general_input_button} type="button">
+                <span
+                  className="spinner-border spinner-border-sm mr-4"
+                  role="status"
+                  aria-hidden="true"
+                />
+              </button>
+            ) : (
+              <button type="submit" className={styles.general_input_button}>
+                Submit
+              </button>
+            )}
+            {/* <button type="submit" className={styles.general_input_button}>
               Submit
-            </button>
+            </button> */}
           </div>
         </div>
       </form>
