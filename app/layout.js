@@ -1,14 +1,16 @@
 "use client";
 
-import "./globals.css";
 import { DM_Sans } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
-import { Navbar, Footer, Loading } from "@/components";
+import { Navbar, Footer, Loading, ToastProvider } from "@/components";
 import dynamic from "next/dynamic";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
 import NextProgress from "next-progress";
-import { ToastContainer } from "react-toastify";
+import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 const DMSans = DM_Sans({
   subsets: ["latin"],
@@ -29,19 +31,20 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
       <html lang="en">
-        <body className={DMSans.className}>
-          <main className="overflow-hidden">
-            <Navbar />
-            <ToastContainer autoClose={2500} />
-            <NextProgress
+        <body className={DMSans.className} suppressHydrationWarning>
+          <ToastProvider>
+            {/* <NextProgress
               color="#fba543"
               height="3px"
               delay={400}
               options={{ showSpinner: true }}
-            />
-            {children}
-            <Footer />
-          </main>
+            /> */}
+            <main className="overflow-hidden">
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
+          </ToastProvider>
         </body>
       </html>
     </Provider>

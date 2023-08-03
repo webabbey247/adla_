@@ -6,8 +6,14 @@ import { FiMail } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect } from "react";
+import { useEmailSubscriptionMutation } from "@/redux/services/sitemapApiSlice";
 
 const SubscribersForm = () => {
+  const [
+    emailSubscription,
+    { data: isSubcription, isLoading, isSuccess, isError, error },
+  ] = useEmailSubscriptionMutation();
   const {
     register,
     handleSubmit,
@@ -23,8 +29,37 @@ const SubscribersForm = () => {
     };
 
     console.log("form info", payload);
+
+    try {
+      const mailingList = await emailSubscription(payload);
+      return mailingList;
+    } catch (err) {
+      console.log("error response", err.response);
+    }
+
     reset();
   };
+
+  useEffect(
+    () => {
+      if (isError) {
+        toast.warning(error?.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+
+      if (isSuccess) {
+        // console.log('success response', responseData?.message);
+        reset();
+        toast.success(isSubcription?.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isSubcription, isError, isSuccess, error]
+  );
+
   return (
     <div className={styles.subscribe_form_container}>
       <form
@@ -42,17 +77,26 @@ const SubscribersForm = () => {
               placeholder="Enter your email"
               {...register("emailAddress")}
             />
-
           </div>
-          <button className={styles.subscribe_input_button}>Subscribe</button>
+          {isLoading ? (
+            <button className={styles.subscribe_input_button} type="button">
+              <span
+                className="spinner-border spinner-border-sm mr-4"
+                role="status"
+                aria-hidden="true"
+              />
+            </button>
+          ) : (
+            <button className={styles.subscribe_input_button}>Subscribe</button>
+          )}
+          {/* <button className={styles.subscribe_input_button}>Subscribe</button> */}
         </div>
-       
       </form>
       {errors.emailAddress && (
-              <span className={styles.input_errors}>
-                {errors.emailAddress.message}
-              </span>
-            )}
+        <span className={styles.input_errors}>
+          {errors.emailAddress.message}
+        </span>
+      )}
     </div>
   );
 };
