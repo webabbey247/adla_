@@ -16,21 +16,27 @@ export const contactValidationSchema = yup.object().shape({
     .required("Kindly explain more about your enquiries!"),
 });
 
-export const getQuoteValidationSchema = yup.object().shape({
-  products: yup
-    .object()
-    .shape({
-      label: yup.string().required("Kindly select your preferred products!"),
-      value: yup.string().required("Kindly select your preferred products!"),
-    })
-    .nullable(), // for handling null value when clearing options via clicking "x"
-  // .required("Kindly select your preferred productss!"),
-  productQty: yup
+export const emailSubscriptionSchema = yup.object().shape({
+  emailAddress: yup
     .string()
     .trim()
-    .required(
-      "Kindly provide an estimated quantity across interested products!"
-    ),
+    .required("Kindly provide a valid email address!"),
+});
+
+export const getQuoteValidationSchema = yup.object().shape({
+  services: yup.array().required("Kindly select your preferred services").min(1, "Kindly select your preferred services"),
+  // companyCountry: yup.object({
+  //   label: yup.string().required("Kindly select your preferred services!"),
+  //   value: yup.string().required("Kindly select your preferred services!"),
+  // }).en(),
+  // services: yup
+  //   .object()
+  //   .shape({
+  //     label: yup.string().required("Kindly select your preferred services!"),
+  //     value: yup.string().required("Kindly select your preferred services!"),
+  //   })
+  //   .nullable(),
+
   fullName: yup.string().trim().required("Kindly provide your full name!"),
   emailAddress: yup
     .string()
@@ -40,15 +46,16 @@ export const getQuoteValidationSchema = yup.object().shape({
     .string()
     .trim()
     .required("Kindly provide a valid mobile number!"),
-  companyName: yup
+    companyName: yup
     .string()
     .trim()
     .required("Kindly provide your company name!"),
-});
-
-export const emailSubscriptionSchema = yup.object().shape({
-  emailAddress: yup
-    .string()
-    .trim()
-    .required("Kindly provide a valid email address!"),
+  // companyAddress: yup.string().ensure().when("companyCountry", {
+  //   is: "",
+  //   then: yup.string().required("Kindly provide a valid mobile number!"),
+  // }),
+  // companyCountry: yup.string().ensure().when("companyAddress", {
+  //   is: "",
+  //   then: yup.string().notRequired("Kindly provide a valid mobile number!"),
+  // }),
 });

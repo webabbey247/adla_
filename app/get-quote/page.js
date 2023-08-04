@@ -10,6 +10,8 @@ const GetQuotePage = () => {
   return (
     <section className="w-100 h-100 position-relative">
       <div className={styles.blank_banner_section} />
+      <div className="bg-pattern" />
+
 
       <div className={styles.qet_quote}>
         {/* <div className="d-flex flex-wrap">

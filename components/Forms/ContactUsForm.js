@@ -51,7 +51,7 @@ const ContactUsForm = () => {
     () => {
       if (isError) {
         toast.warning(error?.message, {
-          position: toast.POSITION.BOTTOM_LEFT,
+          position: toast.POSITION.TOP_CENTER,
         });
       }
 
@@ -59,7 +59,7 @@ const ContactUsForm = () => {
         // console.log('success response', responseData?.message);
         reset();
         toast.success(isContactUs?.message, {
-          position: toast.POSITION.BOTTOM_LEFT,
+          position: toast.POSITION.TOP_CENTER,
         });
       }
     },

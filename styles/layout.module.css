@@ -376,7 +376,7 @@
     .contact_us_button {
         width: 150px;
         height: 50px;
-        margin-right: -3rem !important;
+        margin-right: 1rem !important;
     }
 
 
@@ -429,6 +429,12 @@
             display: none !important;
         }
     }
+
+    /* @media only screen and (max-device-width: 384px) {
+        .contact_us_button {
+            display: none !important;
+        }
+    } */
 }
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

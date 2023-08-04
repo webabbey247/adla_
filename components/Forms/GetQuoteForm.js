@@ -7,7 +7,7 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { contactValidationSchema } from "@/utils/validation";
+import { getQuoteValidationSchema } from "@/utils/validation";
 import { useState } from "react";
 import { countryList, servicesList } from "@/utils/config";
 
@@ -23,28 +23,31 @@ const GetQuoteForm = () => {
     control,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(contactValidationSchema),
+    resolver: yupResolver(getQuoteValidationSchema),
   });
 
-  const handleContactUs = async (data) => {
+  const handleServiceQuote = async (data) => {
     const payload = {
+      services: services,
       customer_full_name: data.fullName,
       customer_email_address: data.emailAddress,
       customer_mobile_number: mobile ? mobile : data.mobileNumber,
-      customer_hear_about_us: data.aboutUs,
-      customer_enquiries: data.enquiry,
+      customer_company_name: data.companyName,
+      // customer_company_address: [data.companyAddress, data.country.label].join(","),
+      customer_notes: data.customerNotes,
     };
 
     console.log("form info", payload);
     reset();
+    setServices(null);
   };
   return (
     <div
       className={`${styles.general_form_container} p-lg-0 m-lg-0 position-relative`}
     >
-      <form className="row">
-      <div className="col-lg-12 col-md-12 col-sm-12">
-      <div className="mb-lg-3">
+      <form className="row" onSubmit={handleSubmit(handleServiceQuote)}>
+        <div className="col-lg-12 col-md-12 col-sm-12">
+          <div className="mb-lg-3">
             <Controller
               name="services"
               {...register("services", {
@@ -61,7 +64,7 @@ const GetQuoteForm = () => {
                   isSearchable
                   isMulti
                   className="form-control"
-                  placeholder="Select products"
+                  placeholder="Select preferred services"
                   options={servicesList.map(({ name, value }) => ({
                     label: name,
                     value: value,
@@ -69,9 +72,9 @@ const GetQuoteForm = () => {
                 />
               )}
             />
-            {errors.fullName && (
+            {errors.services && (
               <span className={styles.input_errors}>
-                {errors.fullName.message}
+                {errors.services.message}
               </span>
             )}
           </div>
@@ -81,12 +84,12 @@ const GetQuoteForm = () => {
             <input
               type="text"
               className={`${styles.general_input} form-control`}
-              placeholder="Contact Person"
-              {...register("contactFullName")}
+              placeholder="Contact Person Full Name"
+              {...register("fullName")}
             />
-            {errors.contactFullName && (
+            {errors.fullName && (
               <span className={styles.input_errors}>
-                {errors.contactFullName.message}
+                {errors.fullName.message}
               </span>
             )}
           </div>
@@ -98,21 +101,21 @@ const GetQuoteForm = () => {
               type="text"
               className={`${styles.general_input} form-control`}
               placeholder="Contact email address"
-              {...register("contactEmailAddress")}
+              {...register("emailAddress")}
             />
-            {errors.contactEmailAddress && (
+            {errors.emailAddress && (
               <span className={styles.input_errors}>
-                {errors.contactEmailAddress.message}
+                {errors.emailAddress.message}
               </span>
             )}
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-12 col-sm-12">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <Controller
-              name="contactMobileNumber"
-              {...register("contactMobileNumber", {
+              name="mobileNumber"
+              {...register("mobileNumber", {
                 onChange: (e) => {
                   setMobile(e.target.value);
                 },
@@ -129,18 +132,18 @@ const GetQuoteForm = () => {
                 />
               )}
             />
-            {errors.contactMobileNumber && (
+            {errors.mobileNumber && (
               <span className={styles.input_errors}>
-                {errors.contactMobileNumber.message}
+                {errors.mobileNumber.message}
               </span>
             )}
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-12 col-sm-12">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <input
-              type="email"
+              type="text"
               className={`${styles.general_input} form-control`}
               placeholder="Company name"
               {...register("companyName")}
@@ -153,33 +156,17 @@ const GetQuoteForm = () => {
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-12 col-sm-12">
-          <div className="mb-lg-3">
-            <input
-              type="email"
-              className={`${styles.general_input} form-control`}
-              placeholder="Company URL"
-              {...register("companyWebsiteUrl")}
-            />
-            {errors.companyWebsiteUrl && (
-              <span className={styles.input_errors}>
-                {errors.companyWebsiteUrl.message}
-              </span>
-            )}
-          </div>
-        </div>
-
         <div className="col-lg-8 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
               placeholder="Company physical address"
-              {...register("companyPhysicalAddress")}
+              {...register("companyAddress")}
             />
-            {errors.companyPhysicalAddress && (
+            {errors.companyAddress && (
               <span className={styles.input_errors}>
-                {errors.companyPhysicalAddress.message}
+                {errors.companyAddress.message}
               </span>
             )}
           </div>
@@ -189,7 +176,7 @@ const GetQuoteForm = () => {
           <div className="mb-lg-3">
             <Controller
               name="country"
-              {...register("country", {
+              {...register("companyCountry", {
                 onChange: (e) => {
                   setCountry(e.target.value);
                 },
@@ -211,18 +198,20 @@ const GetQuoteForm = () => {
                 />
               )}
             />
+            {errors.companyCountry && (
+              <span className={styles.input_errors}>
+                {errors.companyCountry.message}
+              </span>
+            )}
           </div>
         </div>
 
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="mb-lg-2">
-            {/* <label className="form-label mb-0">
-      Tell us more about the services you need?
-      </label> */}
             <textarea
               className={`${styles.general_text_area} form-control`}
               rows="7"
-              {...register("enquiry")}
+              {...register("customerNotes")}
               placeholder="Tell us more about the services you need?"
             ></textarea>
           </div>
@@ -240,4 +229,4 @@ const GetQuoteForm = () => {
   );
 };
 
-export default GetQuoteForm;
+export default GetQuoteForm
