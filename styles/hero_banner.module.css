@@ -27,7 +27,7 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: flex-start;
     padding-left: 80px;
     padding-right: 80px;
@@ -54,21 +54,26 @@
 .hero_banner_slider_child .custom_btn {
     border: 1px solid var(--adlas-primary-color);
     background: var(--adlas-primary-color);
-    min-width: 191px;
+    color: var(--adlas-secondary-color);
+    min-width: 180px;
     height: 55px;
     line-height: 28px;
-    padding: 5px;
+    padding-left: 18px;
+    padding-right: 18px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px !important;
     text-align: left;
     z-index: 11;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .hero_banner_slider_child .custom_btn:hover {
     border: 1px solid var(--adlas-secondary-color);
     background: var(--adlas-secondary-color);
+    color: var(--adlas-white-color)
 }
 
 .heroContainer_padding .banner_background_img {
@@ -88,3 +93,37 @@
     background: rgba(0, 0, 0, 0.3);
     border-radius: var(--adlas-border-radius);
 }
+
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+    .hero_banner_slider_child {
+        padding-left: 35px;
+        padding-right: 35px;
+        height: 650px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+
+    .hero_banner_slider_child {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 650px;
+        width: 100%;
+    }
+
+
+    .hero_banner_slider_child h2 {
+        margin-top: 3rem !important;
+        font-size: 40px !important;
+    }
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

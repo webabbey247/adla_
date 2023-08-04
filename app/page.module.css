@@ -282,8 +282,8 @@
     background-repeat: no-repeat;
 
     position: absolute;
-right: 20px;
-top: 15px;
+    right: 20px;
+    top: 15px;
 }
 
 
@@ -337,10 +337,6 @@ top: 15px;
 }
 
 
-
-
-
-
 @keyframes corp-line {
     0% {
         height: 0
@@ -350,3 +346,16 @@ top: 15px;
         height: calc(100% + 235px)
     }
 }
+
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}
