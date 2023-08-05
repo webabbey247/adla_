@@ -55,7 +55,6 @@
     justify-content: center;
     align-items: center;
     background-image: url('/static/vision_mission_img.jpg');
-    /* mix-blend-mode: luminosity !important; */
     height: 550px;
     position: relative;
     z-index: 15;
@@ -157,9 +156,6 @@
     margin-bottom: 2.5rem;
     padding: 2rem 0;
     display: flex;
-    /* justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column; */
 }
 
 .home_services_grid_container .home_services_rlt_text:first-child {
@@ -356,6 +352,72 @@
 
 @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {}
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {}
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+
+    .home_about_section {
+        padding: 4rem 0.5rem;
+    }
+
+    .home_about_section::before {
+        content: none;
+    }
+
+    .home_about_section_ltr {
+        margin-top: 0;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .home_about_section_rtl {
+        padding-right: 0;
+        margin-top: 2rem !important;
+    }
+
+    .home_services_section {
+        padding: 4rem 0 0;
+    }
+    
+    
+    
+    .home_services_section .home_services_grid_container .active_liner::before {
+        left: 1.5%;
+    }
+
+
+    .home_services_grid_container .home_services_ltr_img {
+        margin-left: 30px;
+        width: 95.5%;
+    }
+
+
+    .home_services_grid_container .home_services_ltr_bottom, .home_services_grid_container .home_services_rlt_text {
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .home_services_grid_container .home_services_ltr_bottom p,
+    .home_services_grid_container .home_services_rlt_text p {
+        text-align: center;
+    }
+
+    .home_services_grid_container .home_services_rlt_text {
+        justify-content: center;
+        align-items: center;
+        margin-top: -2rem !important;
+    }
+
+    .home_services_grid_container .home_services_rlt_text:first-child {
+        margin-top: -2rem !important;
+    }
+
+    .home_services_grid_container .home_services_rlt_text h4, .home_services_grid_container .home_services_rlt_text p {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0 !important;
+    }
+    
+}
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

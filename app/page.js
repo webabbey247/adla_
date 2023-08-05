@@ -79,7 +79,7 @@ export default function Home() {
                       </div>
 
                       <div
-                        className={`${styles.home_services_ltr_bottom} d-flex  flex-column justify-content-end align-items-end`}
+                        className={`${styles.home_services_ltr_bottom} d-flex flex-column justify-content-lg-end justify-content-md-center align-items-lg-end align-items-md-center`}
                       >
                         <h4>Experience</h4>
                         <p>
@@ -92,7 +92,7 @@ export default function Home() {
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <div
-                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-start align-items-start`}
+                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-lg-start align-items-lg-start`}
                       >
                         <h4>Sustainability</h4>
                         <p>
@@ -106,7 +106,7 @@ export default function Home() {
                       </div>
 
                       <div
-                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-start align-items-start`}
+                        className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-lg-start align-items-lg-start`}
                       >
                         <h4>Consistency</h4>
                         <p>
