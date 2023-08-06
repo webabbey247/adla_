@@ -1,5 +1,6 @@
 import { GetQuoteForm } from "@/components/Forms";
 import styles from "@/styles/quote.module.css";
+import { MainLayout } from "@/components";
 
 export const metadata = {
   title: "Service Inquiry | Get Quote",
@@ -8,60 +9,29 @@ export const metadata = {
 
 const GetQuotePage = () => {
   return (
-    <section className="w-100 h-100 position-relative">
-      <div className={styles.blank_banner_section} />
-      <div className="bg-pattern" />
-
-
-      <div className={styles.qet_quote}>
-        {/* <div className="d-flex flex-wrap">
-          <div className={`${styles.masonary_gallery_ltr} overflow-hidden`}>
-            <div
-              className={`${styles.masonary_gallery_ltr_img} w-100 h-100 m-lg-0`}
-            >
-              <span />
-            </div>
-          </div>
-
-          <div className={`${styles.masonary_gallery_rtl} d-flex flex-wrap`}>
-            <div className={styles.masonary_gallery_rtl_img}>
-              <span className={styles.one_of_five} />
-            </div>
-
-            <div className={styles.masonary_gallery_rtl_img}>
-              <span className={styles.two_of_five} />
-            </div>
-
-            <div className={styles.masonary_gallery_rtl_img}>
-              <span className={styles.three_of_five} />
-            </div>
-
-            <div className={styles.masonary_gallery_rtl_img}>
-              <span className={styles.four_of_five} />
-            </div>
-
-            <div className={styles.masonary_gallery_rtl_img}>
-              <span className={styles.five_of_five} />
-            </div>
-          </div>
-        </div> */}
-
-        <div className="container-fluid nav_padding">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
-              <div className={styles.get_quote_top_container}>
-                <h4>Services Inquiry</h4>
-                <p>
-                  To better serve our genuine clients, we require you to provide
-                  us the following information to help us serve you better.
-                </p>
+    <MainLayout>
+      <section className="w-100 h-100 position-relative">
+        <div className={styles.blank_banner_section} />
+        <div className="bg-pattern" />
+        <div className={styles.qet_quote}>
+          <div className="container-fluid nav_padding">
+            <div className="row">
+              <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
+                <div className={styles.get_quote_top_container}>
+                  <h4>Services Inquiry</h4>
+                  <p>
+                    To better serve our genuine clients, we require you to
+                    provide us the following information to help us serve you
+                    better.
+                  </p>
+                </div>
+                <GetQuoteForm />
               </div>
-              <GetQuoteForm />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </MainLayout>
   );
 };
 

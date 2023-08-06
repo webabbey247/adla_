@@ -14,11 +14,12 @@ import { countryList, servicesList } from "@/utils/config";
 const GetQuoteForm = () => {
   const [mobile, setMobile] = useState(null);
   const [country, setCountry] = useState([]);
-  const [services, setServices] = useState(null);
+  const [services, setServices] = useState([]);
 
   const {
     register,
     handleSubmit,
+    setValue,
     reset,
     control,
     formState: { errors },
@@ -39,7 +40,8 @@ const GetQuoteForm = () => {
 
     console.log("form info", payload);
     reset();
-    setServices(null);
+    setValue("services", []);
+
   };
   return (
     <div
@@ -58,7 +60,7 @@ const GetQuoteForm = () => {
               control={control}
               render={({ field }) => (
                 <Select
-                  defaultValue={services}
+                  value={services}
                   {...field}
                   isClearable
                   isSearchable
@@ -175,7 +177,7 @@ const GetQuoteForm = () => {
         <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <Controller
-              name="country"
+              name="companyCountry"
               {...register("companyCountry", {
                 onChange: (e) => {
                   setCountry(e.target.value);
@@ -184,13 +186,12 @@ const GetQuoteForm = () => {
               control={control}
               render={({ field }) => (
                 <Select
-                  defaultValue={country}
+                  value={country}
                   {...field}
                   isClearable
                   isSearchable
-                  classNamePrefix="form-control"
                   className="form-control"
-                  placeholder="Country"
+                  placeholder="Select country"
                   options={countryList.map(({ name }) => ({
                     label: name,
                     value: name,
@@ -209,11 +210,17 @@ const GetQuoteForm = () => {
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="mb-lg-2">
             <textarea
+            name="customerNotes"
               className={`${styles.general_text_area} form-control`}
               rows="7"
               {...register("customerNotes")}
-              placeholder="Tell us more about the services you need?"
+              placeholder=""
             ></textarea>
+            {errors.customerNotes && (
+              <span className={styles.input_errors}>
+                {errors.customerNotes.message}
+              </span>
+            )}
           </div>
         </div>
 

@@ -92,6 +92,12 @@
     margin: 1rem 0 4rem;
 }
 
+.general_form_container .general_input_button:hover {
+    border: var(--adlas-secondary-border);
+    background: var(--adlas-secondary-color);
+    color: var(--adlas-color-white);
+}
+
 .input_errors {
     width: 100%;
     font-size: 13px !important;
@@ -99,6 +105,15 @@
     margin: 0.3rem 0px;
     padding: 0px;
     display: inline-block;
+}
+
+.general_input_form_icon {
+    position: absolute;
+    top: 34%;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 

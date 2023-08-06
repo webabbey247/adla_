@@ -35,14 +35,14 @@ const Navbar = () => {
         <div
           className={`container-fluid ${styles.nav_padding} ${styles.is_mobile}`}
         >
-          <a className="navbar-brand py-0" href="/">
+          <Link className="navbar-brand py-0" href="/" passHref>
             <Image
               src="/static/logo.png"
               width={100}
               height={80}
               alt="Adla Logo"
             />
-          </a>
+          </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
