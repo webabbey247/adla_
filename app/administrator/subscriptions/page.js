@@ -15,7 +15,7 @@ const EnquiriesPage = () => {
             <div
               className={`${styles.pageHeader} d-flex flex-column flex-wrap`}
             >
-              <h5>Email Subscriptions</h5>
+              <h4>Email Subscriptions</h4>
               <p>
                 This is your contact database. From here, you can view, organize
                 and manage your contacts, individually or as a group.

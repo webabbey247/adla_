@@ -11,6 +11,7 @@ import Sidebar from "./Sidebar";
 import DashboardBarChart from "./Charts/Barchart";
 import ContactUsTable from "./Table/ContactUsTable";
 import SubscriptionTable from "./Table/SubscriptionTable";
+import QuotationTable from "./Table/QuotationTable";
 // import DashboardLineChart from "./Charts/LineChart";
 // import DashboardPieChart from "./Charts/PieChart";
 
@@ -30,4 +31,5 @@ export {
   // DashboardPieChart,
   ContactUsTable,
   SubscriptionTable,
+  QuotationTable,
 };

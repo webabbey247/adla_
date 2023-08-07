@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "@/styles/layout.module.css";
 import Link from "next/link";
 import {
@@ -31,16 +33,16 @@ const Sidebar = () => {
 
       <div className="py-2 mx-0 mb-0">
         <div className="my-2">
-          <span>Sitemaps</span>
+          <span>Website Configurations</span>
         </div>
-        <div className="d-flex flex-lg-column">
-          <Link className="" href="/administrator/members">
+        {/* <div className="d-flex flex-lg-column">
+          <Link className="" href="/administrator/dashboard">
             <FiMessageCircle color="var(--sidebar-nav-color)" fontSize="22px" />
             <span>Testimonials</span>
           </Link>
-        </div>
+        </div> */}
         <div className="d-flex flex-lg-column">
-          <Link className="" href="/administrator/settings" passHref>
+          <Link className="" href="/administrator/site-configurations" passHref>
             <FiSettings color="var(--sidebar-nav-color)" fontSize="22px" />
             <span>Settings</span>
           </Link>
@@ -60,7 +62,7 @@ const Sidebar = () => {
         </div>
 
         <div className="d-flex flex-lg-column">
-          <Link className="" href="/administrator/articles" passHref>
+          <Link className="" href="/administrator/quotations" passHref>
             <FiDatabase color="var(--sidebar-nav-color)" fontSize="22px" />
             <span>Services Inquiry</span>
           </Link>

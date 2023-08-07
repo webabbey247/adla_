@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { Fragment } from "react";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,6 @@ import { FiPower } from "react-icons/fi";
 import Sidebar from "../Sidebar";
 
 const ProtectedLayout = ({ children }) => {
-  const router = useRouter();
   // const { token } = useSelector((state) => state.auth);
 
   // useEffect(() => {
@@ -61,11 +60,11 @@ const ProtectedLayout = ({ children }) => {
                   </div>
                 </div>
 
-                <div className="UserLoggedInfo">
+                <div className={styles.user_logged_info}>
                   <span className="cursor-pointer">
                     <FiPower
                       className="cursor-pointer"
-                      color="var(--sidebar-nav-color)"
+                      color="var(--adlas-color-white)"
                       fontSize="22px"
                     />
                   </span>

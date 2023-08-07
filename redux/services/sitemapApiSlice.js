@@ -9,6 +9,13 @@ export const sitemapApiSlice = apiSlice.injectEndpoints({
         body: credentials,
       }),
     }),
+    servicesQuotation: builder.mutation({
+      query: (credentials) => ({
+        url: "services/request-quote",
+        method: "post",
+        body: credentials,
+      }),
+    }),
     emailSubscription: builder.mutation({
       query: (credentials) => ({
         url: "mailing-list/subscribers",
@@ -19,5 +26,8 @@ export const sitemapApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useContactUsMutation, useEmailSubscriptionMutation } =
-  sitemapApiSlice;
+export const {
+  useContactUsMutation,
+  useEmailSubscriptionMutation,
+  useServicesQuotationMutation,
+} = sitemapApiSlice;

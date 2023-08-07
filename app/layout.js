@@ -6,7 +6,6 @@ import { Navbar, Footer, Loading, ToastProvider } from "@/components";
 import dynamic from "next/dynamic";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
-import NextProgress from "next-progress";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 

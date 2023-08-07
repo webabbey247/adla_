@@ -7,34 +7,31 @@ import styles from "@/styles/layout.module.css";
 import { FiEye, FiTrash } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
-import {
-  useDeleteComplaintsMutation,
-  useGetAllComplaintsQuery,
-} from "@/redux/services/admin/adminApiSlice";
+import { useGetAllQuotationsQuery } from "@/redux/services/admin/adminApiSlice";
 import { toast } from "react-toastify";
 
-const ContactUsTable = () => {
+const QuotationTable = () => {
   const router = useRouter();
-  const { data: isData, isLoading, isFetching } = useGetAllComplaintsQuery();
-  const [deleteComplaints, { isLoading: isDeleteLoading }] =
-    useDeleteComplaintsMutation();
+  const { data: isData, isLoading, isFetching } = useGetAllQuotationsQuery();
+  //   const [deleteComplaints, { isLoading: isDeleteLoading }] =
+  //     useDeleteComplaintsMutation();
 
-  const handleDeleteEntry = async (id) => {
-    try {
-      const res = await deleteComplaints(id);
-      if (res?.data.success) {
-        toast.success(res?.data.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      } else {
-        toast.warning(res?.data.message || res?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      }
-    } catch (err) {
-      console.log("hello error", err);
-    }
-  };
+  //   const handleDeleteEntry = async (id) => {
+  //     try {
+  //       const res = await deleteComplaints(id);
+  //       if (res?.data.success) {
+  //         toast.success(res?.data.message, {
+  //           position: toast.POSITION.TOP_CENTER,
+  //         });
+  //       } else {
+  //         toast.warning(res?.data.message || res?.message, {
+  //           position: toast.POSITION.TOP_CENTER,
+  //         });
+  //       }
+  //     } catch (err) {
+  //       console.log("hello error", err);
+  //     }
+  //   };
 
   const columns = [
     {
@@ -51,6 +48,12 @@ const ContactUsTable = () => {
     },
     {
       key: "3",
+      title: "Company Name",
+      dataIndex: "customer_company_name",
+      render: (customer_company_name) => <span>{customer_company_name}</span>,
+    },
+    {
+      key: "4",
       title: "Status",
       dataIndex: "status",
       render: (status) => (
@@ -67,13 +70,13 @@ const ContactUsTable = () => {
       },
     },
     {
-      key: "4",
+      key: "5",
       title: "Logged IP",
       dataIndex: "logged_ip",
       render: (logged_ip) => <span>{logged_ip}</span>,
     },
     {
-      key: "5",
+      key: "6",
       title: "Entry Date",
       dataIndex: "created_at",
       render: (created_at) => (
@@ -84,12 +87,12 @@ const ContactUsTable = () => {
       },
     },
     {
-      key: "6",
+      key: "7",
       title: "Action",
       render: (record) => (
         <div className="d-flex">
           <Link
-            href={`enquiries/${record.customer_ticket_no}`}
+            href={`quotations/${record.customer_ticket_no}`}
             className={styles.bg_info_light}
           >
             <span>
@@ -98,7 +101,7 @@ const ContactUsTable = () => {
             </span>
           </Link>
 
-          {isDeleteLoading ? (
+          {/* {isDeleteLoading ? (
             <span className={styles.bg_danger_light}>
               <span
                 className="spinner-border spinner-border-sm mr-4"
@@ -114,7 +117,12 @@ const ContactUsTable = () => {
               <FiTrash className="mx-1" fontSize={18} />
               delete
             </span>
-          )}
+          )} */}
+
+          <span className={styles.bg_danger_light}>
+            <FiTrash className="mx-1" fontSize={18} />
+            delete
+          </span>
         </div>
       ),
     },
@@ -136,4 +144,4 @@ const ContactUsTable = () => {
   );
 };
 
-export default ContactUsTable;
+export default QuotationTable;

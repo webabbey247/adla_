@@ -5,115 +5,79 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { getQuoteValidationSchema } from "@/utils/validation";
+import { contactValidationSchema } from "@/utils/validation";
 import { useState, useEffect } from "react";
-import { servicesList } from "@/utils/config";
-import { useServicesQuotationMutation } from "@/redux/services/sitemapApiSlice";
+import { useContactUsMutation } from "@/redux/services/sitemapApiSlice";
 
-const GetQuoteForm = () => {
+const SiteConfigurationForm = () => {
   const [mobile, setMobile] = useState(null);
-  const [services, setServices] = useState([]);
   const [
-    servicesQuotation,
-    { data: isQuotationData, isLoading, isSuccess, isError, error },
-  ] = useServicesQuotationMutation();
+    contactUs,
+    { data: isContactUs, isLoading, isSuccess, isError, error },
+  ] = useContactUsMutation();
   const {
     register,
     handleSubmit,
-    setValue,
     reset,
     control,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(getQuoteValidationSchema),
+    resolver: yupResolver(contactValidationSchema),
   });
 
-  const handleServiceQuote = async (data) => {
+  const handleContactUs = async (data) => {
     const payload = {
-      services: services,
       customer_full_name: data.fullName,
       customer_email_address: data.emailAddress,
       customer_mobile_number: mobile ? mobile : data.mobileNumber,
-      customer_company_name: data.companyName,
-      customer_company_address: data.companyAddress,
-      customer_notes: data.customerNotes,
+      hear_about_us: data.aboutUs,
+      customer_enquiries: data.enquiry,
     };
 
     console.log("form info", payload);
 
     try {
-      const requestQuoteRes = await servicesQuotation(payload);
-      return requestQuoteRes;
+      const contactUsRes = await contactUs(payload);
+      return contactUsRes;
     } catch (err) {
       console.log("error response", err.response);
     }
+
+    reset();
   };
 
   useEffect(
     () => {
       if (isError) {
-        toast.warning(error?.message || error?.data.message, {
+        toast.warning(error?.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       }
 
       if (isSuccess) {
-        setValue("services", []);
+        // console.log('success response', responseData?.message);
         reset();
-        toast.success(isQuotationData?.message, {
+        toast.success(isContactUs?.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isQuotationData, isError, isSuccess, error]
+    [isContactUs, isError, isSuccess, error]
   );
+
   return (
     <div
       className={`${styles.general_form_container} p-lg-0 m-lg-0 position-relative`}
     >
-      <form className="row" onSubmit={handleSubmit(handleServiceQuote)}>
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="mb-lg-3">
-            <Controller
-              name="services"
-              {...register("services", {
-                onChange: (e) => {
-                  setServices(e.target.value);
-                },
-              })}
-              control={control}
-              render={({ field }) => (
-                <Select
-                  value={services}
-                  {...field}
-                  isClearable
-                  isSearchable
-                  isMulti
-                  className="form-control"
-                  placeholder="Select preferred services"
-                  options={servicesList.map(({ name, value }) => ({
-                    label: name,
-                    value: value,
-                  }))}
-                />
-              )}
-            />
-            {errors.services && (
-              <span className={styles.input_errors}>
-                {errors.services.message}
-              </span>
-            )}
-          </div>
-        </div>
+      <form className="row" onSubmit={handleSubmit(handleContactUs)}>
         <div className="col-lg-6 col-md-12 col-sm-12">
-          <div className="mb-lg-3">
+        <div className="mb-lg-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
-              placeholder="Contact Person Full Name"
+              placeholder="Company address"
               {...register("fullName")}
             />
             {errors.fullName && (
@@ -124,12 +88,12 @@ const GetQuoteForm = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <div className="col-lg-3 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
-              placeholder="Contact email address"
+              placeholder="Company email address"
               {...register("emailAddress")}
             />
             {errors.emailAddress && (
@@ -140,7 +104,7 @@ const GetQuoteForm = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <div className="col-lg-3 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <Controller
               name="mobileNumber"
@@ -157,7 +121,7 @@ const GetQuoteForm = () => {
                   international
                   countryCallingCodeEditable={false}
                   defaultCountry="NG"
-                  placeholder="Contact mobile number"
+                  placeholder="Enter phone number"
                 />
               )}
             />
@@ -169,83 +133,68 @@ const GetQuoteForm = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
-              placeholder="Company name"
-              {...register("companyName")}
+              placeholder="How did you hear about Adla?"
+              {...register("aboutUs")}
             />
-            {errors.companyName && (
+            {errors.aboutUs && (
               <span className={styles.input_errors}>
-                {errors.companyName.message}
+                {errors.aboutUs.message}
               </span>
             )}
           </div>
         </div>
 
-        <div className="col-lg-12 col-md-12 col-sm-12">
+
+        <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="mb-lg-3">
             <input
               type="text"
               className={`${styles.general_input} form-control`}
-              placeholder="Company physical address"
-              {...register("companyAddress")}
+              placeholder="How did you hear about Adla?"
+              {...register("aboutUs")}
             />
-            {errors.companyAddress && (
+            {errors.aboutUs && (
               <span className={styles.input_errors}>
-                {errors.companyAddress.message}
+                {errors.aboutUs.message}
               </span>
             )}
           </div>
         </div>
 
-        {/* <div className="col-lg-4 col-md-12 col-sm-12">
+
+        <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="mb-lg-3">
-            <Controller
-              name="companyCountry"
-              {...register("companyCountry", {
-                onChange: (e) => {
-                  setCountry(e.target.value);
-                },
-              })}
-              control={control}
-              render={({ field }) => (
-                <Select
-                  value={country}
-                  {...field}
-                  isClearable
-                  isSearchable
-                  className="form-control"
-                  placeholder="Select country"
-                  options={countryList.map(({ name }) => ({
-                    label: name,
-                    value: name,
-                  }))}
-                />
-              )}
+            <input
+              type="text"
+              className={`${styles.general_input} form-control`}
+              placeholder="How did you hear about Adla?"
+              {...register("aboutUs")}
             />
-            {errors.companyCountry && (
+            {errors.aboutUs && (
               <span className={styles.input_errors}>
-                {errors.companyCountry.message}
+                {errors.aboutUs.message}
               </span>
             )}
           </div>
-        </div> */}
+        </div>
 
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="mb-lg-2">
-            <textarea
-              name="customerNotes"
-              className={`${styles.general_text_area} form-control`}
-              rows="7"
-              {...register("customerNotes")}
-              placeholder=""
-            ></textarea>
-            {errors.customerNotes && (
+
+        <div className="col-lg-4 col-md-12 col-sm-12">
+          <div className="mb-lg-3">
+            <input
+              type="text"
+              className={`${styles.general_input} form-control`}
+              placeholder="How did you hear about Adla?"
+              {...register("aboutUs")}
+            />
+            {errors.aboutUs && (
               <span className={styles.input_errors}>
-                {errors.customerNotes.message}
+                {errors.aboutUs.message}
               </span>
             )}
           </div>
@@ -276,4 +225,4 @@ const GetQuoteForm = () => {
   );
 };
 
-export default GetQuoteForm;
+export default SiteConfigurationForm;

@@ -4,6 +4,7 @@
   --adlas-button-border: 1px solid #fba543;
   /* --adlas-font-family: "Quasimoda", -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, sans-serif; */
   --adlas-nav-color: rgb(46, 60, 74);
+  --adlas-sidebar-nav-color: rgba(255, 255, 255, 0.6);
   --adlas-body-text-color: rgb(131, 133, 140);
   --adlas-body-font-size: 1rem;
   --adlas-body-line-height: 1.5;
@@ -256,7 +257,7 @@ ul {
 
 
 .home-hero-banner .swiper-slide {
-background-color: var(--adlas-secondary-color);
+  background-color: var(--adlas-secondary-color);
   color: #fff;
   height: 650px;
 }
@@ -341,11 +342,21 @@ textarea::placeholder {
 }
 
 .bg-pattern {
-  background-image: radial-gradient(rgba(232, 197, 69, 0.5) 2px,transparent 0);
-background-size: 14px 14px;
-height: 75px;
-margin-top: -2px;
+  background-image: radial-gradient(rgba(232, 197, 69, 0.5) 2px, transparent 0);
+  background-size: 14px 14px;
+  height: 75px;
+  margin-top: -2px;
 }
+
+/* tables */
+.ant-table-container {
+  border: 1px solid aliceblue !important;
+}
+.ant-table-cell span {
+  font-size: 1rem !important;
+}
+
+
 
 @keyframes corp-line {
   0% {

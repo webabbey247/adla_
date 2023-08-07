@@ -1,91 +1,102 @@
 "use client";
 
-import { Fragment } from "react";
 import { Table } from "antd";
-import Link from "next/link";
 import styles from "@/styles/layout.module.css";
-import { FiEye, FiTrash } from "react-icons/fi";
+import { FiTrash } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
+import {
+  useGetAllMailingListQuery,
+  useDeleteMailingListMutation,
+} from "@/redux/services/admin/adminApiSlice";
+import { Fragment } from "react";
+import { toast } from "react-toastify";
 
 const SubscriptionTable = () => {
-  const router = useRouter();
+  const { data: isData, isLoading, isFetching } = useGetAllMailingListQuery();
+  const [deleteMailingList, { isLoading: isDeleteLoading }] =
+    useDeleteMailingListMutation();
+
+  const handleDeleteEntry = async (id) => {
+    try {
+      const res = await deleteMailingList(id);
+      if (res?.data.success) {
+        toast.success(res?.data.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      } else {
+        toast.warning(res?.data.message || res?.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+    } catch (err) {
+      console.log("hello error", err);
+    }
+  };
+
   const columns = [
     {
       key: "1",
-      title: "Ticket ID",
-      dataIndex: "reference_id",
-      //   render: (reference_id) => <span>{reference_id}</span>,
+      title: "Logged IP",
+      dataIndex: "logged_ip",
+      render: (logged_ip) => <span>{logged_ip}</span>,
     },
     {
       key: "2",
       title: "Email address",
-      dataIndex: "subject",
-      //   render: (subject) => <span>{subject}</span>,
+      dataIndex: "customer_email_address",
+      render: (customer_email_address) => <span>{customer_email_address}</span>,
     },
+
     {
       key: "3",
-      title: "Status",
-      dataIndex: "status",
-      //   render: (status) => (
-      //     <Fragment>
-      //       {status !== 1 ? (
-      //         <span className={styles.bgDraftLight}>Unread</span>
-      //       ) : (
-      //         <span className={styles.bgSuccessLight}>read</span>
-      //       )}
-      //     </Fragment>
-      //   ),
-      //   sorter: (record1, record2) => {
-      //     return record1.status > record2.status;
-      //   },
+      title: "Entry Date",
+      dataIndex: "created_at",
+      render: (created_at) => (
+        <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>
+      ),
+      sorter: (record1, record2) => {
+        return record1.created_at > record2.created_at;
+      },
     },
     {
       key: "4",
-      title: "Logged IP",
-      dataIndex: "logged_ip",
-      //   render: (logged_ip) => <span>{logged_ip}</span>,
-    },
-    {
-      key: "5",
-      title: "Entry Date",
-      dataIndex: "created_at",
-      //   render: (created_at) => (
-      //     <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>
-      //   ),
-      //   sorter: (record1, record2) => {
-      //     return record1.created_at > record2.created_at;
-      //   },
-    },
-    {
-      key: "6",
       title: "Action",
-      render: () => (
-        <div className="d-flex">
-          <Link href="/" className={styles.bgDraftLight}>
-            <FiEye className="mr-4" />
-          </Link>
-          <span className={styles.bgDangerLight}>
-            <FiTrash />
-          </span>
-        </div>
+      render: (record) => (
+        <Fragment>
+          {isDeleteLoading ? (
+            <span className={styles.bg_danger_light}>
+              <span
+                className="spinner-border spinner-border-sm mr-4"
+                role="status"
+                aria-hidden="true"
+              />
+            </span>
+          ) : (
+            <span
+              className={styles.bg_danger_light}
+              onClick={() => handleDeleteEntry(record.id)}
+            >
+              <FiTrash className="mx-1" fontSize={18} />
+              delete
+            </span>
+          )}
+        </Fragment>
       ),
     },
   ];
 
   return (
-    <Fragment>
-      <div className={`table-responsive ${styles.dataTable}`}>
-        <Table
-          //   loading={isDataLoading || isDataFetching || isLoading}
-          columns={columns}
-          dataSource={[]}
-          pagination={{
-            pageSize: 20,
-          }}
-        />
-      </div>
-    </Fragment>
+    <div className={`table-responsive ${styles.dataTable}`}>
+      <Table
+        loading={isLoading || isFetching}
+        columns={columns}
+        dataSource={isData?.data}
+        pagination={{
+          pageSize: 20,
+        }}
+      />
+    </div>
   );
 };
 

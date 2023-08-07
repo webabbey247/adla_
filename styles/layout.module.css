@@ -326,16 +326,87 @@
 .card {
     border: 0 solid rgba(0, 0, 0, 0.125) !important;
     border-radius: .25rem;
-    /* box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.075) !important; */
+    margin-top: 4rem;
+    padding: 2rem;
 }
 
-.pageHeader {
-    min-height: 58px;
-    /* background: rgba(232, 197, 69, 0.11) !important; */
-  background: var(--adlas-color-white);
-    padding: 0 10px 0 20px;
-    border-radius: 6px 6px 0 0;
+.card .page_header {
+    background: var(--adlas-color-white);
 }
+
+.card .page_header a {
+    font-size: 16px !important;
+    /* font-size: 25px; */
+    text-align: left;
+    font-weight: 700 !important;
+    color: var(--adlas-secondary-color);
+    padding: 0.5rem 0.5rem 0.5rem;
+
+}
+
+.card .page_header a:hover {
+ background-color: rgba(15, 183, 107, .12) !important;
+ max-width: 100%;
+ width: 14%;
+ border-radius: 10px;
+}
+
+.card .page_header a svg {
+    margin-right: 10px;
+}
+
+.card .page_header span {
+    border-radius: 100%;
+    color: var(--adlas-secondary-color) !important;
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: 3rem;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+}
+
+.card .page_header h4 {
+    font-size: 32px !important;
+    line-height: 48px;
+    font-weight: 700 !important;
+    color: var(--adlas-secondary-color) !important;
+}
+
+.card .page_header p {
+    font-weight: 700 !important;
+}
+
+
+
+.card .content_display_info {
+    position: relative;
+}
+
+.card .content_display_info .content_display_child {
+   margin: 1rem 0 0;
+}
+
+.card .content_display_info .content_display_child span {
+    font-size: 16px !important;
+    line-height: 26px !important;
+    font-weight: 700 !important;
+    color: var(--adlas-secondary-color) !important;
+}
+
+.card .content_display_info .content_display_child span.action {
+    color: var(--adlas-color-white) !important;
+} 
+
+.card .content_display_info .content_display_child h5 {
+    font-weight: 400 !important;
+    color: #6c757d !important;
+    font-size: 13px !important;
+}
+
+.card .content_display_info .content_display_child svg {
+    margin-right: 10px;
+}
+
 
 
 .dashboard_container .dashboard_sidebar {
@@ -349,7 +420,10 @@
     max-height: 100vh;
     z-index: 200;
     background: rgba(232, 197, 69, 0.11);
-    /* background: var(--adlas-primary-color); */
+    border-right: 2px solid var(--adlas-secondary-color-01);
+    /* border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px; */
+    background: var(--adlas-secondary-color);
 }
 
 .dashboard_sidebar .sidebar_container {
@@ -378,8 +452,7 @@
 
 .sidebar_container .navigation_footer {
     padding: 0.6rem 1rem;
-   /* background: var(--adlas-secondary-color); */
-   /* background: var(--adlas-secondary-color-01); */
+    box-shadow: 0px -1px 5px #282c33;
 }
 
 
@@ -398,12 +471,16 @@
     font-weight: 500 !important;
     font-size: 1rem !important;
     line-height: 1.5rem;
-    color: var(--sidebar-nav-color) !important;
-
+    color: var(--adlas-color-white) !important;
 }
 
 .navigationFooter .user_info span:first-child {
     font-weight: 600 !important;
+}
+
+.navigation_footer .user_logged_info span svg {
+    margin-top: 20px !important;
+    color: var(--adlas-color-white) !important;
 }
 
 /* Sidebar Css */
@@ -419,7 +496,7 @@
 .sidebar_navigation_container span {
     font-size: 0.8rem !important;
     line-height: 1rem;
-    color: #121212 !important;
+    color: var(--adlas-color-white) !important;
     font-weight: 700 !important;
 }
 
@@ -432,7 +509,7 @@
     font-size: 1rem !important;
     line-height: 1.5rem !important;
     font-weight: 500 !important;
-    color: var(--sidebar-nav-color) !important;
+    color: var(--adlas-sidebar-nav-color) !important;
 }
 
 
@@ -445,7 +522,7 @@
 }
 
 .sidebar_navigation_container svg {
-    color: var(--sidebar-nav-color) !important;
+    color: var(--adlas-sidebar-nav-color) !important;
 }
 
 .sidebar_navigation_container a.active svg {
@@ -455,6 +532,65 @@
 .sidebar_navigation_container span {
     margin-left: 1rem;
 }
+
+
+/***** Badges CSS *****/
+.bg_success_light {
+    background-color: rgba(15, 183, 107, .12) !important;
+    color: #26af48 !important;
+    margin-right: 10px;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    text-transform: capitalize;
+    cursor: pointer !important;
+}
+
+.bg_draft_light {
+    background-color: rgba(18, 18, 18, .8) !important;
+    color: #ffffff !important;
+    margin-right: 10px;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    text-transform: capitalize;
+    cursor: pointer !important;
+
+}
+
+.bg_danger_light {
+    background-color: rgba(242, 17, 54, .12) !important;
+    color: #e63c3c !important;
+    margin-right: 10px;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    text-transform: capitalize;
+    cursor: pointer !important;
+}
+
+.bg_info_light {
+    background-color: rgba(23, 162, 184, .12) !important;
+    color: #17a2b8 !important;
+    margin-right: 10px;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    text-transform: capitalize;
+    cursor: pointer !important;
+}
+
+.bg_danger_light svg, .bg_info_light svg, .bg_draft_light svg, .bg_success_light svg {
+    margin-top: -5px;
+}
+
+.bg_text_color_white {
+    color: var(--adlas-color-white) !important;
+}
+
+/***** Datatables *****/
+.dataTable {
+    padding: 2rem 0;
+    position: relative;
+    width: 100%;
+}
+
 
 
 
