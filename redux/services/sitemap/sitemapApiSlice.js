@@ -1,7 +1,11 @@
-import { apiSlice } from "../api/apiSlice";
+import { apiSlice } from "../../api/apiSlice";
 
 export const sitemapApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    getWebsiteConfiguration: builder.query({
+      query: () => "configurations/all",
+      providesTags: ["WebsiteConfig"],
+    }),
     contactUs: builder.mutation({
       query: (credentials) => ({
         url: "enquiries/contact-us",
@@ -27,6 +31,7 @@ export const sitemapApiSlice = apiSlice.injectEndpoints({
 });
 
 export const {
+  useGetWebsiteConfigurationQuery,
   useContactUsMutation,
   useEmailSubscriptionMutation,
   useServicesQuotationMutation,

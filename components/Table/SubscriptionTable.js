@@ -4,7 +4,7 @@ import { Table } from "antd";
 import styles from "@/styles/layout.module.css";
 import { FiTrash } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-import { format } from "date-fns";
+import { format, formatDistance, subDays } from "date-fns";
 import {
   useGetAllMailingListQuery,
   useDeleteMailingListMutation,
@@ -37,15 +37,15 @@ const SubscriptionTable = () => {
   const columns = [
     {
       key: "1",
-      title: "Logged IP",
-      dataIndex: "logged_ip",
-      render: (logged_ip) => <span>{logged_ip}</span>,
-    },
-    {
-      key: "2",
       title: "Email address",
       dataIndex: "customer_email_address",
       render: (customer_email_address) => <span>{customer_email_address}</span>,
+    },
+    {
+      key: "2",
+      title: "Logged IP",
+      dataIndex: "logged_ip",
+      render: (logged_ip) => <span>{logged_ip}</span>,
     },
 
     {
@@ -53,7 +53,7 @@ const SubscriptionTable = () => {
       title: "Entry Date",
       dataIndex: "created_at",
       render: (created_at) => (
-        <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>
+        <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>        
       ),
       sorter: (record1, record2) => {
         return record1.created_at > record2.created_at;

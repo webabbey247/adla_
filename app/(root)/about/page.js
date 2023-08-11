@@ -37,8 +37,7 @@ const AboutUsPage = () => {
               <div className="col-lg-6 col-md-12 col-sm-12">
                 <span>Who we are</span>
                 <h4>
-                  Experience industry expertise, reliable sourcing, seamless
-                  logistics, and customer-centric approach
+                Benefit from our industry expertise, dependable sourcing, efficient logistics, and customer-focused approach.
                 </h4>
                 <p className="pt-lg-2">
                   We work with carefully selected suppliers that meet our
@@ -70,9 +69,7 @@ const AboutUsPage = () => {
                   <ImQuotesLeft size={80} />
 
                   <p>
-                    With our expertise and extensive network, we provide
-                    tailored solutions to meet your sourcing needs and
-                    facilitate seamless global trade.
+                  We offer customized solutions to fulfill your sourcing requirements and make global trade smoother with our vast experience and network.
                   </p>
                   <div></div>
                 </div>
@@ -127,9 +124,10 @@ const AboutUsPage = () => {
                         <span className={styles.values_icon} />
                         <h4>Our Core Values</h4>
                         <p>
-                          We thrive on being accountable, responsive, honest,
-                          and collaborative while we solve problems for
-                          companies and talents globally.
+                          Our approach involves accountability, responsiveness,
+                          honesty, and collaboration as we provide
+                          problem-solving solutions for companies and talents
+                          worldwide.
                         </p>
                       </div>
 
@@ -139,8 +137,9 @@ const AboutUsPage = () => {
                         <span className={styles.vision_icon} />
                         <h4>Our Vision</h4>
                         <p>
-                          Our vision is to be the single largest producer and
-                          exporter of spices and organic poultry from Africa.
+                          We aspire to become the leading provider and
+                          distributor of spices and organic poultry in Africa,
+                          both in terms of production and exportation.
                         </p>
                       </div>
                     </div>
@@ -169,10 +168,10 @@ const AboutUsPage = () => {
                     logistics, and customer-centric approach.
                   </h4>
                   <p>
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
-                    Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-                    do eiusmod tempor incididunt ut labore et dolore magna.
+                    Choose Adla Global Business Solutions for a reliable
+                    procurement and export partner. Our industry knowledge,
+                    sourcing, logistics, and focus on customers ensure your
+                    success. Count on us for desired results.
                   </p>
                 </div>
 

@@ -1,4 +1,4 @@
-import styles from "@/app/page.module.css"
+import styles from "../app/page.module.css";
 
 const countryList = [
   { name: "Afghanistan", code: "AF" },
@@ -250,21 +250,22 @@ const servicesList = [
   {
     name: "Procurement Excellence",
     value: "Procurement Excellence",
-    summary: "At Adla Global, we excel in procurement by leveraging our in-depth knowledge of the agricultural and food industries.",
+    summary:
+      "At Adla Global, we excel in procurement by leveraging our in-depth knowledge of the agricultural and food industries.",
     summary2: "",
     hoverText: "",
     bgClass: styles.one_of_six,
-    iconClass: styles.one_of_six
+    iconClass: styles.one_of_six,
   },
   {
     name: "Agricultural Expertise",
     value: "Agricultural Expertise",
-    summary: "Our specialization in agricultural products sets us apart. We have established strong relationships with trusted farmers, cooperatives, and suppliers across various regions.",
+    summary:
+      "Our specialization in agricultural products sets us apart. We have established strong relationships with trusted farmers, cooperatives, and suppliers across various regions.",
     summary2: "",
     hoverText: "",
     bgClass: styles.two_of_six,
-    iconClass: styles.two_of_six
-
+    iconClass: styles.two_of_six,
   },
   {
     name: "Food and Non-Food Items",
@@ -273,8 +274,7 @@ const servicesList = [
     summary2: "",
     hoverText: "",
     bgClass: styles.two_of_six,
-    iconClass: styles.three_of_six
-
+    iconClass: styles.three_of_six,
   },
   {
     name: "Seamless Export Solutions",
@@ -283,8 +283,7 @@ const servicesList = [
     summary2: "",
     hoverText: "",
     bgClass: styles.one_of_six,
-    iconClass: styles.four_of_six
-
+    iconClass: styles.four_of_six,
   },
   {
     name: "Collaborative Partnerships",
@@ -293,8 +292,7 @@ const servicesList = [
     summary2: "",
     hoverText: "",
     bgClass: styles.one_of_six,
-    iconClass: styles.five_of_six
-
+    iconClass: styles.five_of_six,
   },
   {
     name: "Commitment to Sustainability",
@@ -303,8 +301,7 @@ const servicesList = [
     summary2: "",
     hoverText: "",
     bgClass: styles.two_of_six,
-    iconClass: styles.six_of_six
-
+    iconClass: styles.six_of_six,
   },
 ];
 

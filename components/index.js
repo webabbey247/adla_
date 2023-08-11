@@ -12,6 +12,9 @@ import DashboardBarChart from "./Charts/Barchart";
 import ContactUsTable from "./Table/ContactUsTable";
 import SubscriptionTable from "./Table/SubscriptionTable";
 import QuotationTable from "./Table/QuotationTable";
+import WebsiteConfig from "./Settings/WebsiteConfig";
+import PasswordConfig from "./Settings/PasswordConfig";
+import ContactInfoCard from "./Cards/ContactInfoCard";
 // import DashboardLineChart from "./Charts/LineChart";
 // import DashboardPieChart from "./Charts/PieChart";
 
@@ -27,9 +30,10 @@ export {
   TestimonialSlider,
   ToastProvider,
   DashboardBarChart,
-  // DashboardLineChart,
-  // DashboardPieChart,
   ContactUsTable,
   SubscriptionTable,
   QuotationTable,
+  WebsiteConfig,
+  PasswordConfig,
+  ContactInfoCard,
 };

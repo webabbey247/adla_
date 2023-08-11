@@ -4,13 +4,14 @@ import styles from "@/styles/forms.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getQuoteValidationSchema } from "@/utils/validation";
 import { useState, useEffect } from "react";
 import { servicesList } from "@/utils/config";
-import { useServicesQuotationMutation } from "@/redux/services/sitemapApiSlice";
+import { useServicesQuotationMutation } from "@/redux/services/sitemap/sitemapApiSlice";
+import { ToastService } from "@/lib/toast.service";
+
 
 const GetQuoteForm = () => {
   const [mobile, setMobile] = useState(null);
@@ -54,17 +55,13 @@ const GetQuoteForm = () => {
   useEffect(
     () => {
       if (isError) {
-        toast.warning(error?.message || error?.data.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.error(error?.data.message || error?.message);
       }
 
       if (isSuccess) {
         setValue("services", []);
         reset();
-        toast.success(isQuotationData?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.success(isQuotationData?.message);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -252,7 +249,7 @@ const GetQuoteForm = () => {
         </div>
 
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="mb-lg-2">
+          <div className="mb-lg-0">
             {isLoading ? (
               <button className={styles.general_input_button} type="button">
                 <span
@@ -262,13 +259,13 @@ const GetQuoteForm = () => {
                 />
               </button>
             ) : (
-              <button type="submit" className={styles.general_input_button}>
+              <button
+                type="submit"
+                className={`${styles.general_input_button} pb-0`}
+              >
                 Submit
               </button>
             )}
-            {/* <button type="submit" className={styles.general_input_button}>
-              Submit
-            </button> */}
           </div>
         </div>
       </form>

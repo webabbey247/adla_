@@ -50,6 +50,7 @@ const Navbar = () => {
                   className={
                     activeSegment === "/" ? "nav-link active" : "nav-link"
                   }
+                  passHref
                   href="/"
                 >
                   Home
@@ -60,6 +61,7 @@ const Navbar = () => {
                   className={
                     activeSegment === "/about" ? "nav-link active" : "nav-link"
                   }
+                  passHref
                   href="/about"
                 >
                   About Adla
@@ -73,6 +75,7 @@ const Navbar = () => {
                       ? "nav-link active"
                       : "nav-link"
                   }
+                  passHref
                   href="/contact"
                 >
                   Contact Us

@@ -4,11 +4,11 @@ import styles from "@/styles/forms.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactValidationSchema } from "@/utils/validation";
 import { useState, useEffect } from "react";
-import { useContactUsMutation } from "@/redux/services/sitemapApiSlice";
+import { useContactUsMutation } from "@/redux/services/sitemap/sitemapApiSlice";
+import { ToastService } from "@/lib/toast.service";
 
 const ContactUsForm = () => {
   const [mobile, setMobile] = useState(null);
@@ -50,17 +50,12 @@ const ContactUsForm = () => {
   useEffect(
     () => {
       if (isError) {
-        toast.warning(error?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.error(error?.data.message || error?.message);
       }
 
       if (isSuccess) {
-        // console.log('success response', responseData?.message);
         reset();
-        toast.success(isContactUs?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.success(isContactUs?.message);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -180,9 +175,6 @@ const ContactUsForm = () => {
                 Submit
               </button>
             )}
-            {/* <button type="submit" className={styles.general_input_button}>
-              Submit
-            </button> */}
           </div>
         </div>
       </form>

@@ -14,7 +14,7 @@ export const adminApiSlice = apiSlice.injectEndpoints({
     }),
     markUnreadComplaints: builder.query({
       query: (tickekID) => `unread/contact-form-inquiries/${tickekID}`,
-      providesTags: ["MarkUnredComplaint"],
+      providesTags: ["UnreadComplaint"],
     }),
     deleteComplaints: builder.mutation({
       query: (id) => ({
@@ -41,6 +41,42 @@ export const adminApiSlice = apiSlice.injectEndpoints({
       providesTags: ["ServiceQuotations"],
       refetchOnMountOrArgChange: true,
     }),
+    getSingleQuotation: builder.query({
+      query: (tickekID) => `services/quotations/${tickekID}`,
+      providesTags: ["SingleQuotation"],
+    }),
+    markUnreadQuotation: builder.query({
+      query: (tickekID) => `unread/services/quotations/${tickekID}`,
+      providesTags: ["UnreadQuotation"],
+    }),
+    deleteQuotation: builder.mutation({
+      query: (id) => ({
+        url: `delete/services/quotations/${id}`,
+        method: "delete",
+      }),
+      invalidatesTags: ["ServiceQuotations"],
+    }),
+    //Website Configurations
+    getWebsiteConfig: builder.query({
+      query: () => "configurations",
+      providesTags: ["websiteConfiguration"],
+      refetchOnMountOrArgChange: true,
+    }),
+    updateWebsiteConfig: builder.mutation({
+      query: (credentials) => ({
+        url: "configurations/post",
+        method: "POST",
+        body: { ...credentials },
+      }),
+      invalidatesTags: ["websiteConfiguration"],
+    }),
+    updateUserPassword: builder.mutation({
+      query: (credentials) => ({
+        url: "configurations/password/post",
+        method: "POST",
+        body: { ...credentials },
+      }),
+    }),
   }),
 });
 
@@ -52,4 +88,10 @@ export const {
   useGetAllMailingListQuery,
   useDeleteMailingListMutation,
   useGetAllQuotationsQuery,
+  useGetSingleQuotationQuery,
+  useLazyMarkUnreadQuotationQuery,
+  useDeleteQuotationMutation,
+  useGetWebsiteConfigQuery,
+  useUpdateWebsiteConfigMutation,
+  useUpdateUserPasswordMutation,
 } = adminApiSlice;

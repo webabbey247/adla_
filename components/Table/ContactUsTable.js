@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from "@/styles/layout.module.css";
 import { FiEye, FiTrash } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-import { format } from "date-fns";
+import { format, formatDistance, subDays} from "date-fns";
 import {
   useDeleteComplaintsMutation,
   useGetAllComplaintsQuery,
@@ -77,7 +77,7 @@ const ContactUsTable = () => {
       title: "Entry Date",
       dataIndex: "created_at",
       render: (created_at) => (
-        <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>
+        <span>{format(new Date(created_at), "yyyy-mm-dd hh:mm:ss")}</span>        
       ),
       sorter: (record1, record2) => {
         return record1.created_at > record2.created_at;
@@ -89,6 +89,7 @@ const ContactUsTable = () => {
       render: (record) => (
         <div className="d-flex">
           <Link
+            passHref
             href={`enquiries/${record.customer_ticket_no}`}
             className={styles.bg_info_light}
           >

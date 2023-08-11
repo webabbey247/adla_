@@ -1,34 +1,46 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { logOut } from "../services/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
+  baseUrl: process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL,
+  // baseUrl: process.env.NEXT_PUBLIC_LOCAL_BASE_URL,
   credentials: "same-origin",
-  // credentials: "include",
   headers: {
     Accept: "application/json",
-    ContentType: "application/json",
   },
-  prepareHeaders: (headers) => {
-    headers.set("Accept", "application/json");
-    headers.set("Content-Type", "application/json");
+  prepareHeaders: (headers, { getState }) => {
+    const token = getState().auth.token;
+    if (token) {
+      headers.set("authorization", `Bearer ${token}`);
+      headers.set("Content-Type", "application/json");
+    }
     return headers;
   },
-  // prepareHeaders: (headers, { getState }) => {
-  //   const token = getState().auth.token;
-  //   if (token) {
-  //     headers.set("authorization", `Bearer ${token}`);
-  //   }
-  //   return headers;
-  // },
 });
 
+const baseQueryWithReauth = async (args, api, extraOptions) => {
+  let result = await baseQuery(args, api, extraOptions);
+  result?.error?.originalStatus === 403 || result?.error?.originalStatus === 401
+    ? api.dispatch(logOut())
+    : result?.error?.originalStatus === 404
+    ? console.log("Enpoint not found")
+    : console.log("Enpoint error", result?.error);
+  return result;
+};
+
 export const apiSlice = createApi({
-  baseQuery: baseQuery,
+  baseQuery: baseQueryWithReauth,
   tagTypes: [
-    "Complaints, getAllMailingList",
-    "Subscribers",
+    "Complaints",
     "SingleComplaint",
-    "MarkUnredComplaint",
+    "UnreadComplaint",
+    "ServiceQuotations",
+    "SingleQuotation",
+    "UnreadQuotation",
+    "websiteConfiguration",
+    "WebsiteConfig",
+    "getAllMailingList",
+    "Subscribers",
   ],
   endpoints: (builder) => ({}),
 });

@@ -1,8 +1,10 @@
 import styles from "@/styles/contactus.module.css";
-import { FiMapPin, FiMail, FiClock } from "react-icons/fi";
+// import { FiMapPin, FiMail, FiClock } from "react-icons/fi";
 import { ContactUsForm } from "@/components/Forms";
-import Link from "next/link";
-import { MainLayout } from "@/components";
+// import Link from "next/link";
+import { MainLayout, ContactInfoCard } from "@/components";
+// import { Fragment } from "react";
+
 
 export const metadata = {
   title: "Contact Us",
@@ -10,6 +12,8 @@ export const metadata = {
 };
 
 const ContactUsPage = () => {
+  // const { isLoading, isFetching, mobileNumber, CompanyAddress, emailAddress } =
+  //   useSelector((state) => state.sitemap);
   return (
     <MainLayout>
       <section className="w-100 h-100 position-relative">
@@ -20,9 +24,7 @@ const ContactUsPage = () => {
                 <div className={styles.contact_us_title}>
                   <h2>Contact Us</h2>
                   <p>
-                    We’d love to learn more about how we can partner with your
-                    organization. Tell us a bit about yourself,and we’ll get in
-                    touch as soon as we can.
+                  We would love to collaborate with your organization. Please share some information about yourself and we will immediately get in touch with you.
                   </p>
                 </div>
               </div>
@@ -43,7 +45,8 @@ const ContactUsPage = () => {
                       <ContactUsForm />
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12 order-first">
-                      <div className="d-flex flex-column w-100">
+                      <ContactInfoCard />
+                      {/* <div className="d-flex flex-column w-100">
                         <div className={styles.contact_text_info_holder}>
                           <h4>Reach Our Expert Team</h4>
                           <p>
@@ -70,7 +73,15 @@ const ContactUsPage = () => {
                           </div>
                           <div className="">
                             <aside>Company Address</aside>
-                            <p>8 Okunade str, Charity bus stop, Oshodi Lagos</p>
+                            {isLoading || isFetching ? (
+                              <span
+                                className="spinner-border text-light spinner-border-sm"
+                                role="status"
+                                aria-hidden="true"
+                              />
+                            ) : (
+                              <p>{CompanyAddress}</p>
+                            )}
                           </div>
                         </div>
 
@@ -84,8 +95,18 @@ const ContactUsPage = () => {
                           </div>
                           <div className="">
                             <aside>General Enquires </aside>
-                            <p>Email: info@addressmail.com</p>
-                            <p>Phone: +234 913 257 4069</p>
+                            {isLoading || isFetching ? (
+                              <span
+                                className="spinner-border text-light spinner-border-sm"
+                                role="status"
+                                aria-hidden="true"
+                              />
+                            ) : (
+                              <Fragment>
+                                <p>Email: {emailAddress}</p>
+                                <p>Phone: {mobileNumber}</p>
+                              </Fragment>
+                            )}
                           </div>
                         </div>
 
@@ -102,7 +123,7 @@ const ContactUsPage = () => {
                             <p>Mon-Satday: 09.00 to 07.00 (Sunday: Closed)</p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

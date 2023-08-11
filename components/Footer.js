@@ -2,52 +2,72 @@ import styles from "@/styles/layout.module.css";
 import Image from "next/image";
 import { SubscribersForm } from "./Forms";
 import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const {
+    isLoading,
+    isFetching,
+    mobileNumber,
+    emailAddress,
+    instagramHandle,
+    twitterHandle,
+    linkedinHandle,
+    facebookHandle,
+  } = useSelector((state) => state.sitemap);
+
   return (
     <section className={`${styles.footer_section} pt-lg-5 position-relative`}>
       <div className={`container-fluid ${styles.nav_padding}`}>
         <div className="row pb-lg-5">
           <div className="col-lg-4 col-md-12 col-sm-12">
             <div className="">
-              {/* <div className="brand-logo mb-5"></div> */}
               <p className="font-size-5 mb-0 text-bali-gray pr-sm-10 pr-md-0">
-                Adla Global Business Solutions is your trusted procurement and
-                export partner with experience in industry expertise, reliable
-                sourcing, seamless logistics, and customer-centric approach.
+                Adla Global Business Solutions is the procurement and export
+                partner you can trust. We have extensive industry expertise,
+                reliable sourcing, seamless logistics, and a customer-centric
+                approach to ensure your business succeeds.
               </p>
-              <ul className={`${styles.social} py-lg-4`}>
-                <li>
-                  <a href="/" target="__blank">
-                    <FiFacebook />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="__blank">
-                    <FiTwitter />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="__blank">
-                    <FiInstagram />
-                  </a>
-                </li>
+              {isLoading || isFetching ? (
+                <div className="d-flex justify-content-center align-items-center align-content-center">
+                  <span
+                    className="spinner-border text-light spinner-border-lg"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                </div>
+              ) : (
+                <ul className={`${styles.social} py-lg-4`}>
+                  <li>
+                    <a href={instagramHandle} target="__blank">
+                      <FiFacebook />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={twitterHandle} target="__blank">
+                      <FiTwitter />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={linkedinHandle} target="__blank">
+                      <FiInstagram />
+                    </a>
+                  </li>
 
-                <li>
-                  <a href="/" target="__blank">
-                    <FiLinkedin />
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <a href={facebookHandle} target="__blank">
+                      <FiLinkedin />
+                    </a>
+                  </li>
+                </ul>
+              )}
             </div>
           </div>
           <div className="col-lg-8 col-md-12 col-sm-12">
             <div className="row">
               <div className="col-lg-2 col-md-2 col-sm-12">
                 <div className="mb-lg-0 position-relative">
-                  <h4 className="mb-lg-4">
-                    Company
-                  </h4>
+                  <h4 className="mb-lg-4">Company</h4>
                   <ul className="list-unstyled">
                     <li className="mb-lg-3">
                       <a href="/#">About Us</a>
@@ -63,32 +83,41 @@ const Footer = () => {
                     <li className="mb-lg-3">
                       <a href="/#">Privacy Policy</a>
                     </li>
-
                   </ul>
                 </div>
               </div>
 
               <div className="col-lg-4 col-md-4 col-sm-12">
                 <div className="mb-lg-0 position-relative">
-                <h4 className="mb-lg-4">Contacts</h4>
+                  <h4 className="mb-lg-4">Contacts</h4>
                   <p className="mb-lg-4">
                     Feel free to get in touch with us via phone or send us a
                     message.
                   </p>
-                  <ul className="list-unstyled">
-                    <li className="mb-lg-3">
-                      <a href="/">+234 913 257 4069</a>
-                    </li>
-                    <li className="mb-lg-3">
-                      <a href="/">info@addressmail.com</a>
-                    </li>
-                  </ul>
+                  {isLoading || isFetching ? (
+                    <div className="d-flex justify-content-center align-items-center align-content-center">
+                      <span
+                        className="spinner-border text-light spinner-border-lg"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  ) : (
+                    <ul className="list-unstyled">
+                      <li className="mb-lg-3">
+                        <a href="/">{mobileNumber}</a>
+                      </li>
+                      <li className="mb-lg-3">
+                        <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
+                      </li>
+                    </ul>
+                  )}
                 </div>
               </div>
 
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className={styles.footer_email_subscription}>
-                <h4 className="mb-lg-4">Subscribe to Our Newsletter</h4>
+                  <h4 className="mb-lg-4">Subscribe to Our Newsletter</h4>
                   <p className="mb-lg-4">
                     Time is the most precious thing you have when bootstrapping.
                   </p>

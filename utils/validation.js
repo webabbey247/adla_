@@ -42,64 +42,49 @@ export const getQuoteValidationSchema = yup.object().shape({
     .string()
     .trim()
     .required("Kindly provide your company name!"),
-    customerNotes: yup
+  customerNotes: yup
     .string()
     .trim()
     .required("Kindly tell us more about the services you need!"),
-  // companyAddress: yup.string().notRequired,
-  // companyCountry: yup.object({
-  //   value: yup.string().required("Please select a gender"),
-  //   label: yup.string().required("Please select a gender"),
-  // }),
+});
 
-  // companyCountry: yup.object().when("companyAddress", {
-  //   is: (companyAddress) => companyAddress !== "",
-  //   then: () =>
-  //     yup.object({
-  //       label: yup.string().required("Kindly select location of your company"),
-  //       value: yup.string().required("Kindly select location of your company"),
-  //     }),
-  //   otherwise: () => yup.object({
-  //     label: yup.string().notRequired(),
-  //     value: yup.string().notRequired(),
-  //   }),
-  // }),
-  // companyCountry: yup.object({
-  //   value: yup.string().when("companyAddress", {
-  //     is: (companyAddress) => companyAddress !== "",
-  //     then: () =>
-  //     yup.object({
-  //       label: yup.string().required("Kindly select location of your company"),
-  //       value: yup.string().required("Kindly select location of your company")
-  //     }),
-  //     otherwise: () =>
-  //     yup.object()
-  //     // then: (schema) =>
-  //     //   schema.required("Kindly select location of your company"),
-  //     // otherwise: (schema) => schema.notRequired(),
-  //   }),
-  // }),
-  // companyCountry: yup
-  //   .string()
-  //   .ensure()
-  //   .when("companyAddress", {
-  //     is: "",
-  //     then: yup.string().notRequired(),
-  //     otherwise: yup
-  //       .string()
-  //       .required('"Kindly select location of your company!"'),
-  //   }),
-  // surname: yup.string().ensure().when('first_name', {
-  //   is: '',
-  //   then: yup.string().required(),
-  //   otherwise: yup.string().required()
-  // })
-  // companyAddress: yup.string().ensure().when("companyCountry", {
-  //   is: "",
-  //   then: yup.string().required("Kindly provide a valid mobile number!"),
-  // }),
-  // companyCountry: yup.string().ensure().when("companyAddress", {
-  //   is: "",
-  //   then: yup.string().notRequired("Kindly provide a valid mobile number!"),
-  // }),
+export const webConfigValidationSchema = yup.object().shape({
+  companyAddress: yup
+    .string()
+    .trim()
+    .required("Kindly provide your company address!"),
+  emailAddress: yup
+    .string()
+    .trim()
+    .required("Kindly provide a valid email address!"),
+  mobileNumber: yup
+    .string()
+    .trim()
+    .required("Kindly provide a valid mobile number!"),
+});
+
+export const loginUserValidationSchema = yup.object().shape({
+  emailAddress: yup
+    .string()
+    .trim()
+    .required("Kindly provide a valid email address!"),
+  password: yup
+    .string()
+    .trim()
+    .required("Kindly provide your preferred password!"),
+});
+
+export const changePasswordValidationSchema = yup.object().shape({
+  currentPassword: yup
+    .string()
+    .trim()
+    .required("Kindly provide your  valid current password!"),
+  newPassword: yup
+    .string()
+    .trim()
+    .required("Kindly provide your preferred password!"),
+  passwordConfirmation: yup
+    .string()
+    .required("Kindly provide your preferred password")
+    .oneOf([yup.ref("newPassword")], "Passwords does not match"),
 });

@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import { HeroBanner, TestimonialSlider, MainLayout } from "@/components";
 import { servicesList } from "@/utils/config";
 

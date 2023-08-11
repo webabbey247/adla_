@@ -24,14 +24,7 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       <html lang="en">
         <body className={DMSans.className} suppressHydrationWarning>
-          <ToastProvider>
-            {children}
-            {/* <main className="overflow-hidden">
-              <Navbar />
-              {children}
-              <Footer />
-            </main> */}
-          </ToastProvider>
+          <ToastProvider>{children}</ToastProvider>
         </body>
       </html>
     </Provider>

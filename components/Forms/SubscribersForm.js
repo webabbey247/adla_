@@ -4,10 +4,11 @@ import styles from "@/styles/forms.module.css";
 import { emailSubscriptionSchema } from "@/utils/validation";
 import { FiMail } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect } from "react";
-import { useEmailSubscriptionMutation } from "@/redux/services/sitemapApiSlice";
+import { useEmailSubscriptionMutation } from "@/redux/services/sitemap/sitemapApiSlice";
+import { ToastService } from "@/lib/toast.service";
 
 const SubscribersForm = () => {
   const [
@@ -43,17 +44,12 @@ const SubscribersForm = () => {
   useEffect(
     () => {
       if (isError) {
-        toast.warning(error?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.error(error?.data.message || error?.message);
       }
 
       if (isSuccess) {
-        // console.log('success response', responseData?.message);
         reset();
-        toast.success(isSubcription?.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        ToastService.success(isSubcription?.message);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,7 +85,6 @@ const SubscribersForm = () => {
           ) : (
             <button className={styles.subscribe_input_button}>Subscribe</button>
           )}
-          {/* <button className={styles.subscribe_input_button}>Subscribe</button> */}
         </div>
       </form>
       {errors.emailAddress && (

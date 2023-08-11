@@ -116,6 +116,27 @@
     cursor: pointer;
 }
 
+.input_group_prepend {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.input_group_prepend .input_group_text {
+    border-radius: 0 !important;
+    height: 55px !important;
+    padding: .375rem 1rem !important;
+  }
+
+
+  .form_control_label {
+    display: inline-block;
+    margin: 0.5rem 0 !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    font-weight: 700 !important;
+    color: var(--adlas-secondary-color) !important;
+  }
+
 
 
 
@@ -128,7 +149,7 @@
     .general_form_container {
         margin-top: 2rem;
     }
-    
+
     .general_form_container .general_input,
     .general_form_container .general_text_area {
         margin: 0.5rem 0 !important;
