@@ -324,6 +324,29 @@
 }
 
 
+.services_accordion_section {
+    padding: 6rem 3rem;
+    background: var(--adlas-secondary-color) !important;
+    position: relative;
+}
+
+.services_accordion_section .services_accordion_ltr {
+    max-width: 700px;
+}
+
+.services_accordion_section .services_accordion_ltr_text h4 {
+    margin: 0.5rem 0;
+    max-width: 550px;
+    font-weight: 700 !important;
+    color: var(--adlas-color-white) !important;
+}
+
+.services_accordion_section .services_accordion_ltr_text p {
+    padding-bottom: 3rem;
+    color: var(--adlas-color-white) !important;
+}
+
+
 .home_section_testimonials {
     padding: 6rem 0;
     /* background: var(--adlas-secondary-color-02); */
@@ -376,9 +399,9 @@
     .home_services_section {
         padding: 4rem 0 0;
     }
-    
-    
-    
+
+
+
     .home_services_section .home_services_grid_container .active_liner::before {
         left: 1.5%;
     }
@@ -417,7 +440,7 @@
         max-width: 100%;
         margin-left: 0 !important;
     }
-    
+
 }
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {}

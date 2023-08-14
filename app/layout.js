@@ -15,7 +15,7 @@ const DMSans = DM_Sans({
 });
 
 const DynamicBootstrap = dynamic(
-  () => require("bootstrap/dist/js/bootstrap.min.js"),
+  () => require('bootstrap/dist/js/bootstrap.min.js'),
   { ssr: false }
 );
 

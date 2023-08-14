@@ -88,15 +88,6 @@ const AboutUsPage = () => {
                     We specialize in sourcing the finest agro commodities, base
                     metal and minor metals.
                   </h4>
-                  {/* <p>
-                  Our team consists of seasoned experts who are well-versed in
-                  agricultural exports and have ample understanding of how the
-                  sector works. Our team also has a vast network of influential
-                  and renowned industry partners. We thoroughly make sure that
-                  our deliverables meet up with our standard of quality control
-                  to ensure our customers receive the best products at the most
-                  affordable prices.
-                </p> */}
                 </div>
 
                 <div className={styles.vision_mission_container}>

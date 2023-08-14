@@ -15,6 +15,7 @@ import QuotationTable from "./Table/QuotationTable";
 import WebsiteConfig from "./Settings/WebsiteConfig";
 import PasswordConfig from "./Settings/PasswordConfig";
 import ContactInfoCard from "./Cards/ContactInfoCard";
+import ServicesAccordionCard from "./Cards/ServicesAccordion";
 // import DashboardLineChart from "./Charts/LineChart";
 // import DashboardPieChart from "./Charts/PieChart";
 
@@ -36,4 +37,5 @@ export {
   WebsiteConfig,
   PasswordConfig,
   ContactInfoCard,
+  ServicesAccordionCard,
 };

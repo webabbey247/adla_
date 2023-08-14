@@ -31,7 +31,7 @@ const Footer = () => {
               {isLoading || isFetching ? (
                 <div className="d-flex justify-content-center align-items-center align-content-center">
                   <span
-                    className="spinner-border text-light spinner-border-lg"
+                    className="spinner-border text-light spinner-border-sm"
                     role="status"
                     aria-hidden="true"
                   />
@@ -97,7 +97,7 @@ const Footer = () => {
                   {isLoading || isFetching ? (
                     <div className="d-flex justify-content-center align-items-center align-content-center">
                       <span
-                        className="spinner-border text-light spinner-border-lg"
+                        className="spinner-border text-light spinner-border-sm"
                         role="status"
                         aria-hidden="true"
                       />

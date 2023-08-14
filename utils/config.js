@@ -252,7 +252,8 @@ const servicesList = [
     value: "Procurement Excellence",
     summary:
       "At Adla Global, we excel in procurement by leveraging our in-depth knowledge of the agricultural and food industries.",
-    summary2: "",
+    summary2:
+      "At Adla Global, we excel in procurement by leveraging our in-depth knowledge of the agricultural and food industries. Our experienced team meticulously identifies and selects high-quality products that meet your specific requirements. We understand the importance of timely sourcing, competitive pricing, and consistent supply, ensuring you have a reliable source of goods to fuel your business growth",
     hoverText: "",
     bgClass: styles.one_of_six,
     iconClass: styles.one_of_six,
@@ -262,7 +263,8 @@ const servicesList = [
     value: "Agricultural Expertise",
     summary:
       "Our specialization in agricultural products sets us apart. We have established strong relationships with trusted farmers, cooperatives, and suppliers across various regions.",
-    summary2: "",
+    summary2:
+      "Our specialization in agricultural products sets us apart. We have established strong relationships with trusted farmers, cooperatives, and suppliers across various regions. From grains, pulses, and oilseeds to fruits, vegetables, and spices, we source the finest agricultural commodities to cater to the diverse needs of our clients. With our expertise in the agricultural sector, you can confidently rely on us for your procurement needs.",
     hoverText: "",
     bgClass: styles.two_of_six,
     iconClass: styles.two_of_six,
@@ -271,7 +273,8 @@ const servicesList = [
     name: "Food and Non-Food Items",
     value: "Food and Non-Food Items",
     summary: "",
-    summary2: "",
+    summary2:
+      "Adla Global understands the demands of both the food and non-food industries. Whether you require raw materials for food manufacturing or non-food items for distribution, we have you covered. Our extensive product portfolio encompasses a wide range of goods, including ingredients, packaging materials, household products, personal care items, and more. Our commitment to quality ensures that you receive products that meet the highest standards.",
     hoverText: "",
     bgClass: styles.two_of_six,
     iconClass: styles.three_of_six,
@@ -280,7 +283,8 @@ const servicesList = [
     name: "Seamless Export Solutions",
     value: "Seamless Export Solutions",
     summary: "",
-    summary2: "",
+    summary2:
+      "We specialize in facilitating seamless exports to Europe and North America. Our dedicated export team ensures compliance with international regulations and manages the logistics process efficiently. We handle documentation, customs clearance, and transportation to guarantee a smooth and hassle-free experience. Trust us to deliver your products to your doorstep, enabling you to focus on your core business activities.",
     hoverText: "",
     bgClass: styles.one_of_six,
     iconClass: styles.four_of_six,
@@ -289,7 +293,8 @@ const servicesList = [
     name: "Collaborative Partnerships",
     value: "Collaborative Partnerships",
     summary: "",
-    summary2: "",
+    summary2:
+      "At Adla Global, we value long-term partnerships with our clients. We work closely with you to understand your specific procurement needs and develop customized solutions. Our dedicated account managers provide personalized support, ensuring that your requirements are met effectively and efficiently. We are committed to building enduring relationships based on trust, transparency, and mutual success.",
     hoverText: "",
     bgClass: styles.one_of_six,
     iconClass: styles.five_of_six,
@@ -298,7 +303,8 @@ const servicesList = [
     name: "Commitment to Sustainability",
     value: "Commitment to Sustainability",
     summary: "",
-    summary2: "",
+    summary2:
+      "Adla Global is passionate about sustainability and ethical sourcing. We actively collaborate with suppliers who adhere to sustainable practices and prioritize environmental stewardship. By partnering with us, you can be confident that your procurement aligns with your sustainability goals and contributes to a greener future.",
     hoverText: "",
     bgClass: styles.two_of_six,
     iconClass: styles.six_of_six,
