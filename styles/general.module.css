@@ -1,0 +1,10 @@
+
+.blank_banner_section {
+    background-color: var(--adlas-secondary-color);
+    padding: 2.5rem 0;
+}
+
+
+.general_section {
+    padding: 6rem 0;
+}

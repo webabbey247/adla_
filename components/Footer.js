@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SubscribersForm } from "./Forms";
 import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Footer = () => {
   const {
@@ -70,19 +71,20 @@ const Footer = () => {
                   <h4 className="mb-lg-4">Company</h4>
                   <ul className="list-unstyled">
                     <li className="mb-lg-3">
-                      <a href="/#">About Us</a>
-                    </li>
-                    <li className="mb-lg-3">
-                      <a href="/#">Services</a>
+                      <Link href="/about">About Us</Link>
                     </li>
 
                     <li className="mb-lg-3">
-                      <a href="/#">Contact Us</a>
+                      <Link href="/contact">Contact Us</Link>
                     </li>
 
                     <li className="mb-lg-3">
-                      <a href="/#">Privacy Policy</a>
+                      <Link href="/get-quote">Get Quote</Link>
                     </li>
+
+                    {/* <li className="mb-lg-3">
+                      <Link href="/privacy-policy">Privacy Policy</Link>
+                    </li> */}
                   </ul>
                 </div>
               </div>

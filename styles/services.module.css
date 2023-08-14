@@ -85,5 +85,20 @@
     background: transparent;
     color: var(--adlas-color-white) !important;
     /* background: var(--adlas-color-white); */
-    
+
+}
+
+
+.hh {
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/vision_mission_img.jpg');
+    height: 550px;
+    position: relative;
+    z-index: 15;
+    border-radius: var(--adlas-border-radius);
 }
