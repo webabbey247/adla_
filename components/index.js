@@ -14,20 +14,20 @@ import SubscriptionTable from "./Table/SubscriptionTable";
 import QuotationTable from "./Table/QuotationTable";
 import WebsiteConfig from "./Settings/WebsiteConfig";
 import PasswordConfig from "./Settings/PasswordConfig";
-import ContactInfoCard from "./Cards/ContactInfoCard";
+import ContactUsFormCard from "./Cards/ContactUsFormCard";
 import ServicesCard from "./Cards/ServicesCard";
 import FaqsCard from "./Cards/FaqsCard";
 import TestimonialsCard from "./Cards/TestimonialsCard";
 import WhoWeAreCard from "./Cards/WhoWeAreCard";
-// import DashboardLineChart from "./Charts/LineChart";
-// import DashboardPieChart from "./Charts/PieChart";
+import CustomBannerCard from "./Cards/CustomBannerCard";
+import MissionVisionCard from "./Cards/MissionVisionCard";
+import ContactMapCard from "./Cards/ContactMapCard";
 
 export {
   MainLayout,
   ProtectedLayout,
   Sidebar,
   Loading,
-  // HeroBanner,
   HeroBannerSlider,
   HomeAboutUsCard,
   HomeMissionVisionCard,
@@ -39,9 +39,12 @@ export {
   QuotationTable,
   WebsiteConfig,
   PasswordConfig,
-  ContactInfoCard,
+  ContactUsFormCard,
   ServicesCard,
   FaqsCard,
   TestimonialsCard,
   WhoWeAreCard,
+  CustomBannerCard,
+  MissionVisionCard,
+  ContactMapCard,
 };

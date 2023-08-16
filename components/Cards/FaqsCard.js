@@ -10,16 +10,12 @@ const FaqsCard = () => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
                   <div className={styles.faqs_accordion_ltr_text}>
-                    <span className={styles.faqs_header_badge}>
-                      Frequently Asked Questions
-                    </span>
-                    <h4>Got questions? find answers here</h4>
-                    {/* <p>
-                Choose Adla Global Business Solutions for a reliable
-                procurement and export partner. Our industry knowledge,
-                sourcing, logistics, and focus on customers ensure your
-                success. Count on us for desired results.
-              </p> */}
+                    <h4>Got questions? Find answers here.</h4>
+                    <p>
+                      If you are looking for quick answers to the most important
+                      questions about your Adla Global Business, our FAQs cover the most
+                      common questions.
+                    </p>
                   </div>
 
                   <div className={styles.faqs_accordion_ltr_container}>

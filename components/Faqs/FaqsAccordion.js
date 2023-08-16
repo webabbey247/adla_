@@ -3,9 +3,9 @@
 import styles from "@/styles/faqs.module.css";
 import { Fragment, useState } from "react";
 import { servicesList } from "@/utils/config";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp, FiPlus, FiMinus } from "react-icons/fi";
 const FaqsAccordion = () => {
-  const [openAccordion, setOpenAccordion] = useState(null);
+  const [openAccordion, setOpenAccordion] = useState(0);
 
   const handleAccordionClick = (index) => {
     console.log(openAccordion, index);
@@ -38,9 +38,9 @@ const FaqsAccordion = () => {
                   <p className={styles.faqs_accordion_name}>{_data.name}</p>
                 </Fragment>
                 {openAccordion === index ? (
-                  <FiChevronUp fontSize={22} color="var( --adlas-nav-color)" />
+                  <FiMinus fontSize={22} color="var( --adlas-nav-color)" />
                 ) : (
-                  <FiChevronDown
+                  <FiPlus
                     fontSize={22}
                     color="var( --adlas-nav-color)"
                   />

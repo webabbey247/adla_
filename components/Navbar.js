@@ -84,7 +84,7 @@ const Navbar = () => {
                   passHref
                   href="/faqs"
                 >
-                  Faqs
+                  FAQs
                 </Link>
               </li>
 

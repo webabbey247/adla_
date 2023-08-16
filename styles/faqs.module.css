@@ -1,35 +1,8 @@
-.faqs_banner {
-    background-image: url('/static/vision_mission_img.jpg');
-    background-position: 80%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding: 6rem 0;
-
-    /* mix-blend-mode: luminosity !important; */
-}
-
-.faqs_banner h2 {
-    font-size: 60px;
-    line-height: 1.1em;
-    text-align: left;
-    font-weight: 800 !important;
-}
-
-.faqs_banner p {
-    margin: 1rem 0 !important;
-    text-align: left;
-    font-weight: 400 !important;
-}
 
 
 .faqs_accordion_section {
     padding: 4rem 3rem 6rem;
+    /* background: rgba(232, 197, 69, 0.11); */
     background-color: var(--adlas-color-white);
     position: relative;
 }
@@ -46,30 +19,20 @@
     flex-direction: column;
 }
 
-.faqs_accordion_section .faqs_accordion_ltr_text span {
-    display: inline-block;
-    font-size: 9px;
-    text-transform: uppercase;
-    color: #3b00ff;
-    background-color: #eaeaff;
-    width: max-content;
-    padding: 10px 15px;
-    border-radius: 100px;
-    margin-bottom: 1rem !important;
-    text-align: center;
-}
 
 .faqs_accordion_section .faqs_accordion_ltr_text h4 {
-    font-weight: 700 !important;
     text-align: center !important;
+    font-size: 38px;
+line-height: 48px;
+font-weight: 700 !important;
+/* max-width: 500px; */
     /* color: var(--adlas-color-white) !important; */
 }
 
 .faqs_accordion_section .faqs_accordion_ltr_text p {
     padding-bottom: 3rem;
     text-align: center !important;
-
-    /* color: var(--adlas-color-white) !important; */
+    max-width: 600px;
 }
 
 .faqs_accordion_section .faqs_accordion_ltr_container {
@@ -95,16 +58,16 @@
     flex-direction: column;
     width: 100%;
     /* box-shadow: 0 0 32px rgba(0, 0, 0, 0.1); */
-    border-top: 1px solid var(--adlas-nav-color);
-    background: transparent;
+    /* border-top: 1px solid var(--adlas-nav-color); */
+    /* background: transparent; */
+    background-color: rgba(0,0,0,.03);
     /* border-radius: var(--adlas-border-radius); */
     /* background: rgba(232, 197, 69, 0.11); */
 }
 
-.faqs_accordion_item:last-child {
+/* .faqs_accordion_item:last-child {
     border-bottom: 1px solid var(--adlas-nav-color);
-
-}
+} */
 
 .faqs_accordion_header {
     display: flex;

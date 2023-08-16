@@ -1,5 +1,9 @@
-import styles from "@/styles/faqs.module.css";
-import { MainLayout, FaqsCard } from "@/components";
+import {
+  MainLayout,
+  FaqsCard,
+  CustomBannerCard,
+  TestimonialsCard,
+} from "@/components";
 
 export const metadata = {
   title: "Frequently Asked Questions",
@@ -10,21 +14,14 @@ const FaqsPage = () => {
   return (
     <MainLayout>
       <section className="w-100 h-100 position-relative">
-        <div className={styles.faqs_banner}>
-          <div className="container-fluid nav_padding">
-            <div className="row ">
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <h2>Frequently Asked Questions</h2>
-                <p>
-                  We would love to collaborate with your organization. Please
-                  share some information about yourself and we will immediately
-                  get in touch with you.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CustomBannerCard
+          title="Frequently Asked Questions"
+          description="We would love to collaborate with your organization. Please
+          share some information about yourself and we will immediately
+          get in touch with you."
+        />
         <FaqsCard />
+        <TestimonialsCard />
       </section>
     </MainLayout>
   );

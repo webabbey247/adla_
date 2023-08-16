@@ -38,3 +38,32 @@
 .testimonials_child_container .testimonials_child p {
     text-align: center;
 }
+
+/* Custom Banner CSS */
+.general_custom_banner {
+    background-image: url('/static/vision_mission_img.jpg');
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--adlas-color-white);
+    padding-left: 80px;
+    padding-right: 80px;
+    padding: 8rem 0;
+    /* mix-blend-mode: luminosity !important; */
+}
+
+.general_custom_banner h2 {
+    font-size: 60px;
+    line-height: 1.1em;
+    text-align: left;
+    font-weight: 800 !important;
+}
+
+.general_custom_banner p {
+    margin: 1rem 0 !important;
+    text-align: left;
+    font-weight: 400 !important;
+}

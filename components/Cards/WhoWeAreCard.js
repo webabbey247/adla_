@@ -1,6 +1,4 @@
 import styles from "@/styles/about.module.css";
-import { ImQuotesLeft } from "react-icons/im";
-
 const WhoWeAreCard = () => {
   return (
     <div className={styles.about_us}>
@@ -9,8 +7,9 @@ const WhoWeAreCard = () => {
           <div className="col-lg-6 col-md-12 col-sm-12">
             <span className={styles.about_us_badge}>Who we are</span>
             <h4>
-              Benefit from our industry expertise, dependable sourcing,
-              efficient logistics, and customer-focused approach.
+            Benefit from our industry expertise,
+              dependable
+              sourcing, efficient logistics, and  <small>customer-focused approach.</small>
             </h4>
             <p className="pt-lg-2">
               We work with carefully selected suppliers that meet our quality
@@ -35,19 +34,6 @@ const WhoWeAreCard = () => {
           <div className="col-lg-6 col-md-12 col-sm-12">
             <div className={styles.about_us_rtl_img_01} />
           </div>
-
-          {/* <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className={styles.about_us_rtl_quote_card}>
-              <ImQuotesLeft size={80} />
-
-              <p>
-                We offer customized solutions to fulfill your sourcing
-                requirements and make global trade smoother with our vast
-                experience and network.
-              </p>
-              <div></div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
