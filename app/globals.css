@@ -16,6 +16,7 @@
   --adlas-nav-active-color: #fba543;
   --adlas-primary-color: #fba543;
   --adlas-secondary-color: #0e3844;
+  --adlas-green-color: #008751;
   --adlas-secondary-color-01: #E8C545;
   --adlas-secondary-color-02: #e8c5451c;
   --adlas-color-white: #ffffff;
@@ -23,7 +24,6 @@
   --adlas-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, .09);
   --adlas-error-color: #cd494e;
 }
-
 
 
 * {
@@ -131,14 +131,18 @@ ul {
 
 /***** Header *****/
 
-.kk {
+.nav-link.active{
+  color: var(--adlas-nav-active-color) !important;
+}
+
+/* .kk {
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
-}
+} */
 
-.navbar.bg-body-transparent {
+/* .navbar.bg-body-transparent {
   background-color: transparent !important;
   position: fixed;
   top: 0;
@@ -171,13 +175,15 @@ ul {
   z-index: 1030;
   transition: all 0.3s ease-out;
   transform: translateY(0%);
-}
+} */
 
-.navbar-expand-lg .navbar-nav .nav-item {
-  padding-left: 12px !important;
-  padding-right: 12px !important;
+
+
+/* .navbar-expand-lg .navbar-nav .nav-item {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
   color: var(--adlas-color-white) !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   font-size: var(--adlas-nav-font-size) !important;
   line-height: var(--adlas-nav-line-height) !important;
 }
@@ -194,7 +200,7 @@ ul {
 .navbar.navbar-expand-lg .nav-link.active, .navbar.navbar-expand-lg .nav-link.show,
 .navbar.navbar-expand-lg.bg-body-theme .nav-link.active, .navbar.navbar-expand-lg.bg-body-theme .nav-link.show {
   color: var(--adlas-nav-active-color) !important;
-}
+} */
 
 /***** End Header *****/
 

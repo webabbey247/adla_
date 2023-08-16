@@ -19,40 +19,24 @@ const ProtectedLayout = ({ children }) => {
   // const [logOut, { data: isLogOutData, isLoading, isFetching }] =
   //   useLazyLogOutQuery();
 
-  // const handleLogout = async () => {
-  //   try {
-  //     const logOutRes = await logOut();
-  //     return logOutRes;
-  //   } catch (err) {
-  //     console.log("hello error", err);
-  //   }
-  // };
+  const handleLogout = async () => {
+    dispatch(logOut());
+    // try {
+    //   const logOutRes = await logOut();
+    //   return logOutRes;
+    // } catch (err) {
+    //   console.log("hello error", err);
+    // }
+  };
 
   useEffect(() => {
     !token || token === null || token == ""
-      ? setTimeout(() => router.push(UN_AUTHENTICATED), 100)
+      ? (setTimeout(() => router.push(UN_AUTHENTICATED), 100),
+        ToastService.error("Kindly login to continue!"))
       : null;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
-
-  // useEffect(
-  //   () => {
-  //     !token || token === null || token == ""
-  //       ? setTimeout(() => router.push(UN_AUTHENTICATED), 100)
-  //       : null;
-
-  //     if (isError) {
-  //       ToastService.error(error?.data.message || error?.message);
-  //     }
-  //     if (isSuccess) {
-  //       dispatch(logOut);
-  //       ToastService.success(isLogOutData?.message);
-  //     }
-  //   },
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   [token, isLogOutData, isError, isSuccess, error]
-  // );
 
   return (
     <main className="overflow-hidden">
@@ -95,9 +79,12 @@ const ProtectedLayout = ({ children }) => {
                 </div>
 
                 <div className={styles.user_logged_info}>
-                  <span className="cursor-pointer">
+                  <span
+                    className="pe-auto"
+                    onClick={() => handleLogout()}
+                  >
                     <FiPower
-                      className="cursor-pointer"
+                      className="pe-auto"
                       color="var(--adlas-color-white)"
                       fontSize="22px"
                     />

@@ -8,22 +8,22 @@
 .accordion_item {
     display: flex;
     flex-direction: column;
-    width: 750px;
+    width: 550px;
     /* box-shadow: 0 0 32px rgba(0, 0, 0, 0.1); */
-    border-top: 1px solid var(--adlas-color-white);
+    border-top: 1px solid var(--adlas-nav-color);
     background: transparent;
     /* border-radius: var(--adlas-border-radius); */
     /* background: rgba(232, 197, 69, 0.11); */
 }
 
 .accordion_item:last-child {
-    border-bottom: 1px solid var(--adlas-color-white);
+    border-bottom: 1px solid var(--adlas-nav-color);
 
 }
 
 .accordion_header {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     cursor: pointer;
     padding: 1rem 2rem;
@@ -43,8 +43,8 @@
 
 .accordion_header .accordion_header_container .accordion_number {
     font-size: 40px;
-    color: #ced4da;
-    font-weight: 500 !important;
+    color: var(--adlas-nav-color);
+    font-weight: 600 !important;
     margin-right: 20px;
 }
 
@@ -52,7 +52,7 @@
     flex: 1;
     font-size: 40px;
     font-weight: 500 !important;
-    color: var(--adlas-color-white) !important;
+    color: var(--adlas-nav-color) !important;
 }
 
 .accordion_details {
@@ -67,7 +67,7 @@
 }
 
 .open {
-    border-color: var(--adlas-primary-color);
+    border-color: var(--adlas-nav-color);
 }
 
 .open .accordion_header {
@@ -77,28 +77,13 @@
 
 .open .accordion_header_container .accordion_name .accordion_header,
 .open .accordion_header_container .accordion_name .accordion_number {
-    color: var(--adlas-color-white);
+    color: var( --adlas-nav-color);
 }
 
 .open .accordion_details {
     height: auto;
     background: transparent;
-    color: var(--adlas-color-white) !important;
+    color: var( --adlas-nav-color) !important;
     /* background: var(--adlas-color-white); */
 
-}
-
-
-.hh {
-    background-position: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('/static/vision_mission_img.jpg');
-    height: 550px;
-    position: relative;
-    z-index: 15;
-    border-radius: var(--adlas-border-radius);
 }

@@ -20,7 +20,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-
+import SeoCard from "@/components/Cards/SeoCard";
 
 const EnquiriesSinglePage = ({ params }) => {
   const router = useRouter();
@@ -88,6 +88,9 @@ const EnquiriesSinglePage = ({ params }) => {
             </div>
           ) : (
             <Fragment>
+              {/* <SeoCard title={`Customer Ticket_ID: ${isData?.data.customer_ticket_no}) }`} description="" /> */}
+              <title>Customer Ticket_ID: {isData?.data.customer_ticket_no} | Adla Global Business</title>
+              <meta name="description" content="" />
               <div className={`card ${styles.card} mb-3`}>
                 <div
                   className={`${styles.page_header} d-flex flex-column flex-wrap`}
@@ -204,7 +207,7 @@ const EnquiriesSinglePage = ({ params }) => {
 
                     <div className="row mt-lg-3">
                       <div className="col-lg-12 col-md-12 col-sm-12">
-                        <div className={styles.content_display_child}>
+                      <div className={`${styles.content_display_child} pb-4`}>
                           <span>Action</span>
                           <div className="d-flex mt-2">
                             {isDeleteLoading ? (

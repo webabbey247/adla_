@@ -14,10 +14,13 @@ const ContactInfoCard = () => {
       <div className={styles.contact_text_info_holder}>
         <h4>Reach Our Expert Team</h4>
         <p>
-
-        For urgent assistance, utilize the contact information provided or complete the <Link className={styles.get_quote_link} href="/get-quote">
+          For urgent assistance, utilize the contact information provided or
+          complete the{" "}
+          <Link className={styles.get_quote_link} href="/get-quote">
             get quote
-          </Link> form. Any other inquiries can be directed through the provided message form.
+          </Link>{" "}
+          form. Any other inquiries can be directed through the provided message
+          form.
         </p>
       </div>
 

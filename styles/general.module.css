@@ -1,10 +1,40 @@
-
 .blank_banner_section {
     background-color: var(--adlas-secondary-color);
     padding: 2.5rem 0;
 }
 
-
 .general_section {
     padding: 6rem 0;
+}
+
+/* Testimonials CSS */
+
+.testimonials_section {
+    padding: 6rem 0;
+    /* background: var(--adlas-secondary-color-02); */
+    background-color: var(--adlas-color-white);
+    position: relative;
+    z-index: 11;
+}
+
+.testimonials_child_container {
+    /* background: var(--adlas-secondary-color-02); */
+    background: var(--adlas-white-color);
+}
+
+.testimonials_child_container .testimonials_child {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+    background: var(--adlas-white-color);
+}
+
+
+.testimonials_child_container .testimonials_child h4 {
+    font-weight: 700 !important;
+    margin-bottom: 1rem;
+}
+
+.testimonials_child_container .testimonials_child h4,
+.testimonials_child_container .testimonials_child p {
+    text-align: center;
 }

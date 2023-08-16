@@ -1,8 +1,8 @@
-// import Navbar from "./Navbar";
-// import Footer from "./Footer";
 import Loading from "./Loading";
-import HeroBanner from "./HeroBanner/HeroBanner";
-import TestimonialSlider from "./Testimonials/TestimonialSlider";
+// import HeroBanner from "./HeroBanner/HeroBanner";
+import HeroBannerSlider from "./HeroBanner/HeroBannerSlider";
+import HomeAboutUsCard from "./Cards/HomeAboutUsCard";
+import HomeMissionVisionCard from "./Cards/HomeMissionVisionCard";
 import ToastProvider from "./ToastContainer/ToastContainer";
 import Button from "./Buttons";
 import MainLayout from "./Layouts/MainLayout";
@@ -15,20 +15,23 @@ import QuotationTable from "./Table/QuotationTable";
 import WebsiteConfig from "./Settings/WebsiteConfig";
 import PasswordConfig from "./Settings/PasswordConfig";
 import ContactInfoCard from "./Cards/ContactInfoCard";
-import ServicesAccordionCard from "./Cards/ServicesAccordion";
+import ServicesCard from "./Cards/ServicesCard";
+import FaqsCard from "./Cards/FaqsCard";
+import TestimonialsCard from "./Cards/TestimonialsCard";
+import WhoWeAreCard from "./Cards/WhoWeAreCard";
 // import DashboardLineChart from "./Charts/LineChart";
 // import DashboardPieChart from "./Charts/PieChart";
 
 export {
-  // Navbar,
-  // Footer,
   MainLayout,
   ProtectedLayout,
   Sidebar,
   Loading,
-  HeroBanner,
+  // HeroBanner,
+  HeroBannerSlider,
+  HomeAboutUsCard,
+  HomeMissionVisionCard,
   Button,
-  TestimonialSlider,
   ToastProvider,
   DashboardBarChart,
   ContactUsTable,
@@ -37,5 +40,8 @@ export {
   WebsiteConfig,
   PasswordConfig,
   ContactInfoCard,
-  ServicesAccordionCard,
+  ServicesCard,
+  FaqsCard,
+  TestimonialsCard,
+  WhoWeAreCard,
 };

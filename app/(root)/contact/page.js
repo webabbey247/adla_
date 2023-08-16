@@ -31,7 +31,7 @@ const ContactUsPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-pattern" />
+        {/* <div className="bg-pattern" /> */}
 
         <div className={`${styles.contact_us_form_section}`}>
           <div className="container-fluid nav_padding">

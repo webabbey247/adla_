@@ -2,14 +2,18 @@
 
 import styles from "@/styles/layout.module.css";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { FaWhatsapp } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const activeSegment = useSelectedLayoutSegment();
+  const pathname = usePathname();
   const [colorChange, setColorchange] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { isLoading, isFetching, mobileNumber, emailAddress, companyAddress } =
+    useSelector((state) => state.sitemap);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -26,15 +30,13 @@ const Navbar = () => {
       <nav
         className={
           isMobile
-            ? "navbar navbar-expand-lg bg-body-secondary py-0"
+            ? `navbar navbar-expand-lg ${styles.bg_body_secondary} py-0`
             : colorChange
-            ? "navbar navbar-expand-lg bg-body-theme py-0"
-            : "navbar navbar-expand-lg bg-body-transparent py-0"
+            ? `navbar navbar-expand-lg ${styles.bg_body_theme} py-0`
+            : `navbar navbar-expand-lg ${styles.bg_body_transparent} py-0`
         }
       >
-        <div
-          className={`container-fluid ${styles.nav_padding} ${styles.is_mobile}`}
-        >
+        <div className={`container-fluid nav_padding ${styles.is_mobile}`}>
           <Link className="navbar-brand py-0" href="/" passHref>
             <Image
               src="/static/logo.png"
@@ -44,11 +46,13 @@ const Navbar = () => {
             />
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav me-auto mt-lg-2">
+              <li className={styles.nav_menu_item}>
                 <Link
                   className={
-                    activeSegment === "/" ? "nav-link active" : "nav-link"
+                    pathname === "/"
+                      ? `nav-link ${styles.nav_menu_link} ${styles.active}`
+                      : `nav-link ${styles.nav_menu_link}`
                   }
                   passHref
                   href="/"
@@ -56,10 +60,12 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className={styles.nav_menu_item}>
                 <Link
                   className={
-                    activeSegment === "/about" ? "nav-link active" : "nav-link"
+                    pathname === "/about"
+                      ? `nav-link ${styles.nav_menu_link} ${styles.active}`
+                      : `nav-link ${styles.nav_menu_link}`
                   }
                   passHref
                   href="/about"
@@ -68,12 +74,26 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="nav-item">
+              <li className={styles.nav_menu_item}>
                 <Link
                   className={
-                    activeSegment === "/contact"
-                      ? "nav-link active"
-                      : "nav-link"
+                    pathname === "/faqs"
+                      ? `nav-link ${styles.nav_menu_link} ${styles.active}`
+                      : `nav-link ${styles.nav_menu_link}`
+                  }
+                  passHref
+                  href="/faqs"
+                >
+                  Faqs
+                </Link>
+              </li>
+
+              <li className={styles.nav_menu_item}>
+                <Link
+                  className={
+                    pathname === "/contact"
+                      ? `nav-link ${styles.nav_menu_link} ${styles.active}`
+                      : `nav-link ${styles.nav_menu_link}`
                   }
                   passHref
                   href="/contact"
@@ -85,7 +105,27 @@ const Navbar = () => {
           </div>
 
           {!isMobile && (
-            <div className="ms-auto">
+            <div className="ms-auto d-flex flex-lg-row">
+              <div className={styles.whatsapp_call_action}>
+                {isLoading || isFetching ? (
+                  <div className="d-flex justify-content-center align-items-center align-content-center mr-lg-4">
+                    <span
+                      className="spinner-border text-light spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                  </div>
+                ) : (
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=${mobileNumber}`}
+                    className="text-white mr-lg-4"
+                  >
+                    <FaWhatsapp fontSize={22} />
+                    {mobileNumber}
+                  </a>
+                )}
+              </div>
+
               <Link
                 href="/get-quote"
                 className={`${styles.contact_us_button}`}
@@ -93,6 +133,21 @@ const Navbar = () => {
               >
                 Get Quote
               </Link>
+              <div
+                className={`${styles.country_language} d-flex align-items-lg-center`}
+              >
+                <div className={styles.country_language_flag}>
+                  <span />
+                </div>
+                <p>NG</p>
+              </div>
+
+              {/* <a
+                href="https://api.whatsapp.com/send?phone=2349010003247"
+                className="text-white mr-lg-4"
+              >
+                09132574022
+              </a> */}
             </div>
           )}
 
@@ -152,16 +207,28 @@ const Navbar = () => {
                 Get Quote
               </Link>
 
-              <div className={styles.responsive_nav_info}>
-                <aside>Company Address</aside>
-                <p>8 Okunade str, Charity bus stop, Oshodi Lagos</p>
-              </div>
+              {isLoading || isFetching ? (
+                <div className="d-flex justify-content-center align-items-center align-content-center">
+                  <span
+                    className="spinner-border text-light spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                </div>
+              ) : (
+                <Fragment>
+                  <div className={styles.responsive_nav_info}>
+                    <aside>Company Address</aside>
+                    <p>{companyAddress}</p>
+                  </div>
 
-              <div className={styles.responsive_nav_info}>
-                <aside>General Enquires </aside>
-                <p>Email: info@addressmail.com</p>
-                <p>Phone: +234 913 257 4069</p>
-              </div>
+                  <div className={styles.responsive_nav_info}>
+                    <aside>General Enquires </aside>
+                    <p>Email: {emailAddress}</p>
+                    <p>Phone: {mobileNumber}</p>
+                  </div>
+                </Fragment>
+              )}
 
               <div className={styles.responsive_nav_info}>
                 <aside>Operation Hours </aside>

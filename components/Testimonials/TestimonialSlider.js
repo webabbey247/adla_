@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/testimonials.module.css";
+import styles from "@/styles/general.module.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 

@@ -1,8 +1,93 @@
 /* Header */
-
 .nav_padding {
     padding-left: 80px !important;
     padding-right: 80px !important;
+}
+
+.bg_body_transparent {
+    background-color: transparent !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease-out;
+}
+
+.bg_body_theme {
+    background-color: var(--adlas-color-white) !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease-out;
+    transform: translateY(0%);
+    box-shadow: rgba(65, 62, 101, 0.1) 0px 12px 34px -11px;
+}
+
+.bg_body_secondary {
+    background-color: var(--adlas-secondary-color) !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease-out;
+    transform: translateY(0%);
+}
+
+.nav_menu_item {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: var(--adlas-color-white) !important;
+    font-weight: 600 !important;
+    font-size: var(--adlas-nav-font-size) !important;
+    line-height: var(--adlas-nav-line-height) !important;
+}
+
+.nav_menu_link {
+    color: var(--adlas-color-white) !important;
+}
+
+.nav_menu_link.active {
+    color: var(--adlas-nav-active-color) !important;
+}
+
+.bg_body_theme .nav_menu_link {
+    color: var(--adlas-nav-color) !important;
+}
+
+.bg_body_theme .nav_menu_link.active {
+    color: var(--adlas-nav-active-color) !important;
+}
+
+
+.whatsapp_call_action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp_call_action a {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-right: 0.5rem;
+    color: var(--adlas-color-white) !important;
+}
+
+.bg_body_theme .whatsapp_call_action a {
+    color: var(--adlas-nav-color) !important;
+}
+
+.whatsapp_call_action a svg {
+    margin-right: 5px;
+}
+
+.bg_body_theme .whatsapp_call_action a svg {
+    color: var(--adlas-green-color) !important;
 }
 
 .contact_us_button {
@@ -25,6 +110,42 @@
 .contact_us_button:hover {
     border: 1px solid var(--adlas-secondary-color);
     background: var(--adlas-secondary-color);
+    color: var(--adlas-color-white) !important;
+}
+
+.country_language {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.country_language .country_language_flag {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--adlas-border-radius);
+    background: #00875129;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country_language .country_language_flag span {
+    width: 20px;
+    height: 20px;
+    background-image: url('/static/icons/nb_flag.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+
+.country_language p {
+    font-weight: 600 !important;
+    margin-left: 5px;
+    font-size: 14px !important;
+    color: var(--adlas-color-white);
+}
+
+.bg_body_theme .country_language p  {
+    color: var(--adlas-nav-color) !important;
 }
 
 /* footer */
@@ -319,12 +440,12 @@
     min-width: 0;
 }
 
-.dashboard_container > * {
+.dashboard_container>* {
     position: relative;
     display: flex;
     flex: 1 1 auto;
     width: 100%;
-  }
+}
 
 .dashboard_container .main_container {
     padding: 2rem 0 !important;
@@ -357,10 +478,10 @@
 }
 
 .card .page_header a:hover {
- background-color: rgba(15, 183, 107, .12) !important;
- max-width: 100%;
- width: 15%;
- border-radius: 10px;
+    background-color: rgba(15, 183, 107, .12) !important;
+    max-width: 100%;
+    width: 15%;
+    border-radius: 10px;
 }
 
 .card .page_header a svg {
@@ -389,7 +510,7 @@
 }
 
 .card .card_body {
-    margin:2rem 0;
+    margin: 2rem 0;
 }
 
 
@@ -399,7 +520,7 @@
 }
 
 .card .content_display_info .content_display_child {
-   margin: 1rem 0 0;
+    margin: 1rem 0 0;
 }
 
 .card .content_display_info .content_display_child span {
@@ -411,7 +532,7 @@
 
 .card .content_display_info .content_display_child span.action {
     color: var(--adlas-color-white) !important;
-} 
+}
 
 .card .content_display_info .content_display_child h5 {
     font-weight: 400 !important;
@@ -489,6 +610,7 @@
     font-size: 1rem !important;
     line-height: 1.5rem;
     color: var(--adlas-color-white) !important;
+    cursor: pointer !important;
 }
 
 .navigationFooter .user_info span:first-child {
@@ -498,6 +620,7 @@
 .navigation_footer .user_logged_info span svg {
     margin-top: 20px !important;
     color: var(--adlas-color-white) !important;
+    cursor: pointer !important;
 }
 
 /* Sidebar Css */

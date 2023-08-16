@@ -1,5 +1,5 @@
 .about_us_banner {
-    background-image: url('/static/agriculture_banner_img.jpg');
+    background-image: url('/static/vision_mission_img.jpg');
     background-position: 90%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,12 +39,16 @@
     color: var(--adlas-secondary-color-01) !important;
     text-transform: uppercase !important;
     font-weight: 800 !important;
+    /* margin-bottom: 1rem !important; */
+background-color: #E7ECEF !important;
+color: #1C4863 !important;
 }
 
 .about_us h4 {
     font-size: 38px;
     line-height: 48px;
     font-weight: 700 !important;
+    margin-top: 1rem !important;
 }
 
 .about_us .about_us_rtl_img_01 {
@@ -59,6 +63,8 @@
     height: 100%;
     border-radius: var(--adlas-border-radius);
     margin: 0 0 0 6rem;
+    border-top-left-radius: 150px;
+border-bottom-right-radius: 150px;
 }
 
 .about_us .about_us_rtl_quote_card {
@@ -344,8 +350,19 @@
     margin: 0 !important;
 }
 
+.about_us_badge {
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #3b00ff;
+    background-color: #eaeaff;
+    width: max-content;
+    padding: 10px 15px;
+    border-radius: 100px;
+    margin-bottom: 2rem !important;
+    }
+
 .about_us_services_section .about_us_services_top_wrapper h4 {
-    margin: 0.5rem 0;
+    margin: 1rem 0 1rem;
     max-width: 550px;
     font-weight: 700 !important;
 }
@@ -475,6 +492,8 @@
 .about_us_services_bottom_wrapper .about_us_services_card .hover_text_content p {
     color: var(--adlas-color-white);
 }
+
+
 
 
 

@@ -1,11 +1,12 @@
 import styles from "../page.module.css";
 import {
-  HeroBanner,
-  TestimonialSlider,
+  HeroBannerSlider,
+  HomeAboutUsCard,
+  HomeMissionVisionCard,
   MainLayout,
-  ServicesAccordionCard,
+  ServicesCard,
+  TestimonialsCard,
 } from "@/components";
-import { servicesList } from "@/utils/config";
 
 export const metadata = {
   title: "Welcome | Adla Investment Enterprises",
@@ -17,166 +18,12 @@ export default function Home() {
     <MainLayout>
       <section className="banner-container w-100 h-100 position-relative">
         <div className="position-relative h-100">
-          <HeroBanner />
+          <HeroBannerSlider />
           <div className={styles.banner_divider} />
-          <div className={styles.home_about_section}>
-            <div className="container-fluid nav_padding">
-              <div className="row">
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className={styles.home_about_section_ltr}>
-                    <h4>
-                      Adla Global Business Solutions, a leading procurement and
-                      exports specialist company.
-                    </h4>
-                    <p>
-                      Our goal is to deliver consistent absolute returns for our
-                      investors irrespective of the market environment. Rigorous
-                      analysis, disciplined risk management, and a relentless
-                      pursuit of excellence underpin Adla’s reputation as a
-                      market leader.
-                    </p>
-
-                    <p>
-                      Our enduring client relationships are built on trust,
-                      integrity, and high-performing investment strategies.
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className={styles.home_about_section_rtl}>
-                    <div className={styles.home_about_section_rtl_img} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.home_services_section}>
-            <div className="container-fluid nav_padding">
-              <div className="row">
-                <div className="col-lg-6 offset-lg-3 col-md-12 col-sm-12">
-                  <div className={styles.home_services_text_container}>
-                    <h4>Our Difference</h4>
-                    <p>
-                      A diversity of opinion, expertise, and experience are the
-                      cornerstones of our investment process while analytical
-                      precision, ethical discipline, and responsible thinking
-                      drive its implementation.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-lg-12 col-md-12 col-sm-12">
-                  <div
-                    className={`position-relative ${styles.home_services_grid_container}`}
-                  >
-                    <div className={`row ${styles.active_liner} no-gutters`}>
-                      <div className="col-lg-6 col-md-12 col-sm-12">
-                        <div
-                          className={`${styles.home_services_ltr} position-relative`}
-                        >
-                          <div className={styles.home_services_ltr_img}>
-                            <span />
-                            <div
-                              className={`position-relative ${styles.home_services_ltr_text}`}
-                            >
-                              <p>
-                                Our enduring client relationships are built on
-                                trust, integrity, and high-performing investment
-                                strategies.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div
-                          className={`${styles.home_services_ltr_bottom} d-flex flex-column justify-content-lg-end justify-content-md-center align-items-lg-end align-items-md-center`}
-                        >
-                          <h4>Experience</h4>
-                          <p>
-                            Approaching four decades of analysing cyclical and
-                            secular market shifts has instilled resilience and
-                            flexibility into our investment and risk management
-                            processes.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-lg-6 col-md-12 col-sm-12">
-                        <div
-                          className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-lg-start align-items-lg-start`}
-                        >
-                          <h4>Sustainability</h4>
-                          <p>
-                            Adla’s longevity creates a natural synergy with
-                            sustainable investing practices. To build on our
-                            long-term success, we have dedicated resources
-                            working to ensure that our portfolios are conscious
-                            of environmental, social, and governance (ESG)
-                            factors, and all of the opportunities that creates.
-                          </p>
-                        </div>
-
-                        <div
-                          className={`${styles.home_services_rlt_text} d-flex flex-column justify-content-lg-start align-items-lg-start`}
-                        >
-                          <h4>Consistency</h4>
-                          <p>
-                            Our investing expertise is fortified by proven
-                            infrastructure and a commitment to industry best
-                            practices. That combination promotes the continuous
-                            process improvement needed to deliver consistent
-                            outperformance.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.services_accordion_section}>
-            <div className="container-fluid nav-padding">
-              <div className="row">
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className={styles.services_accordion_ltr}>
-                    <div className={styles.services_accordion_ltr_text}>
-                      <h4>
-                        Experience industry expertise, reliable sourcing,
-                        seamless logistics, and customer-centric approach.
-                      </h4>
-                      <p>
-                        Choose Adla Global Business Solutions for a reliable
-                        procurement and export partner. Our industry knowledge,
-                        sourcing, logistics, and focus on customers ensure your
-                        success. Count on us for desired results.
-                      </p>
-                    </div>
-                    <div className={styles.services_accordion_ltr_container}>
-                      <ServicesAccordionCard />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className={styles.services_accordion_section_rtl}>
-                    <span />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.home_section_testimonials}>
-            <div className="container-fluid nav-padding">
-              <div className="row">
-                <div className="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
-                  <TestimonialSlider />
-                </div>
-              </div>
-            </div>
-          </div>
+          <HomeAboutUsCard />
+          <ServicesCard />
+          <HomeMissionVisionCard />
+          <TestimonialsCard />
         </div>
       </section>
     </MainLayout>
