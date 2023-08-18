@@ -12,6 +12,7 @@ import DashboardBarChart from "./Charts/Barchart";
 import ContactUsTable from "./Table/ContactUsTable";
 import SubscriptionTable from "./Table/SubscriptionTable";
 import QuotationTable from "./Table/QuotationTable";
+import FaqsTable from "./Table/FaqsTable";
 import WebsiteConfig from "./Settings/WebsiteConfig";
 import PasswordConfig from "./Settings/PasswordConfig";
 import ContactUsFormCard from "./Cards/ContactUsFormCard";
@@ -22,6 +23,7 @@ import WhoWeAreCard from "./Cards/WhoWeAreCard";
 import CustomBannerCard from "./Cards/CustomBannerCard";
 import MissionVisionCard from "./Cards/MissionVisionCard";
 import ContactMapCard from "./Cards/ContactMapCard";
+import FaqsModalCard from "./Modals/FaqsModalCard";
 
 export {
   MainLayout,
@@ -37,6 +39,7 @@ export {
   ContactUsTable,
   SubscriptionTable,
   QuotationTable,
+  FaqsTable,
   WebsiteConfig,
   PasswordConfig,
   ContactUsFormCard,
@@ -47,4 +50,5 @@ export {
   CustomBannerCard,
   MissionVisionCard,
   ContactMapCard,
+  FaqsModalCard,
 };

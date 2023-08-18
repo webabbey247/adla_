@@ -2,6 +2,55 @@ import { apiSlice } from "@/redux/api/apiSlice";
 
 export const adminApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    //Faqs Form
+    getAllFaqs: builder.query({
+      query: () => "faqs",
+      providesTags: ["AllFAQS"],
+      refetchOnMountOrArgChange: true,
+    }),
+    getSingleFaq: builder.query({
+      query: (slug) => `/faqs/${slug}`,
+      providesTags: ["SingleFaq"],
+      refetchOnMountOrArgChange: true,
+    }),
+    approveSingleFaq: builder.mutation({
+      query: (id) => ({
+        url: `approve/faqs/${id}`,
+        method: "POST",
+      }),
+      invalidatesTags: ["AllFAQS"],
+    }),
+
+    draftSingleFaq: builder.mutation({
+      query: (id) => ({
+        url: `draft/faqs/${id}`,
+        method: "POST",
+      }),
+      invalidatesTags: ["AllFAQS"],
+    }),
+    newSingleFaq: builder.mutation({
+      query: (credentials) => ({
+        url: "faqs/post",
+        method: "post",
+        body: credentials,
+      }),
+      invalidatesTags: ["AllFAQS"],
+    }),
+    updateSingleFaq: builder.mutation({
+      query: ({ slug, ...credentials }) => ({
+        url: `/update/faqs/${slug}/post`,
+        method: "post",
+        body: credentials,
+      }),
+      invalidatesTags: ["AllFAQS"],
+    }),
+    deleteSingleFaq: builder.mutation({
+      query: (id) => ({
+        url: `delete/faqs/${id}`,
+        method: "delete",
+      }),
+      invalidatesTags: ["AllFAQS"],
+    }),
     //Contact Us Form
     getAllComplaints: builder.query({
       query: () => "contact-form-inquiries",
@@ -12,9 +61,16 @@ export const adminApiSlice = apiSlice.injectEndpoints({
       query: (tickekID) => `contact-form-inquiries/${tickekID}`,
       providesTags: ["SingleComplaint"],
     }),
-    markUnreadComplaints: builder.query({
-      query: (tickekID) => `unread/contact-form-inquiries/${tickekID}`,
-      providesTags: ["UnreadComplaint"],
+    // markUnreadComplaints: builder.query({
+    //   query: (tickekID) => `unread/contact-form-inquiries/${tickekID}`,
+    //   providesTags: ["UnreadComplaint"],
+    // }),
+    markUnreadComplaints: builder.mutation({
+      query: (tickekID) => ({
+        url: `unread/contact-form-inquiries/${tickekID}`,
+        method: "POST",
+      }),
+      invalidatesTags: ["Complaints"],
     }),
     deleteComplaints: builder.mutation({
       query: (id) => ({
@@ -45,9 +101,12 @@ export const adminApiSlice = apiSlice.injectEndpoints({
       query: (tickekID) => `services/quotations/${tickekID}`,
       providesTags: ["SingleQuotation"],
     }),
-    markUnreadQuotation: builder.query({
-      query: (tickekID) => `unread/services/quotations/${tickekID}`,
-      providesTags: ["UnreadQuotation"],
+    markUnreadQuotation: builder.mutation({
+      query: (tickekID) => ({
+        url: `unread/services/quotations/${tickekID}`,
+        method: "POST",
+      }),
+      invalidatesTags: ["ServiceQuotations"],
     }),
     deleteQuotation: builder.mutation({
       query: (id) => ({
@@ -81,15 +140,26 @@ export const adminApiSlice = apiSlice.injectEndpoints({
 });
 
 export const {
+  useGetAllFaqsQuery,
+  useGetSingleFaqQuery,
+  useApproveSingleFaqMutation,
+  useDraftSingleFaqMutation,
+  // useLazyDraftSingleFaqQuery,
+  // useLazyApproveSingleFaqQuery,
+  useNewSingleFaqMutation,
+  useUpdateSingleFaqMutation,
+  useDeleteSingleFaqMutation,
   useGetAllComplaintsQuery,
   useGetSingleComplaintQuery,
-  useLazyMarkUnreadComplaintsQuery,
+  useMarkUnreadComplaintsMutation,
+  // useLazyMarkUnreadComplaintsQuery,
   useDeleteComplaintsMutation,
   useGetAllMailingListQuery,
   useDeleteMailingListMutation,
   useGetAllQuotationsQuery,
   useGetSingleQuotationQuery,
-  useLazyMarkUnreadQuotationQuery,
+  useMarkUnreadQuotationMutation,
+  // useLazyMarkUnreadQuotationQuery,
   useDeleteQuotationMutation,
   useGetWebsiteConfigQuery,
   useUpdateWebsiteConfigMutation,

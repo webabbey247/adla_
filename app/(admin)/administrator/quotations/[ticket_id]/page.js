@@ -15,7 +15,7 @@ import { format } from "date-fns";
 import {
   useGetSingleQuotationQuery,
   useDeleteQuotationMutation,
-  useLazyMarkUnreadQuotationQuery,
+  useMarkUnreadQuotationMutation,
 } from "@/redux/services/admin/adminApiSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ const QuotationSinglePage = ({ params }) => {
   const [
     markUnreadQuotation,
     { isLoading: isDraftLoading, isFetching: isDraftFetching },
-  ] = useLazyMarkUnreadQuotationQuery();
+  ] = useMarkUnreadQuotationMutation();
 
   const handleDeleteEntry = async (id) => {
     try {

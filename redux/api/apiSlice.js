@@ -2,8 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { logOut } from "../services/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
+  // baseUrl: process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL,
+  // credentials: "same-origin",
   baseUrl: process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL,
-  // baseUrl: process.env.NEXT_PUBLIC_LOCAL_BASE_URL,
   credentials: "same-origin",
   headers: {
     Accept: "application/json",
@@ -31,16 +32,17 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const apiSlice = createApi({
   baseQuery: baseQueryWithReauth,
   tagTypes: [
+    "AllFaqs",
+    "SingleFaq",
     "Complaints",
     "SingleComplaint",
-    "UnreadComplaint",
     "ServiceQuotations",
     "SingleQuotation",
-    "UnreadQuotation",
     "websiteConfiguration",
     "WebsiteConfig",
     "getAllMailingList",
     "Subscribers",
+    "AllFAQS",
   ],
   endpoints: (builder) => ({}),
 });

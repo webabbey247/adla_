@@ -144,7 +144,7 @@
     color: var(--adlas-color-white);
 }
 
-.bg_body_theme .country_language p  {
+.bg_body_theme .country_language p {
     color: var(--adlas-nav-color) !important;
 }
 
@@ -467,6 +467,33 @@
     background: var(--adlas-color-white);
 }
 
+.card .page_header span.page_header_btn {
+    border: var(--adlas-button-border);
+    background: var(--adlas-primary-color);
+    width: 150px;
+    height: 50px;
+    line-height: 28px;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--adlas-border-radius);
+    color: var(--adlas-color-black) !important;
+    font-weight: 700 !important;
+    font-size: var(--adlas-nav-font-size) !important;
+    line-height: var(--adlas-nav-line-height) !important;
+}
+
+
+.card .page_header span.page_header_btn:hover {
+    border: var(--adlas-button-border) !important;
+    border-radius: var(--adlas-border-radius) !important;
+    background: var(--adlas-secondary-color) !important;
+    color: var(--adlas-color-white) !important;
+    width: 150px !important;
+    border-color: var(--adlas-secondary-color) !important;
+}
+
 .card .page_header a {
     font-size: 16px !important;
     /* font-size: 25px; */
@@ -724,17 +751,64 @@
 }
 
 
-
-
-/* .footer_section .spinner_border{
-    border:  0.25em solid var(--adlas-color-white) !important;
-} */
-
-/***** Datatables *****/
+/***** Datatables Styles *****/
 .dataTable {
     padding: 2rem 0;
     position: relative;
     width: 100%;
+}
+
+
+/***** Modals Styles *****/
+.modal_back_drop {
+    opacity: .7;
+    visibility: visible;
+    background: rgba(92, 109, 85, 0.4);
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    overscroll-behavior: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition-duration: .32s;
+    z-index: 1000;
+}
+
+.modal_container {
+    right: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    transition-duration: .5s;
+    width: 30vw;
+    z-index: 1000;
+    /* border-radius: 1rem; */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    background: var(--adlas-color-white) !important;
+}
+
+.modal_container .modal_container_header {
+    align-items: center;
+    background: var(--adlas-secondary-color);
+    /* border-radius: 1rem 0 0 0; */
+    /* cursor: default; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.modal_container .modal_container_header h4 {
+    color: var(--adlas-color-white) !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
+    font-weight: 700 !important;
+}
+
+.modal_container .modal_container_body {
+    padding: 1rem 0.8rem;
 }
 
 

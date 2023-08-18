@@ -15,7 +15,7 @@ import { format } from "date-fns";
 import {
   useGetSingleComplaintQuery,
   useDeleteComplaintsMutation,
-  useLazyMarkUnreadComplaintsQuery,
+  useMarkUnreadComplaintsMutation,
 } from "@/redux/services/admin/adminApiSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -36,7 +36,7 @@ const EnquiriesSinglePage = ({ params }) => {
   const [
     markUnreadComplaints,
     { isLoading: isDraftLoading, isFetching: isDraftFetching },
-  ] = useLazyMarkUnreadComplaintsQuery();
+  ] = useMarkUnreadComplaintsMutation();
 
   const handleDeleteEntry = async (id) => {
     try {
@@ -89,7 +89,10 @@ const EnquiriesSinglePage = ({ params }) => {
           ) : (
             <Fragment>
               {/* <SeoCard title={`Customer Ticket_ID: ${isData?.data.customer_ticket_no}) }`} description="" /> */}
-              <title>Customer Ticket_ID: {isData?.data.customer_ticket_no} | Adla Global Business</title>
+              <title>
+                Customer Ticket_ID: {isData?.data.customer_ticket_no} | Adla
+                Global Business
+              </title>
               <meta name="description" content="" />
               <div className={`card ${styles.card} mb-3`}>
                 <div
@@ -207,7 +210,7 @@ const EnquiriesSinglePage = ({ params }) => {
 
                     <div className="row mt-lg-3">
                       <div className="col-lg-12 col-md-12 col-sm-12">
-                      <div className={`${styles.content_display_child} pb-4`}>
+                        <div className={`${styles.content_display_child} pb-4`}>
                           <span>Action</span>
                           <div className="d-flex mt-2">
                             {isDeleteLoading ? (

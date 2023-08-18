@@ -4,6 +4,7 @@ import ContactUsForm from "./ContactUsForm";
 import LoginForm from "./LoginForm";
 import SiteConfigurationForm from "./SiteConfigurationForm";
 import ChangePasswordForm from "./ChangePasswordForm";
+import FaqsForm from "./FaqsForm";
 
 export {
   SubscribersForm,
@@ -12,4 +13,5 @@ export {
   LoginForm,
   SiteConfigurationForm,
   ChangePasswordForm,
+  FaqsForm,
 };

@@ -17,10 +17,7 @@ const AboutUsPage = () => {
       <section className="w-100 h-100 position-relative">
         <CustomBannerCard
           title="About Us"
-          description=" Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-          do eiusmod tempor incididunt ut labore et dolore magna.
-          Lorem iosum dolor sit amet. consectetur adiviscina elit. sed
-          do eiusmod tempor incididunt ut labore et dolore magna."
+          description="At Adla Global Investment, we boast an extensive service portfolio that centers around fulfilling our clients' purchasing demands by sourcing products both locally and internationally. Our African-based clientele can rest easy knowing that we provide all the necessary export documentation, product cost, transport, freight insurance, and more."
         />
         <WhoWeAreCard />
         <MissionVisionCard />

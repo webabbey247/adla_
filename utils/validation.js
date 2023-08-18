@@ -88,3 +88,14 @@ export const changePasswordValidationSchema = yup.object().shape({
     .required("Kindly provide your preferred password")
     .oneOf([yup.ref("newPassword")], "Passwords does not match"),
 });
+
+export const faqsValidationSchema = yup.object().shape({
+  possibleQuestion: yup
+    .string()
+    .trim()
+    .required("Kindly provide your preferred question!"),
+  possibleAnswer: yup
+    .string()
+    .trim()
+    .required("Kindly describe your possible answer!"),
+});

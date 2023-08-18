@@ -12,6 +12,7 @@ const sitemapSlice = createSlice({
     twitterHandle: null,
     linkedinHandle: null,
     facebookHandle: null,
+    FaqForm: false,
   },
   reducers: {
     setWebsiteConfig: (state, action) => {
@@ -25,8 +26,16 @@ const sitemapSlice = createSlice({
       state.linkedinHandle = action.payload.linkedin_handle;
       state.facebookHandle = action.payload.facebook_handle;
     },
+
+    setFaqFormActive: (state) => {
+      state.FaqForm = true;
+    },
+    resetFaqForm: (state) => {
+      state.FaqForm = false;
+    },
   },
 });
 
-export const { setWebsiteConfig } = sitemapSlice.actions;
+export const { setWebsiteConfig, setFaqFormActive, resetFaqForm } =
+  sitemapSlice.actions;
 export default sitemapSlice.reducer;

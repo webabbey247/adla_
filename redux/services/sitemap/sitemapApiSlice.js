@@ -2,6 +2,10 @@ import { apiSlice } from "../../api/apiSlice";
 
 export const sitemapApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    allFaqs: builder.query({
+      query: () => "faqs/all",
+      providesTags: ["AllFaqs"],
+    }),
     getWebsiteConfiguration: builder.query({
       query: () => "configurations/all",
       providesTags: ["WebsiteConfig"],
@@ -31,6 +35,7 @@ export const sitemapApiSlice = apiSlice.injectEndpoints({
 });
 
 export const {
+  useAllFaqsQuery,
   useGetWebsiteConfigurationQuery,
   useContactUsMutation,
   useEmailSubscriptionMutation,

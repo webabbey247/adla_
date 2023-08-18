@@ -2,9 +2,9 @@
 
 import styles from "@/styles/faqs.module.css";
 import { Fragment, useState } from "react";
-import { servicesList } from "@/utils/config";
-import { FiChevronDown, FiChevronUp, FiPlus, FiMinus } from "react-icons/fi";
-const FaqsAccordion = () => {
+import { FiPlus, FiMinus } from "react-icons/fi";
+
+const FaqsAccordion = ({ isData }) => {
   const [openAccordion, setOpenAccordion] = useState(0);
 
   const handleAccordionClick = (index) => {
@@ -18,7 +18,7 @@ const FaqsAccordion = () => {
 
   return (
     <div className={styles.faqs_accordion_container}>
-      {servicesList.map((_data, index) => {
+      {isData.map((_data, index) => {
         return (
           <div
             key={index}
@@ -35,21 +35,25 @@ const FaqsAccordion = () => {
                   <p className={styles.faqs_accordion_number}>{`0${
                     index + 1
                   }`}</p>
-                  <p className={styles.faqs_accordion_name}>{_data.name}</p>
+                  <p className={styles.faqs_accordion_name}>
+                    {_data.possible_question}
+                  </p>
                 </Fragment>
                 {openAccordion === index ? (
                   <FiMinus fontSize={22} color="var( --adlas-nav-color)" />
                 ) : (
-                  <FiPlus
-                    fontSize={22}
-                    color="var( --adlas-nav-color)"
-                  />
+                  <FiPlus fontSize={22} color="var( --adlas-nav-color)" />
                 )}
               </div>
             </div>
 
             <div className={styles.faqs_accordion_details}>
-              <p>{_data.summary2}</p>
+              {/* <p>{_data.possible_answer}</p> */}
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: _data.possible_answer,
+                }}
+              />
             </div>
           </div>
         );

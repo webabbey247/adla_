@@ -86,6 +86,7 @@ const ContactUsTable = () => {
     {
       key: "6",
       title: "Action",
+      fixed: 'right',
       render: (record) => (
         <div className="d-flex">
           <Link

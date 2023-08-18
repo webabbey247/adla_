@@ -98,6 +98,27 @@
     color: var(--adlas-color-white);
 }
 
+.general_form_container .general_cancel_button {
+    min-width: 180px;
+    font-weight: 500;
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 55px !important;
+    font-size: 16px;
+    border-radius: var(--adlas-border-radius) !important;
+    /* border: var(--adlas-button-border); */
+    border: 1px solid var(--adlas-secondary-color) !important;
+    background: var(--adlas-color-black);
+    color: var(--adlas-color-white);
+    margin: 1rem 0 4rem;
+}
+
+.general_form_container .general_cancel_button:hover {
+    border: var(--adlas-secondary-border);
+    background: var(--adlas-secondary-color);
+    color: var(--adlas-color-white);
+}
+
 .input_errors {
     width: 100%;
     font-size: 13px !important;

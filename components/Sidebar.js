@@ -4,9 +4,9 @@ import styles from "@/styles/layout.module.css";
 import Link from "next/link";
 import {
   FiActivity,
-  FiMessageCircle,
   FiDatabase,
   FiSettings,
+  FiHelpCircle,
 } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 
@@ -35,12 +35,12 @@ const Sidebar = () => {
         <div className="my-2">
           <span>Website Configurations</span>
         </div>
-        {/* <div className="d-flex flex-lg-column">
-          <Link className="" href="/administrator/dashboard">
-            <FiMessageCircle color="var(--sidebar-nav-color)" fontSize="22px" />
-            <span>Testimonials</span>
+        <div className="d-flex flex-lg-column">
+          <Link className="" href="/administrator/frequently-asked-questions">
+            <FiHelpCircle color="var(--sidebar-nav-color)" fontSize="22px" />
+            <span>FAQs</span>
           </Link>
-        </div> */}
+        </div>
         <div className="d-flex flex-lg-column">
           <Link className="" href="/administrator/site-configurations" passHref>
             <FiSettings color="var(--sidebar-nav-color)" fontSize="22px" />
