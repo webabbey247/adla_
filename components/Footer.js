@@ -82,9 +82,9 @@ const Footer = () => {
                       <Link href="/get-quote">Get Quote</Link>
                     </li>
 
-                    {/* <li className="mb-lg-3">
-                      <Link href="/privacy-policy">Privacy Policy</Link>
-                    </li> */}
+                    <li className="mb-lg-3">
+                      <Link href="/faqs">FAQs</Link>
+                    </li>
                   </ul>
                 </div>
               </div>

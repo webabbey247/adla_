@@ -1,4 +1,4 @@
-// import styles from "../page.module.css";
+import styles from "../page.module.css";
 import {
   HeroBannerSlider,
   HomeAboutUsCard,
@@ -19,7 +19,7 @@ export default function Home() {
       <section className="banner-container w-100 h-100 position-relative">
         <div className="position-relative h-100">
           <HeroBannerSlider />
-          {/* <div className={styles.banner_divider} /> */}
+          <div className={styles.banner_divider} />
           <HomeAboutUsCard />
           <ServicesCard />
           <HomeMissionVisionCard />
