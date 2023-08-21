@@ -23,7 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
       <html lang="en">
-        <body className={DMSans.className} suppressHydrationWarning>
+        <body className={DMSans.className}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
           <ToastProvider>{children}</ToastProvider>
         </body>
       </html>
