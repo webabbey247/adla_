@@ -1,6 +1,6 @@
 import Loading from "./Loading";
 // import HeroBanner from "./HeroBanner/HeroBanner";
-import HeroBannerSlider from "./HeroBanner/HeroBannerSlider";
+// import HeroBannerSlider from "./HeroBanner/HeroBannerSlider";
 import HomeAboutUsCard from "./Cards/HomeAboutUsCard";
 import HomeMissionVisionCard from "./Cards/HomeMissionVisionCard";
 import ToastProvider from "./ToastContainer/ToastContainer";
@@ -30,7 +30,7 @@ export {
   ProtectedLayout,
   Sidebar,
   Loading,
-  HeroBannerSlider,
+  // HeroBannerSlider,
   HomeAboutUsCard,
   HomeMissionVisionCard,
   Button,
