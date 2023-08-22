@@ -1,6 +1,6 @@
 import styles from "../page.module.css";
 import {
-  HeroBannerSlider,
+  // HeroBannerSlider,
   HomeAboutUsCard,
   HomeMissionVisionCard,
   MainLayout,
@@ -18,7 +18,7 @@ export default function Home() {
     <MainLayout>
       <section className="banner-container w-100 h-100 position-relative">
         <div className="position-relative h-100">
-          <HeroBannerSlider />
+          {/* <HeroBannerSlider /> */}
           <div className={styles.banner_divider} />
           <HomeAboutUsCard />
           <ServicesCard />
