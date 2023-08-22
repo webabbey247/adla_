@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       <html lang="en">
         <body className={DMSans.className}>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="./favicon.ico" sizes="any" />
           <ToastProvider>{children}</ToastProvider>
         </body>
       </html>
