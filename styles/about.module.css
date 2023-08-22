@@ -66,7 +66,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/mkk.jpg');
+    background-image: url('/static/about_us_img_banner.jpg');
     height: 100%;
     border-radius: var(--adlas-border-radius);
     margin: 0 0 0 6rem;

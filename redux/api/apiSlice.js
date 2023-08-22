@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { logOut } from "../services/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
+  baseUrl: process.env.NEXT_PUBLIC_STAGING_BASE_URL,
+  credentials: "same-origin",
   // baseUrl: process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL,
   // credentials: "same-origin",
-  baseUrl: process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL,
-  credentials: "same-origin",
   headers: {
     Accept: "application/json",
   },
