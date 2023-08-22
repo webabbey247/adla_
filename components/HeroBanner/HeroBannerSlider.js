@@ -4,7 +4,7 @@
 import styles from "@/styles/homepage.module.css";
 import Link from "next/link";
 // import Typewriter from "../Typography/Typewriter";
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
 
 const HeroBannerSlider = () => {
   return (
@@ -18,7 +18,7 @@ const HeroBannerSlider = () => {
               {/* <h2> Your Procurement and Export Partner.</h2> */}
               <h2>
                 Your leading <br />{" "}
-                <TypeAnimation
+                {/* <TypeAnimation
                   sequence={[
                     "Procurement",
                     1000,
@@ -28,7 +28,7 @@ const HeroBannerSlider = () => {
                   speed={50}
                   repeat={Infinity}
                   style={{ color: 'var(--adlas-primary-color)' }}
-                />
+                /> */}
               </h2>
               <h2>specialist company.</h2>
               <p>
